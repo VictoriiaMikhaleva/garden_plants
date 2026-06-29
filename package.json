@@ -4,6 +4,10 @@
   "private": true,
   "description": "Подбор уличных растений — продолжение Choose_your_plant",
   "scripts": {
-    "start": "npx --yes serve . -p 3456"
+    "start": "npx --yes serve . -p 3456",
+    "photos:commons": "node scripts/fetch-garden-photos.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
   }
 }

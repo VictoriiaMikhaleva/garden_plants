@@ -165,8 +165,10 @@
     return `<div class="meter"><span>${title}</span><b><span class="valueText">${esc(value)}</span>${unit ? `<span class="unit">${esc(unit.trim())}</span>` : ""}</b>${visual || ""}</div>`;
   }
 
+  const PHOTO_CACHE_V = "20250629";
+
   function photo(p) {
-    const src = p.photo ? p.photo : "";
+    const src = p.photo ? `${p.photo}?v=${PHOTO_CACHE_V}` : "";
     if (src) {
       return `<div class="plantPhoto"><img loading="lazy" src="${esc(src)}" alt="${esc(p.nameRu)} — фото" onerror="this.parentElement.className='plantPhoto fallback';this.outerHTML='${colorIcon(p.color)}'"></div>`;
     }
