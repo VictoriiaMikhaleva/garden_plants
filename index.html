@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Подбор уличных растений по освещённости, высоте и цветению. Продолжение каталога комнатных растений PlantFit.">
+  <title>Подбор уличных растений для сада</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#home">
+        <span class="brand__mark" aria-hidden="true">🌳</span>
+        <span class="brand__text">
+          <span class="brand__name">Уличные растения</span>
+          <span class="brand__tag">продолжение каталога PlantFit</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Разделы страницы">
+        <a href="#quickStart">Сценарии</a>
+        <a href="#how-it-works">Как работает</a>
+        <a href="https://victoriiamikhaleva.github.io/Choose_your_plant/">Комнатные</a>
+      </nav>
+      <div class="site-header__actions">
+        <a class="btn btn-small" href="#quickStart">Подобрать растение</a>
+        <a class="btn btn-small btn-ghost" href="https://victoriiamikhaleva.github.io/Choose_your_plant/plant_selector_catalog_v6_photos_lux_fixed.html">Комнатный каталог</a>
+        <a class="btn btn-small btn-ghost" href="garden_catalog.html">Каталог</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero--scenario" id="home" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <header class="hero__intro">
+          <p class="hero__source">
+            <svg class="hero__source-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
+              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+            </svg>
+            Каталог по цвету · Сосновка
+          </p>
+          <p class="hero__audience">Для озеленителей, ландшафтных дизайнеров и владельцев участков</p>
+          <h1 id="hero-title">Подберите уличное растение под условия участка</h1>
+          <p class="hero__lead">
+            Тот же принцип, что и в <a href="https://victoriiamikhaleva.github.io/Choose_your_plant/">каталоге комнатных растений</a>: освещённость, высота, сроки цветения и цветовая группа.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn-hero" href="#quickStart">Подобрать растение</a>
+            <a class="btn btn-hero btn-ghost" href="garden_catalog.html">Открыть каталог</a>
+          </div>
+        </header>
+
+        <div class="onboarding" id="quickStart">
+          <header class="onboarding__header">
+            <h2 class="onboarding__title">Выберите тип участка</h2>
+            <p class="onboarding__lead">Один клик — и каталог уже настроен под вас</p>
+          </header>
+
+          <ul class="onboarding-grid" role="list">
+            <li class="onboarding-grid__item">
+              <button type="button" class="onboarding-card onboarding-card--dark" data-profile="shadeBorder" data-scenario="shade">
+                <span class="onboarding-card__visual" aria-hidden="true">
+                  <img class="scenario-icon scenario-icon--art" src="assets/icons/scenarios/dark-icon.png" alt="" width="256" height="256" decoding="async">
+                </span>
+                <span class="onboarding-card__copy">
+                  <span class="onboarding-card__headline">Тенистый бордюр</span>
+                  <span class="onboarding-card__subtitle">Мало солнца, низкая высота</span>
+                </span>
+              </button>
+            </li>
+            <li class="onboarding-grid__item">
+              <button type="button" class="onboarding-card onboarding-card--easy" data-profile="partialShade" data-scenario="partial">
+                <span class="onboarding-card__visual" aria-hidden="true">
+                  <img class="scenario-icon scenario-icon--art" src="assets/icons/scenarios/easy-icon.png" alt="" width="256" height="256" decoding="async">
+                </span>
+                <span class="onboarding-card__copy">
+                  <span class="onboarding-card__headline">Полутень</span>
+                  <span class="onboarding-card__subtitle">Универсальный участок</span>
+                </span>
+              </button>
+            </li>
+            <li class="onboarding-grid__item">
+              <button type="button" class="onboarding-card onboarding-card--sun" data-profile="sunnyBed" data-scenario="sun">
+                <span class="onboarding-card__visual" aria-hidden="true">
+                  <img class="scenario-icon scenario-icon--art" src="assets/icons/scenarios/sun-icon.png" alt="" width="256" height="256" decoding="async">
+                </span>
+                <span class="onboarding-card__copy">
+                  <span class="onboarding-card__headline">Солнечная клумба</span>
+                  <span class="onboarding-card__subtitle">Много солнца весь день</span>
+                </span>
+              </button>
+            </li>
+            <li class="onboarding-grid__item">
+              <button type="button" class="onboarding-card onboarding-card--large" data-profile="springBloom" data-scenario="spring">
+                <span class="onboarding-card__visual" aria-hidden="true">
+                  <img class="scenario-icon scenario-icon--art" src="assets/icons/scenarios/large-icon.png" alt="" width="256" height="256" decoding="async">
+                </span>
+                <span class="onboarding-card__copy">
+                  <span class="onboarding-card__headline">Весеннее цветение</span>
+                  <span class="onboarding-card__subtitle">Апрель — май</span>
+                </span>
+              </button>
+            </li>
+            <li class="onboarding-grid__item">
+              <button type="button" class="onboarding-card onboarding-card--office" data-profile="summerBloom" data-scenario="summer">
+                <span class="onboarding-card__visual" aria-hidden="true">
+                  <img class="scenario-icon scenario-icon--art" src="assets/icons/scenarios/office-icon.png" alt="" width="256" height="256" decoding="async">
+                </span>
+                <span class="onboarding-card__copy">
+                  <span class="onboarding-card__headline">Летнее цветение</span>
+                  <span class="onboarding-card__subtitle">Июнь — август</span>
+                </span>
+              </button>
+            </li>
+            <li class="onboarding-grid__item">
+              <button type="button" class="onboarding-card onboarding-card--pets" data-profile="autumnBloom" data-scenario="autumn">
+                <span class="onboarding-card__visual" aria-hidden="true">
+                  <img class="scenario-icon scenario-icon--art" src="assets/icons/scenarios/pets-icon.png" alt="" width="256" height="256" decoding="async">
+                </span>
+                <span class="onboarding-card__copy">
+                  <span class="onboarding-card__headline">Осеннее цветение</span>
+                  <span class="onboarding-card__subtitle">Сентябрь — октябрь</span>
+                </span>
+              </button>
+            </li>
+          </ul>
+
+          <p class="onboarding__status" id="scenarioStatus" role="status" aria-live="polite"></p>
+        </div>
+
+        <p class="hero__scope">8 цветовых групп: от белых до розовых</p>
+
+        <form id="quickStartForm" class="visually-hidden" hidden>
+          <label for="profile">Профиль</label>
+          <select id="profile" name="profile">
+            <option value="shadeBorder">Тенистый бордюр</option>
+            <option value="partialShade">Полутень</option>
+            <option value="sunnyBed">Солнечная клумба</option>
+            <option value="springBloom">Весеннее цветение</option>
+            <option value="summerBloom">Летнее цветение</option>
+            <option value="autumnBloom">Осеннее цветение</option>
+          </select>
+          <button type="submit">Перейти к рекомендациям</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="section section-soft how-it-works" aria-labelledby="how-it-works-title">
+      <div class="container">
+        <header class="how-it-works__header">
+          <h2 id="how-it-works-title" class="how-it-works__title">Как работает подбор</h2>
+          <p class="how-it-works__lead">
+            Те же шкалы и визуальный стиль, что в каталоге комнатных растений — для узнаваемого опыта.
+          </p>
+        </header>
+
+        <ol class="how-it-works__steps">
+          <li class="how-step-card">
+            <article class="how-step-card__inner">
+              <div class="how-step-card__visual" aria-hidden="true">
+                <img class="how-step-card__img" src="assets/icons/how-it-works/step-1-icon.png" alt="" width="256" height="256" loading="lazy" decoding="async">
+              </div>
+              <div class="how-step-card__copy">
+                <h3 class="how-step-card__title">Задайте условия участка</h3>
+                <p class="how-step-card__text">Освещённость (☀), высота (📏) и месяц цветения (🌸).</p>
+              </div>
+            </article>
+          </li>
+          <li class="how-step-card">
+            <article class="how-step-card__inner">
+              <div class="how-step-card__visual" aria-hidden="true">
+                <img class="how-step-card__img" src="assets/icons/how-it-works/step-2-icon.png" alt="" width="256" height="256" loading="lazy" decoding="async">
+              </div>
+              <div class="how-step-card__copy">
+                <h3 class="how-step-card__title">Выберите цветовую группу</h3>
+                <p class="how-step-card__text">Белые, голубые, фиолетовые, жёлтые, оранжевые, красные и розовые.</p>
+              </div>
+            </article>
+          </li>
+          <li class="how-step-card">
+            <article class="how-step-card__inner">
+              <div class="how-step-card__visual" aria-hidden="true">
+                <img class="how-step-card__img" src="assets/icons/how-it-works/step-3-icon.png" alt="" width="256" height="256" loading="lazy" decoding="async">
+              </div>
+              <div class="how-step-card__copy">
+                <h3 class="how-step-card__title">Сравните и сохраните</h3>
+                <p class="how-step-card__text">Избранное, сравнение до 3 видов, экспорт в CSV.</p>
+              </div>
+            </article>
+          </li>
+          <li class="how-step-card">
+            <article class="how-step-card__inner">
+              <div class="how-step-card__visual" aria-hidden="true">
+                <img class="how-step-card__img" src="assets/icons/how-it-works/step-4-icon.png" alt="" width="256" height="256" loading="lazy" decoding="async">
+              </div>
+              <div class="how-step-card__copy">
+                <h3 class="how-step-card__title">Связь с комнатным каталогом</h3>
+                <p class="how-step-card__text">Перекрёстная ссылка на <a href="https://victoriiamikhaleva.github.io/Choose_your_plant/">Choose_your_plant</a> для единого проекта.</p>
+              </div>
+            </article>
+          </li>
+        </ol>
+
+        <div class="how-it-works__cta">
+          <div class="how-it-works__actions">
+            <a class="btn btn-hero" href="#quickStart">Подобрать растение</a>
+            <a class="btn btn-hero btn-ghost" href="garden_catalog.html">Открыть каталог</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div data-footer-credit-host></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/landing.js"></script>
+  <script src="assets/js/footer-credit.js"></script>
+</body>
+</html>

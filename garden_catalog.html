@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2f7d4f">
+<meta name="description" content="Подбор уличных растений по освещённости, высоте и срокам цветения. Продолжение каталога комнатных растений PlantFit.">
+<title>Каталог · Уличные растения</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<style>
+:root{--bg:#f3f7ef;--card:#fff;--ink:#172018;--muted:#617067;--brand:#2f7d4f;--brand2:#7fb069;--line:#d9e7d4;--soft:#f8fbf5;--danger:#b33a3a;--warn:#b7791f;--ok:#2f7d4f;--blue:#2d6cdf;--shadow:0 16px 40px rgba(24,50,30,.11);--r:24px;color-scheme:light}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:radial-gradient(circle at 10% 0%,#e3f1d8 0,#f3f7ef 38%,#eef5ea 100%);color:var(--ink)}button,input,select,textarea{font:inherit}button{border:0;cursor:pointer}.skip-link{position:absolute;left:-9999px;top:12px;z-index:99;padding:12px 16px;border-radius:14px;background:var(--brand);color:#fff;font-weight:850}.skip-link:focus{left:12px}.wrap{max-width:1280px;margin:0 auto;padding:0 22px}.layout{display:grid;grid-template-columns:380px minmax(0,1fr);gap:20px;align-items:start;padding-bottom:46px}.panel,.card{background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}.filters{position:sticky;top:14px;padding:18px}.filters h2,.results h2{margin:0 0 14px;font-size:23px}.btns{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.btn{border-radius:999px;padding:12px 16px;font-weight:900;background:var(--brand);color:#fff}.btn.secondary{background:#edf5e9;color:#245136;border:1px solid var(--line)}.btn.ghost{background:#fff;color:var(--brand);border:1px solid var(--line)}.btn.small{padding:8px 11px;font-size:13px}.summary{padding:16px 18px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.summary strong{color:var(--brand)}.tabs{display:flex;gap:8px;flex-wrap:wrap}.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 12px;font-size:13px;font-weight:850;color:#314839}.chip.active{background:var(--brand);color:#fff;border-color:var(--brand)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;align-items:stretch}.plant{padding:18px;gap:13px;display:flex;flex-direction:column;position:relative}.plantPhoto{width:100%;aspect-ratio:4/3;border-radius:22px;border:1px solid var(--line);background:linear-gradient(135deg,#eef7e9,#fff);display:grid;place-items:center;overflow:hidden}.plantPhoto.fallback{font-size:54px}.plantTop{padding-right:42px}.plant h3{margin:0;font-size:19px}.lat{font-size:13px;color:var(--muted);margin-top:3px}.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:5px 8px;font-size:12px;font-weight:850}.tag.ok{background:#eaf8ee;color:var(--ok)}.tag.warn{background:#fff8e8;color:var(--warn)}.tag.danger{background:#fff0f0;color:var(--danger)}.tag.blue{background:#eef4ff;color:var(--blue)}.meters{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:11px}.meter{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:12px;font-size:13px;min-height:96px;display:flex;flex-direction:column;gap:7px}.meter span{text-transform:uppercase;letter-spacing:.045em;color:var(--muted);font-size:10px;font-weight:900}.meter b{font-size:15px;font-weight:900}.paramTrack{position:relative;height:10px;border-radius:999px;background:#e7efe3;overflow:hidden;border:1px solid rgba(47,125,79,.12)}.paramTrack i{position:absolute;top:0;bottom:0;left:var(--a);width:var(--w);border-radius:999px;background:linear-gradient(90deg,#b9ddb0,#2f7d4f)}.paramTrack em{position:absolute;top:-4px;left:var(--v);width:4px;height:18px;border-radius:999px;background:#172018;box-shadow:0 0 0 2px rgba(255,255,255,.9);transform:translateX(-2px);font-style:normal}.metricNote{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--muted)}.metricNote::before{content:'';width:7px;height:7px;border-radius:999px;background:var(--ok)}.metricNote.warn::before{background:var(--warn)}.scorebar{height:9px;border-radius:999px;background:#edf2ea;overflow:hidden}.scorebar i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--brand2),var(--brand))}.reasons{margin:0;padding-left:18px;color:var(--muted);font-size:13px}.tips{border-top:1px dashed var(--line);padding-top:10px}.fav{position:absolute;right:12px;top:12px;background:#fff;border:1px solid var(--line);width:38px;height:38px;border-radius:14px;color:#9a6b00;font-size:18px}.fav.active{background:#fff8df}.compareRow label{font-size:12.5px;color:var(--muted)}.empty{display:none;text-align:center;padding:34px}.drawer,.audit{margin-top:14px;padding:16px}.compareGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.compareBox{border:1px solid var(--line);border-radius:16px;padding:12px;background:var(--soft);font-size:13px}.mini{font-size:12px;color:var(--muted)}details summary{cursor:pointer;color:var(--brand);font-weight:900}.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#172018;color:#fff;padding:12px 16px;border-radius:999px;display:none;z-index:100}.toast.show{display:block}@media(max-width:1050px){.layout{grid-template-columns:1fr}.filters{position:static}}@media(max-width:640px){.wrap{padding:0 14px}.grid,.compareGrid{grid-template-columns:1fr}}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/catalog.css">
+</head>
+<body class="catalog-page">
+<a class="skip-link" href="#results">К результатам</a>
+
+<header class="site-header catalog-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="index.html">
+      <span class="brand__mark" aria-hidden="true">🌳</span>
+      <span class="brand__text">
+        <span class="brand__name">Уличные растения</span>
+        <span class="brand__tag">продолжение каталога PlantFit</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Навигация">
+      <a href="index.html">На главную</a>
+      <a href="https://victoriiamikhaleva.github.io/Choose_your_plant/">Комнатные</a>
+    </nav>
+    <div class="site-header__actions">
+      <a class="btn btn-small btn-ghost" href="https://victoriiamikhaleva.github.io/Choose_your_plant/plant_selector_catalog_v6_photos_lux_fixed.html">Комнатный каталог</a>
+      <a class="btn btn-small btn-ghost" href="index.html">Сценарии</a>
+    </div>
+  </div>
+</header>
+
+<section class="catalog-hero wrap">
+  <div class="catalog-hero__intro">
+    <p class="catalog-hero__eyebrow">Каталог по цвету · Сосновка</p>
+    <h1 class="catalog-hero__title">Подбор уличных растений</h1>
+    <p class="catalog-hero__lead">Освещённость участка, высота, сроки цветения и цветовая группа — с баллами совпадения, как в каталоге комнатных растений.</p>
+  </div>
+  <div class="catalog-hero__stats">
+    <div class="catalog-stat"><b id="totalCount">—</b><span>в каталоге</span></div>
+    <div class="catalog-stat"><b id="shownCount">—</b><span>по критериям</span></div>
+    <div class="catalog-stat"><b id="favCount">0</b><span>в избранном</span></div>
+    <div class="catalog-stat"><b>8</b><span>цветовых групп</span></div>
+  </div>
+  <div class="catalog-hero__quick">
+    <p class="catalog-hero__quick-label">Быстрые профили участка</p>
+    <div class="catalog-quick-btns">
+      <button class="catalog-quick-btn" type="button" data-profile="shadeBorder">
+        <span class="catalog-quick-btn__icon-wrap" aria-hidden="true">
+          <img class="catalog-quick-btn__icon" src="assets/icons/scenarios/dark-icon.svg" alt="" width="32" height="32" decoding="async">
+        </span>
+        <span>Тенистый бордюр</span>
+      </button>
+      <button class="catalog-quick-btn" type="button" data-profile="partialShade">
+        <span class="catalog-quick-btn__icon-wrap" aria-hidden="true">
+          <img class="catalog-quick-btn__icon" src="assets/icons/scenarios/easy-icon.png" alt="" width="32" height="32" decoding="async">
+        </span>
+        <span>Полутень</span>
+      </button>
+      <button class="catalog-quick-btn" type="button" data-profile="sunnyBed">
+        <span class="catalog-quick-btn__icon-wrap" aria-hidden="true">
+          <img class="catalog-quick-btn__icon" src="assets/icons/scenarios/sun-icon.svg" alt="" width="32" height="32" decoding="async">
+        </span>
+        <span>Солнечная клумба</span>
+      </button>
+      <button class="catalog-quick-btn" type="button" data-profile="springBloom">
+        <span class="catalog-quick-btn__icon-wrap" aria-hidden="true">
+          <img class="catalog-quick-btn__icon" src="assets/icons/scenarios/large-icon.svg" alt="" width="32" height="32" decoding="async">
+        </span>
+        <span>Весеннее цветение</span>
+      </button>
+      <button class="catalog-quick-btn" type="button" data-profile="summerBloom">
+        <span class="catalog-quick-btn__icon-wrap" aria-hidden="true">
+          <img class="catalog-quick-btn__icon" src="assets/icons/scenarios/bathroom-icon.svg" alt="" width="32" height="32" decoding="async">
+        </span>
+        <span>Летнее цветение</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<main class="wrap layout">
+<aside class="panel filters filters-panel" id="filtersPanel">
+<form id="filterForm" class="filters-form">
+<header class="filters-form__head">
+<div class="filters-form__title-row">
+<span class="filters-form__badge" aria-hidden="true">◈</span>
+<h2 class="filters-form__title">Параметры участка</h2>
+</div>
+<p class="filters-form__subtitle">Солнце, высота и цветение — пересчёт в реальном времени</p>
+</header>
+<div class="filters-search">
+<label class="visually-hidden" for="q">Поиск</label>
+<span class="filters-search__icon" aria-hidden="true">⌕</span>
+<input id="q" type="search" class="filters-search__input" placeholder="Пион, хоста, астильба…" autocomplete="off">
+</div>
+<nav class="filters-tabs" role="tablist" aria-label="Разделы параметров">
+<button type="button" class="filters-tab is-active" role="tab" aria-selected="true" aria-controls="filtersPaneSite" id="filtersTabSite" data-filters-tab="site">Участок</button>
+<button type="button" class="filters-tab" role="tab" aria-selected="false" aria-controls="filtersPaneCatalog" id="filtersTabCatalog" data-filters-tab="catalog" tabindex="-1">Каталог</button>
+</nav>
+<div class="filters-panes">
+<fieldset class="filters-pane is-active" id="filtersPaneSite" role="tabpanel" aria-labelledby="filtersTabSite">
+<legend class="visually-hidden">Участок</legend>
+<input type="hidden" id="profile" value="custom">
+<div class="param-grid">
+<div class="param-card" data-param="sun">
+<div class="param-card__head">
+<span class="param-card__icon" aria-hidden="true">☀</span>
+<div class="param-card__meta">
+<label class="param-card__label" for="sun">Освещённость</label>
+<span class="param-card__unit">1–5</span>
+</div>
+<output class="param-card__value" id="sunValue" for="sun sunRange">Полутень</output>
+</div>
+<div class="param-card__controls">
+<div class="param-card__input-row">
+<input id="sun" class="param-card__number" type="number" min="1" max="5" step="1" value="3" aria-label="Освещённость, шкала 1–5">
+</div>
+<div class="param-card__track">
+<input id="sunRange" class="param-card__range" type="range" min="1" max="5" step="1" value="3" aria-label="Освещённость, шкала">
+</div>
+</div>
+<p class="filters-hint">1 — тень, 3 — полутень, 5 — полное солнце</p>
+</div>
+<div class="param-card" data-param="height">
+<div class="param-card__head">
+<span class="param-card__icon" aria-hidden="true">📏</span>
+<div class="param-card__meta">
+<label class="param-card__label" for="height">Высота</label>
+<span class="param-card__unit">см</span>
+</div>
+<output class="param-card__value" id="heightValue" for="height heightRange">60</output>
+</div>
+<div class="param-card__controls">
+<div class="param-card__input-row">
+<input id="height" class="param-card__number" type="number" min="10" max="200" step="5" value="60" aria-label="Желаемая высота, см">
+</div>
+<div class="param-card__track">
+<input id="heightRange" class="param-card__range" type="range" min="10" max="200" step="5" value="60" aria-label="Высота, шкала">
+</div>
+</div>
+</div>
+<div class="param-card" data-param="bloom">
+<div class="param-card__head">
+<span class="param-card__icon" aria-hidden="true">🌸</span>
+<div class="param-card__meta">
+<label class="param-card__label" for="bloom">Месяц цветения</label>
+<span class="param-card__unit">мес.</span>
+</div>
+<output class="param-card__value" id="bloomValue" for="bloom bloomRange">июнь</output>
+</div>
+<div class="param-card__controls">
+<div class="param-card__input-row">
+<input id="bloom" class="param-card__number" type="number" min="1" max="12" step="1" value="6" aria-label="Месяц цветения">
+</div>
+<div class="param-card__track">
+<input id="bloomRange" class="param-card__range" type="range" min="1" max="12" step="1" value="6" aria-label="Месяц цветения, шкала">
+</div>
+</div>
+</div>
+</div>
+</fieldset>
+<fieldset class="filters-pane" id="filtersPaneCatalog" role="tabpanel" aria-labelledby="filtersTabCatalog" hidden>
+<legend class="visually-hidden">Каталог</legend>
+<div class="filters-field">
+<label class="filters-label" for="color">Цветовая группа</label>
+<div class="filters-select-wrap">
+<select id="color" class="filters-select">
+<option value="any">Любая</option>
+<option value="white">Белые</option>
+<option value="blue">Голубые / сине-зелёные</option>
+<option value="purple">Фиолетовые</option>
+<option value="yellow">Жёлтые</option>
+<option value="orange">Оранжевые</option>
+<option value="red-orange">Красно-оранжевые</option>
+<option value="red">Красные</option>
+<option value="pink">Розовые</option>
+</select>
+</div>
+</div>
+<div class="filters-row2">
+<div class="filters-field">
+<label class="filters-label" for="onlyFav">Показать</label>
+<div class="filters-select-wrap">
+<select id="onlyFav" class="filters-select">
+<option value="all">Все растения</option>
+<option value="fav">Только избранное</option>
+</select>
+</div>
+</div>
+<div class="filters-field">
+<label class="filters-label" for="sort">Сортировка</label>
+<div class="filters-select-wrap">
+<select id="sort" class="filters-select">
+<option value="score">Лучшее совпадение</option>
+<option value="name">По названию</option>
+<option value="height">По высоте</option>
+<option value="bloom">По сроку цветения</option>
+</select>
+</div>
+</div>
+</div>
+</fieldset>
+</div>
+<footer class="filters-actions">
+<div class="filters-actions__primary">
+<button class="btn filters-btn-submit" type="submit">Подобрать</button>
+<button class="btn secondary" type="button" id="reset">Сбросить</button>
+</div>
+<div class="filters-actions__export">
+<button class="btn ghost btn-small" type="button" id="exportCsv">CSV</button>
+<button class="btn ghost btn-small" type="button" id="copyList">Текст</button>
+</div>
+</footer>
+</form>
+</aside>
+
+<section id="results" class="results" tabindex="-1" aria-live="polite">
+<div class="panel summary">
+<div>
+<strong id="resultTitle">Рекомендации</strong><br>
+<span class="mini" id="resultSubtitle">Сначала идут растения с лучшим совпадением.</span>
+</div>
+<div class="tabs">
+<button type="button" class="chip active" data-view="all">Все</button>
+<button type="button" class="chip" data-view="best">Идеально (90+)</button>
+<button type="button" class="chip" data-view="problem">Ниже 80</button>
+</div>
+</div>
+<div id="cards" class="grid"></div>
+<div id="empty" class="panel empty">
+<h2>Ничего не найдено</h2>
+<p>Ослабьте фильтр по цвету или измените параметры участка.</p>
+</div>
+<section class="panel drawer" id="comparePanel">
+<h2>Сравнение</h2>
+<p class="mini">Отметьте до 3 растений для сравнения условий.</p>
+<div id="compareGrid" class="compareGrid"></div>
+</section>
+<section class="panel audit">
+<h2>Аудит данных каталога</h2>
+<p class="mini" id="auditSummary"></p>
+<ul id="auditList"></ul>
+</section>
+<section class="panel drawer">
+<h2>Памятка по посадке</h2>
+<div class="careGrid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
+<div class="careItem" style="border:1px solid var(--line);border-radius:16px;padding:13px;font-size:13px"><b>Солнце</b>Учитывайте тень от зданий и деревьев в разное время дня.</div>
+<div class="careItem" style="border:1px solid var(--line);border-radius:16px;padding:13px;font-size:13px"><b>Высота</b>Планируйте ярусы: низкие — на передний план, высокие — к заднему.</div>
+<div class="careItem" style="border:1px solid var(--line);border-radius:16px;padding:13px;font-size:13px"><b>Цветение</b>Сочетайте весенние, летние и осенние виды для непрерывного цвета.</div>
+<div class="careItem" style="border:1px solid var(--line);border-radius:16px;padding:13px;font-size:13px"><b>Связь</b>Этот каталог — продолжение <a href="https://victoriiamikhaleva.github.io/Choose_your_plant/">подбора комнатных растений</a>.</div>
+</div>
+</section>
+</section>
+</main>
+
+<footer class="catalog-footer">
+<div class="wrap catalog-footer__inner">
+Каталог уличных растений работает локально. Данные из «Каталога растений по цвету Сосновка».
+<a href="https://victoriiamikhaleva.github.io/Choose_your_plant/">← Комнатные растения</a>
+</div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="assets/js/garden-plants-data.js"></script>
+<script src="assets/js/garden-catalog.js"></script>
+<script src="assets/js/footer-credit.js"></script>
+</body>
+</html>

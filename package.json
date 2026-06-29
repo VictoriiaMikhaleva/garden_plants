@@ -1,0 +1,9 @@
+{
+  "name": "garden-plants",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Подбор уличных растений — продолжение Choose_your_plant",
+  "scripts": {
+    "start": "npx --yes serve . -p 3456"
+  }
+}
