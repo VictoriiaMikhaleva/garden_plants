@@ -22,7 +22,7 @@ const DOWNLOAD_RETRIES = 6;
 const API_RETRIES = 5;
 
 const BAD_TITLE =
-  /icon|logo|map|chart|diagram|stamp|coin|herbarium|seed\s+only|cross.?section|anatomy|svg|\bbark\b|\bствол\b|distribution|range\s+map/i;
+  /icon|logo|map|chart|diagram|stamp|coin|herbarium|seed\s+only|cross.?section|anatomy|svg|\bbark\b|\bствол\b|distribution|range\s+map|bouquet|flower\s+bed|flower\s+bush/i;
 
 const COLOR_QUERY = {
   white: "white flower",
