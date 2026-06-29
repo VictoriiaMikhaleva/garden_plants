@@ -23,13 +23,8 @@
 
 ## Фото растений
 
-Снимки с Wikimedia Commons (CC/PD), нормализованы на белый фон 4:3 — как в комнатном каталоге:
-
-```bash
-npm run photos:commons
-```
-
-Подробнее — `assets/plants/PHOTOS_SOURCES.md`, атрибуция — `assets/plants/attribution.json`.
+Свои снимки — в `assets/plants/raw/{id}.png`, затем `npm run photos:normalize`.  
+Пока фото нет, в карточках цветовые иконки. Подробнее — `assets/plants/PHOTOS_SOURCES.md`.
 
 ## Быстрый старт
 

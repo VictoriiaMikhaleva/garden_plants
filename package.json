@@ -5,6 +5,8 @@
   "description": "Подбор уличных растений — продолжение Choose_your_plant",
   "scripts": {
     "start": "npx --yes serve . -p 3456",
+    "photos:normalize": "node scripts/normalize-garden-photos.js",
+    "photos:reset": "node scripts/strip-garden-photos.js",
     "photos:commons": "node scripts/fetch-garden-photos.js"
   },
   "devDependencies": {

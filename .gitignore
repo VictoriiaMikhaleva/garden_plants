@@ -1,3 +1,5 @@
 _ref_indoor/
+assets/plants/raw/*
+!assets/plants/raw/README.md
 photos-fetch.log
 node_modules/
