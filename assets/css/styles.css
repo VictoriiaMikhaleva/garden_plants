@@ -159,6 +159,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  max-width: min(100%, 52rem);
   margin: 0 0 0.65rem;
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
