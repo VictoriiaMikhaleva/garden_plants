@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#2f7d4f">
 <meta name="description" content="Подбор уличных растений по освещённости, высоте и срокам цветения. Продолжение каталога комнатных растений PlantFit.">
-<title>Каталог · Уличные растения</title>
+<title>Каталог · Подбор растений</title>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <style>
 :root{--bg:#f3f7ef;--card:#fff;--ink:#172018;--muted:#617067;--brand:#2f7d4f;--brand2:#7fb069;--line:#d9e7d4;--soft:#f8fbf5;--danger:#b33a3a;--warn:#b7791f;--ok:#2f7d4f;--blue:#2d6cdf;--shadow:0 16px 40px rgba(24,50,30,.11);--r:24px;color-scheme:light}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:radial-gradient(circle at 10% 0%,#e3f1d8 0,#f3f7ef 38%,#eef5ea 100%);color:var(--ink)}button,input,select,textarea{font:inherit}button{border:0;cursor:pointer}.skip-link{position:absolute;left:-9999px;top:12px;z-index:99;padding:12px 16px;border-radius:14px;background:var(--brand);color:#fff;font-weight:850}.skip-link:focus{left:12px}.wrap{max-width:1280px;margin:0 auto;padding:0 22px}.layout{display:grid;grid-template-columns:380px minmax(0,1fr);gap:20px;align-items:start;padding-bottom:46px}.panel,.card{background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}.filters{position:sticky;top:14px;padding:18px}.filters h2,.results h2{margin:0 0 14px;font-size:23px}.btns{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.btn{border-radius:999px;padding:12px 16px;font-weight:900;background:var(--brand);color:#fff}.btn.secondary{background:#edf5e9;color:#245136;border:1px solid var(--line)}.btn.ghost{background:#fff;color:var(--brand);border:1px solid var(--line)}.btn.small{padding:8px 11px;font-size:13px}.summary{padding:16px 18px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.summary strong{color:var(--brand)}.tabs{display:flex;gap:8px;flex-wrap:wrap}.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 12px;font-size:13px;font-weight:850;color:#314839}.chip.active{background:var(--brand);color:#fff;border-color:var(--brand)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;align-items:stretch}.plant{padding:18px;gap:13px;display:flex;flex-direction:column;position:relative}.plantPhoto{width:100%;aspect-ratio:4/3;border-radius:22px;border:1px solid var(--line);background:linear-gradient(135deg,#eef7e9,#fff);display:grid;place-items:center;overflow:hidden}.plantPhoto.fallback{font-size:54px}.plantTop{padding-right:42px}.plant h3{margin:0;font-size:19px}.lat{font-size:13px;color:var(--muted);margin-top:3px}.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:5px 8px;font-size:12px;font-weight:850}.tag.ok{background:#eaf8ee;color:var(--ok)}.tag.warn{background:#fff8e8;color:var(--warn)}.tag.danger{background:#fff0f0;color:var(--danger)}.tag.blue{background:#eef4ff;color:var(--blue)}.meters{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:11px}.meter{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:12px;font-size:13px;min-height:96px;display:flex;flex-direction:column;gap:7px}.meter span{text-transform:uppercase;letter-spacing:.045em;color:var(--muted);font-size:10px;font-weight:900}.meter b{font-size:15px;font-weight:900}.paramTrack{position:relative;height:10px;border-radius:999px;background:#e7efe3;overflow:hidden;border:1px solid rgba(47,125,79,.12)}.paramTrack i{position:absolute;top:0;bottom:0;left:var(--a);width:var(--w);border-radius:999px;background:linear-gradient(90deg,#b9ddb0,#2f7d4f)}.paramTrack em{position:absolute;top:-4px;left:var(--v);width:4px;height:18px;border-radius:999px;background:#172018;box-shadow:0 0 0 2px rgba(255,255,255,.9);transform:translateX(-2px);font-style:normal}.metricNote{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--muted)}.metricNote::before{content:'';width:7px;height:7px;border-radius:999px;background:var(--ok)}.metricNote.warn::before{background:var(--warn)}.scorebar{height:9px;border-radius:999px;background:#edf2ea;overflow:hidden}.scorebar i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--brand2),var(--brand))}.reasons{margin:0;padding-left:18px;color:var(--muted);font-size:13px}.tips{border-top:1px dashed var(--line);padding-top:10px}.fav{position:absolute;right:12px;top:12px;background:#fff;border:1px solid var(--line);width:38px;height:38px;border-radius:14px;color:#9a6b00;font-size:18px}.fav.active{background:#fff8df}.compareRow label{font-size:12.5px;color:var(--muted)}.empty{display:none;text-align:center;padding:34px}.drawer,.audit{margin-top:14px;padding:16px}.compareGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.compareBox{border:1px solid var(--line);border-radius:16px;padding:12px;background:var(--soft);font-size:13px}.mini{font-size:12px;color:var(--muted)}details summary{cursor:pointer;color:var(--brand);font-weight:900}.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#172018;color:#fff;padding:12px 16px;border-radius:999px;display:none;z-index:100}.toast.show{display:block}@media(max-width:1050px){.layout{grid-template-columns:1fr}.filters{position:static}}@media(max-width:640px){.wrap{padding:0 14px}.grid,.compareGrid{grid-template-columns:1fr}}
@@ -21,18 +21,17 @@
 <header class="site-header catalog-header">
   <div class="wrap site-header__inner">
     <a class="brand" href="index.html">
-      <span class="brand__mark" aria-hidden="true">🌳</span>
+      <span class="brand__mark" aria-hidden="true">🌿</span>
       <span class="brand__text">
-        <span class="brand__name">Уличные растения</span>
-        <span class="brand__tag">продолжение каталога PlantFit</span>
+        <span class="brand__name">Подбор растений</span>
+        <span class="brand__tag">согласно условиям в саду</span>
       </span>
     </a>
     <nav class="site-nav" aria-label="Навигация">
       <a href="index.html">На главную</a>
-      <a href="https://victoriiamikhaleva.github.io/Choose_your_plant/">Комнатные</a>
+      <a href="https://victoriiamikhaleva.github.io/Choose_your_plant/plant_selector_catalog_v6_photos_lux_fixed.html">Каталог комнатных растений</a>
     </nav>
     <div class="site-header__actions">
-      <a class="btn btn-small btn-ghost" href="https://victoriiamikhaleva.github.io/Choose_your_plant/plant_selector_catalog_v6_photos_lux_fixed.html">Комнатный каталог</a>
       <a class="btn btn-small btn-ghost" href="index.html">Сценарии</a>
     </div>
   </div>
@@ -256,7 +255,7 @@
 <div class="careItem" style="border:1px solid var(--line);border-radius:16px;padding:13px;font-size:13px"><b>Солнце</b>Учитывайте тень от зданий и деревьев в разное время дня.</div>
 <div class="careItem" style="border:1px solid var(--line);border-radius:16px;padding:13px;font-size:13px"><b>Высота</b>Планируйте ярусы: низкие — на передний план, высокие — к заднему.</div>
 <div class="careItem" style="border:1px solid var(--line);border-radius:16px;padding:13px;font-size:13px"><b>Цветение</b>Сочетайте весенние, летние и осенние виды для непрерывного цвета.</div>
-<div class="careItem" style="border:1px solid var(--line);border-radius:16px;padding:13px;font-size:13px"><b>Связь</b>Этот каталог — продолжение <a href="https://victoriiamikhaleva.github.io/Choose_your_plant/">подбора комнатных растений</a>.</div>
+<div class="careItem" style="border:1px solid var(--line);border-radius:16px;padding:13px;font-size:13px"><b>Связь</b>Этот каталог — продолжение <a href="https://victoriiamikhaleva.github.io/Choose_your_plant/plant_selector_catalog_v6_photos_lux_fixed.html">каталога комнатных растений</a>.</div>
 </div>
 </section>
 </section>
@@ -265,7 +264,7 @@
 <footer class="catalog-footer">
 <div class="wrap catalog-footer__inner">
 Каталог уличных растений работает локально. Каталог по цвету · в соавторстве с ландшафтным дизайнером Анной Колесовой.
-<a href="https://victoriiamikhaleva.github.io/Choose_your_plant/">← Комнатные растения</a>
+<a href="https://victoriiamikhaleva.github.io/Choose_your_plant/plant_selector_catalog_v6_photos_lux_fixed.html">← Каталог комнатных растений</a>
 </div>
 </footer>
 

@@ -34,7 +34,7 @@
 
 ## Связь с комнатным каталогом
 
-В шапке и подвале — ссылки на [комнатный каталог](https://victoriiamikhaleva.github.io/Choose_your_plant/). После деплоя оба проекта можно связать перекрёстными ссылками.
+В шапке и подвале — ссылка на [каталог комнатных растений](https://victoriiamikhaleva.github.io/Choose_your_plant/plant_selector_catalog_v6_photos_lux_fixed.html).
 
 ## Деплой (GitHub Pages)
 
