@@ -286,17 +286,17 @@
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  width: 2.35rem;
-  height: 2.35rem;
+  width: 2.85rem;
+  height: 2.85rem;
   background: #f9f7f2;
-  border: 1px solid rgba(23, 32, 24, 0.06);
-  border-radius: 10px;
+  border: 1px solid rgba(23, 32, 24, 0.08);
+  border-radius: 12px;
 }
 
 .catalog-quick-btn__icon {
   display: block;
-  width: 1.9rem;
-  height: 1.9rem;
+  width: 2.45rem;
+  height: 2.45rem;
   object-fit: contain;
   object-position: center;
   pointer-events: none;
