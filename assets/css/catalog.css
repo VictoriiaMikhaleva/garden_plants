@@ -554,9 +554,10 @@
 
 .catalog-page .param-card__head {
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 0.5rem;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  align-items: start;
+  gap: 0.2rem 0.5rem;
   margin-bottom: 0.55rem;
 }
 
@@ -568,10 +569,15 @@
   font-size: 0.95rem;
   border-radius: 10px;
   background: rgba(47, 125, 79, 0.08);
+  grid-column: 1;
+  grid-row: 1 / -1;
+  align-self: center;
 }
 
 .catalog-page .param-card__meta {
   min-width: 0;
+  grid-column: 2;
+  grid-row: 1;
 }
 
 .catalog-page .param-card__label {
@@ -596,12 +602,17 @@
 }
 
 .catalog-page .param-card__value {
+  grid-column: 2;
+  grid-row: 2;
   font-size: 0.875rem;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
   color: var(--brand);
   letter-spacing: -0.02em;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .catalog-page .param-card__controls {
