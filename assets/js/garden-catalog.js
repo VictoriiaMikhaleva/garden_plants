@@ -121,13 +121,20 @@
     return rangeVisual(plantR, mid, 1, 12, "");
   }
 
+  function capIdealScore(score, s, h, b) {
+    if (!h.ok && h.delta >= 15) score = Math.min(score, 89);
+    if (!s.ok) score = Math.min(score, 89);
+    if (!b.ok) score = Math.min(score, 89);
+    return score;
+  }
+
   function explain(p, f) {
     let score = 55;
     const reasons = [];
     const tips = [];
 
     const s = distScore(f.sun, p.sunR, 30, 24, 0.45);
-    const h = distScore(f.height, p.heightR, 18, 20, 8);
+    const h = distScore(f.height, p.heightR, 18, 24, 4);
     const b = bloomScore(f.bloomMonths, p.bloomR);
 
     score += s.points + h.points + b.points;
@@ -155,8 +162,11 @@
       }
     }
 
+    let finalScore = Math.round(clamp((score * 100) / 130, 0, 100));
+    finalScore = capIdealScore(finalScore, s, h, b);
+
     return {
-      score: Math.round(clamp((score * 100) / 130, 0, 100)),
+      score: finalScore,
       reasons: reasons.slice(0, 5),
       tips: [...new Set(tips)].slice(0, 4)
     };
