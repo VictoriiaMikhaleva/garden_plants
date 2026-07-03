@@ -222,18 +222,17 @@
 <div class="panel summary">
 <div>
 <strong id="resultTitle">Рекомендации</strong><br>
-<span class="mini" id="resultSubtitle">Сначала идут растения с лучшим совпадением.</span>
+<span class="mini" id="resultSubtitle">Показаны идеальные совпадения — 90 баллов и выше.</span>
 <div class="summary-actions">
 <button type="button" class="pdf-export-btn" id="pdfPrintBtn">Подготовить проект для клиента</button>
 </div>
 </div>
-<div class="tabs">
-<button type="button" class="chip active" data-view="all">Все</button>
-<button type="button" class="chip" data-view="best">Идеально (90+)</button>
-<button type="button" class="chip" data-view="problem">Ниже 80</button>
-</div>
 </div>
 <div id="cards" class="grid"></div>
+<div id="expandResults" class="results-expand" hidden>
+<button type="button" class="btn secondary results-expand__btn" id="showLessSuitableBtn">Показать менее подходящие растения</button>
+<p class="mini results-expand__note" id="expandResultsNote"></p>
+</div>
 <div id="empty" class="panel empty">
 <h2>Ничего не найдено</h2>
 <p>Ослабьте фильтр по цвету или измените параметры участка.</p>

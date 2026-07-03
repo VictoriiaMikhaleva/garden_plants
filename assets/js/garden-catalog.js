@@ -15,7 +15,8 @@
   const BLOOM_MONTH_SHORT = ["", "янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
 
   const $ = (id) => document.getElementById(id);
-  let currentView = "all";
+  let showLessSuitable = false;
+  let lastFilterKey = "";
   let lastResults = [];
   let compareIds = new Set();
 
@@ -252,37 +253,97 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
 </article>`;
   }
 
-  function topResultsSubtitle(arr) {
-    if (!arr.length) return "Попробуйте расширить условия или сменить цветовую группу.";
-    const topScore = Math.max(...arr.map((p) => p.score));
-    const tied = arr.filter((p) => p.score === topScore).sort((a, b) => a.nameRu.localeCompare(b.nameRu, "ru"));
-    if (tied.length === 1) return `Лучший вариант: ${tied[0].nameRu}, ${topScore} баллов.`;
-    const names = tied.slice(0, 3).map((p) => p.nameRu).join(", ");
-    return `Лучшие варианты (${topScore} баллов): ${names}${tied.length > 3 ? " и другие" : ""}.`;
+  function filterKey(f) {
+    return JSON.stringify({
+      q: f.q,
+      sun: f.sun,
+      height: f.height,
+      bloomMonths: f.bloomMonths,
+      color: f.color,
+      onlyFav: f.onlyFav,
+      sort: f.sort
+    });
+  }
+
+  function topResultsSubtitle(ideal, rest, expanded) {
+    if (!ideal.length && !rest.length) return "Попробуйте расширить условия или сменить цветовую группу.";
+    if (!ideal.length && rest.length) return "Идеальных совпадений (90+) нет — можно посмотреть менее подходящие варианты.";
+    const topScore = Math.max(...ideal.map((p) => p.score));
+    const tied = ideal.filter((p) => p.score === topScore).sort((a, b) => a.nameRu.localeCompare(b.nameRu, "ru"));
+    let lead =
+      tied.length === 1
+        ? `Лучший вариант: ${tied[0].nameRu}, ${topScore} баллов.`
+        : `Лучшие варианты (${topScore} баллов): ${tied.slice(0, 3).map((p) => p.nameRu).join(", ")}${tied.length > 3 ? " и другие" : ""}.`;
+    if (expanded && rest.length) lead += ` Также показано ${rest.length} с оценкой ниже 90.`;
+    else if (rest.length) lead += ` Ещё ${rest.length} — по кнопке ниже.`;
+    return lead;
   }
 
   function render() {
     const f = collect();
+    const key = filterKey(f);
+    if (key !== lastFilterKey) {
+      showLessSuitable = false;
+      lastFilterKey = key;
+    }
+
     const fs = favs();
     let arr = PLANTS.filter((p) => !f.q || p.text.includes(f.q)).map((p) => Object.assign({}, p, explain(p, f)));
 
     if (f.color !== "any") arr = arr.filter((p) => p.color === f.color);
     arr = arr.filter((p) => p.score >= 50);
     if (f.onlyFav === "fav") arr = arr.filter((p) => fs.has(p.id));
-    if (currentView === "best") arr = arr.filter((p) => p.score >= 90);
-    if (currentView === "problem") arr = arr.filter((p) => p.score < 80);
 
     if (f.sort === "score") arr.sort((a, b) => b.score - a.score || a.nameRu.localeCompare(b.nameRu, "ru"));
     if (f.sort === "name") arr.sort((a, b) => a.nameRu.localeCompare(b.nameRu, "ru"));
     if (f.sort === "height") arr.sort((a, b) => mid(a.heightR) - mid(b.heightR));
     if (f.sort === "bloom") arr.sort((a, b) => mid(a.bloomR) - mid(b.bloomR));
 
-    lastResults = arr;
-    $("cards").innerHTML = arr.map(card).join("");
-    $("shownCount").textContent = arr.length;
-    $("resultTitle").textContent = `Найдено: ${arr.length} из ${PLANTS.length}`;
-    $("resultSubtitle").textContent = topResultsSubtitle(arr);
-    $("empty").style.display = arr.length ? "none" : "block";
+    const ideal = arr.filter((p) => p.score >= 90);
+    const rest = arr.filter((p) => p.score < 90);
+    const display = showLessSuitable ? [...ideal, ...rest] : ideal;
+
+    lastResults = display;
+    $("cards").innerHTML = display.map(card).join("");
+    $("shownCount").textContent = display.length;
+
+    if (ideal.length) {
+      $("resultTitle").textContent = showLessSuitable && rest.length
+        ? `Показано: ${display.length} (${ideal.length} идеальных)`
+        : `Идеально: ${ideal.length}`;
+    } else {
+      $("resultTitle").textContent = rest.length ? "Идеальных совпадений нет" : `Найдено: 0 из ${PLANTS.length}`;
+    }
+
+    $("resultSubtitle").textContent = topResultsSubtitle(ideal, rest, showLessSuitable);
+
+    const expandEl = $("expandResults");
+    const expandBtn = $("showLessSuitableBtn");
+    const expandNote = $("expandResultsNote");
+    if (rest.length) {
+      expandEl.hidden = false;
+      if (showLessSuitable) {
+        expandBtn.textContent = "Скрыть менее подходящие растения";
+        expandNote.textContent = `Дополнительно показано ${rest.length} с оценкой 50–89.`;
+      } else {
+        expandBtn.textContent = `Показать менее подходящие растения (${rest.length})`;
+        expandNote.textContent = "";
+      }
+    } else {
+      expandEl.hidden = true;
+    }
+
+    const emptyEl = $("empty");
+    if (!display.length) {
+      emptyEl.style.display = "block";
+      emptyEl.querySelector("h2").textContent = ideal.length ? "Ничего не найдено" : "Идеальных совпадений нет";
+      emptyEl.querySelector("p").textContent = rest.length
+        ? "Ослабьте фильтры или нажмите кнопку ниже, чтобы увидеть менее подходящие варианты."
+        : "Ослабьте фильтр по цвету или измените параметры участка.";
+    } else {
+      emptyEl.style.display = "none";
+    }
+
     renderCompare();
   }
 
@@ -321,8 +382,8 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     applyProfile("partialShade");
     setBloomMonths([6]);
     $("profile").value = "custom";
-    currentView = "all";
-    document.querySelectorAll(".chip").forEach((b, i) => b.classList.toggle("active", i === 0));
+    showLessSuitable = false;
+    lastFilterKey = "";
   }
 
   function updateParamOutputs() {
@@ -443,13 +504,11 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     });
     $("reset").addEventListener("click", reset);
 
-    document.querySelectorAll(".chip").forEach((b) =>
-      b.addEventListener("click", () => {
-        currentView = b.dataset.view;
-        document.querySelectorAll(".chip").forEach((x) => x.classList.toggle("active", x === b));
-        render();
-      })
-    );
+    $("showLessSuitableBtn").addEventListener("click", () => {
+      showLessSuitable = !showLessSuitable;
+      render();
+      if (showLessSuitable) $("expandResults").scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
 
     $("cards").addEventListener("click", (e) => {
       const fav = e.target.closest("[data-fav]");
