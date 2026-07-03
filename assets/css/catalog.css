@@ -949,8 +949,24 @@
   border-radius: 14px;
 }
 
+.catalog-page .careGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem;
+}
+
 .catalog-page .careItem {
+  border: 1px solid var(--line);
   border-radius: 14px;
+  padding: 0.8rem 0.85rem;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+.catalog-page .careItem b {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.875rem;
 }
 
 /* ——— Footer & toast ——— */
@@ -1048,6 +1064,10 @@
 
   .catalog-hero__stats {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .catalog-page .careGrid {
+    grid-template-columns: 1fr;
   }
 }
 
