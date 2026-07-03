@@ -6,7 +6,7 @@ const sharp = require("sharp");
 const CANVAS_W = 800;
 const CANVAS_H = 600;
 const SAFE_SCALE = 0.88;
-const WEBP_QUALITY = 82;
+const WEBP_QUALITY = 86;
 const BLACK_THRESH = 34;
 
 async function stripNearBlackBackground(buf) {
