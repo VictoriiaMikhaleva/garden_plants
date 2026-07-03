@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/catalog.css">
+<link rel="stylesheet" href="assets/css/pdf-print.css">
 </head>
 <body class="catalog-page">
 <a class="skip-link" href="#results">К результатам</a>
@@ -227,6 +228,9 @@
 <div>
 <strong id="resultTitle">Рекомендации</strong><br>
 <span class="mini" id="resultSubtitle">Сначала идут растения с лучшим совпадением.</span>
+<div class="summary-actions">
+<button type="button" class="pdf-export-btn" id="pdfPrintBtn">Подготовить проект для клиента</button>
+</div>
 </div>
 <div class="tabs">
 <button type="button" class="chip active" data-view="all">Все</button>
@@ -269,7 +273,38 @@
 </footer>
 
 <div class="toast" id="toast"></div>
+
+<div id="pdf-template" class="pdf-template" aria-hidden="true">
+  <div class="pdf-doc">
+    <header class="pdf-cover-block">
+      <p class="pdf-cover-eyebrow">Проект озеленения</p>
+      <h1 class="pdf-cover-title">Подбор растений для участка</h1>
+      <p class="pdf-cover-date"></p>
+    </header>
+    <section class="pdf-params-section">
+      <h2 class="pdf-section-title">Параметры участка</h2>
+      <div class="pdf-params-grid"></div>
+    </section>
+    <section class="pdf-summary-section">
+      <div class="pdf-summary-box"><p></p></div>
+    </section>
+    <section class="pdf-plants-section">
+      <h2 class="pdf-section-title">Лучшие растения</h2>
+      <div class="pdf-plants-list"></div>
+    </section>
+    <section class="pdf-recs-section pdf-recs">
+      <h2 class="pdf-section-title">Рекомендации по посадке</h2>
+      <ul></ul>
+    </section>
+    <footer class="pdf-footer">
+      Подбор сформирован сервисом <strong>«Подбор растений»</strong> · каталог уличных растений<br>
+      victoriiamikhaleva.github.io
+    </footer>
+  </div>
+</div>
+
 <script src="assets/js/garden-plants-data.js"></script>
+<script src="assets/js/garden-pdf-export.js"></script>
 <script src="assets/js/garden-catalog.js"></script>
 <script src="assets/js/footer-credit.js"></script>
 </body>

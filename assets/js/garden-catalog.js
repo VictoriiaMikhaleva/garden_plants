@@ -428,6 +428,15 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
 
     runAudit();
 
+    if (window.GardenPlantsPdf) {
+      GardenPlantsPdf.bind({
+        getResults: () => lastResults,
+        getFilters: collect,
+        getProfileKey: () => $("profile").value,
+        photoCacheV: PHOTO_CACHE_V
+      });
+    }
+
     const qp = new URLSearchParams(location.search).get("profile") || localStorage.getItem("gardenfit.quickProfile");
     if (qp && PROFILES[qp]) applyProfile(qp);
     else applyProfile("partialShade");
