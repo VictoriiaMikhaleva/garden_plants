@@ -90,7 +90,7 @@
       recs.add("Высокие растения размещайте на задний план композиции или у забора.");
     }
 
-    if (filters.color !== "any") {
+    if (filters.bloomMonths?.length) {
       recs.add("Для непрерывного цветения сочетайте весенние, летние и осенние виды в одной группе.");
     }
 
@@ -149,13 +149,19 @@
     const profileLabel = PROFILE_LABELS[profileKey];
 
     const sunText = GARDEN_SUN_LABELS[f.sun] || String(f.sun);
-    const bloomText = GARDEN_MONTH_LABELS[f.bloom] || String(f.bloom);
+    const bloomText = f.bloomMonths?.length
+      ? f.bloomMonths
+          .slice()
+          .sort((a, b) => a - b)
+          .map((m) => GARDEN_MONTH_LABELS[m] || m)
+          .join(", ")
+      : "любой";
     const colorText = f.color === "any" ? "Любая" : GARDEN_COLOR_LABELS[f.color] || f.color;
 
     const paramCards = [
       renderParamCard("☀", "Освещённость", sunText),
       renderParamCard("📏", "Высота", `${f.height} см`),
-      renderParamCard("🌸", "Месяц цветения", bloomText),
+      renderParamCard("🌸", "Месяцы цветения", bloomText),
       renderParamCard("🎨", "Цветовая группа", colorText)
     ];
 

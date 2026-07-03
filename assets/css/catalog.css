@@ -652,6 +652,37 @@
   padding: 0.15rem 0 0;
 }
 
+.catalog-page .bloom-months {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.35rem;
+}
+
+.catalog-page .bloom-month {
+  padding: 0.4rem 0.25rem;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+  border-radius: 999px;
+  border: 1px solid rgba(23, 32, 24, 0.08);
+  background: #fff;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.catalog-page .bloom-month.is-active {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+
+.catalog-page .bloom-month:focus-visible {
+  outline: 2px solid rgba(47, 125, 79, 0.35);
+  outline-offset: 1px;
+}
+
 .catalog-page .param-card__range {
   display: block;
   width: 100%;
@@ -943,6 +974,10 @@
 .catalog-page .drawer,
 .catalog-page .audit {
   border-radius: var(--radius-xl);
+}
+
+.catalog-page .audit {
+  display: none;
 }
 
 .catalog-page .compareBox {

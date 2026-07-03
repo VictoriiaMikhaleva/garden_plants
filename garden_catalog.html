@@ -152,18 +152,13 @@
 <div class="param-card__head">
 <span class="param-card__icon" aria-hidden="true">🌸</span>
 <div class="param-card__meta">
-<label class="param-card__label" for="bloom">Месяц цветения</label>
-<span class="param-card__unit">мес.</span>
+<span class="param-card__label" id="bloomLabel">Месяцы цветения</span>
+<span class="param-card__unit">можно несколько</span>
 </div>
-<output class="param-card__value" id="bloomValue" for="bloom bloomRange">июнь</output>
+<output class="param-card__value" id="bloomValue">июнь</output>
 </div>
 <div class="param-card__controls">
-<div class="param-card__input-row">
-<input id="bloom" class="param-card__number" type="number" min="1" max="12" step="1" value="6" aria-label="Месяц цветения">
-</div>
-<div class="param-card__track">
-<input id="bloomRange" class="param-card__range" type="range" min="1" max="12" step="1" value="6" aria-label="Месяц цветения, шкала">
-</div>
+<div class="bloom-months" id="bloomMonths" role="group" aria-labelledby="bloomLabel"></div>
 </div>
 </div>
 </div>

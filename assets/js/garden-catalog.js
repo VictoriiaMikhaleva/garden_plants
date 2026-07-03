@@ -7,10 +7,12 @@
     shadeBorder: { sun: 2, height: 40 },
     partialShade: { sun: 3, height: 60 },
     sunnyBed: { sun: 5, height: 80 },
-    springBloom: { bloom: 4 },
-    summerBloom: { bloom: 7 },
-    autumnBloom: { bloom: 9 }
+    springBloom: { bloomMonths: [3, 4, 5] },
+    summerBloom: { bloomMonths: [6, 7, 8] },
+    autumnBloom: { bloomMonths: [9, 10, 11] }
   };
+
+  const BLOOM_MONTH_SHORT = ["", "янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
 
   const $ = (id) => document.getElementById(id);
   let currentView = "all";
@@ -74,6 +76,50 @@
     return `${GARDEN_MONTH_LABELS[r.min]} — ${GARDEN_MONTH_LABELS[r.max]}`;
   }
 
+  function getBloomMonths() {
+    return [...document.querySelectorAll(".bloom-month.is-active")]
+      .map((b) => +b.dataset.month)
+      .filter((m) => m >= 1 && m <= 12)
+      .sort((a, b) => a - b);
+  }
+
+  function setBloomMonths(months) {
+    const set = new Set(months);
+    document.querySelectorAll(".bloom-month").forEach((b) => {
+      b.classList.toggle("is-active", set.has(+b.dataset.month));
+      b.setAttribute("aria-pressed", set.has(+b.dataset.month) ? "true" : "false");
+    });
+  }
+
+  function bloomSelectionLabel(months) {
+    if (!months.length) return "не выбрано";
+    if (months.length === 1) return GARDEN_MONTH_LABELS[months[0]] || String(months[0]);
+    const sorted = [...months].sort((a, b) => a - b);
+    const consecutive = sorted[sorted.length - 1] - sorted[0] + 1 === sorted.length;
+    if (consecutive) {
+      return `${GARDEN_MONTH_LABELS[sorted[0]]} — ${GARDEN_MONTH_LABELS[sorted[sorted.length - 1]]}`;
+    }
+    return sorted.map((m) => BLOOM_MONTH_SHORT[m] || m).join(", ");
+  }
+
+  function bloomScore(months, plantR) {
+    if (!months.length) return { points: 22, ok: true, delta: 0 };
+    const hit = months.some((m) => m >= plantR.min && m <= plantR.max);
+    if (hit) return { points: 22, ok: true, delta: 0 };
+    const userMin = Math.min(...months);
+    const userMax = Math.max(...months);
+    const d = userMax < plantR.min ? plantR.min - userMax : userMin - plantR.max;
+    return { points: -Math.min(18, d / 0.55), ok: false, delta: d };
+  }
+
+  function bloomRangeVisual(plantR, months) {
+    if (!months.length) {
+      return `<small>Месяцы не выбраны — учитываются все</small>`;
+    }
+    const mid = (Math.min(...months) + Math.max(...months)) / 2;
+    return rangeVisual(plantR, mid, 1, 12, "");
+  }
+
   function explain(p, f) {
     let score = 55;
     const reasons = [];
@@ -81,13 +127,13 @@
 
     const s = distScore(f.sun, p.sunR, 30, 24, 0.45);
     const h = distScore(f.height, p.heightR, 18, 20, 8);
-    const b = distScore(f.bloom, p.bloomR, 22, 18, 0.55);
+    const b = bloomScore(f.bloomMonths, p.bloomR);
 
     score += s.points + h.points + b.points;
 
     reasons.push(s.ok ? "освещённость участка подходит" : `освещённость отличается (~${s.delta.toFixed(1)} по шкале)`);
     reasons.push(h.ok ? "высота в нужном диапазоне" : `высота отличается на ~${Math.round(h.delta)} см`);
-    reasons.push(b.ok ? "цветение в выбранный период" : `пик цветения смещён (~${Math.round(b.delta)} мес.)`);
+    reasons.push(b.ok ? "цветение в выбранные месяцы" : `цветение не попадает в выбранные месяцы (~${Math.round(b.delta)} мес.)`);
 
     if (!s.ok) {
       tips.push(f.sun < p.sunR.min ? "выберите более солнечное место или проредите крону деревьев" : "добавьте притенение или посадите под кустарник");
@@ -96,7 +142,7 @@
       tips.push(f.height < p.heightR.min ? "растение вырастет выше — учтите при планировании ярусов" : "для низкого бордюра лучше подобрать более компактный сорт");
     }
     if (!b.ok) {
-      tips.push(f.bloom < p.bloomR.min ? "цветение начнётся позже выбранного месяца" : "основное цветение закончится раньше");
+      tips.push("выберите соседние месяцы или расширьте период — растение цветёт в другое время");
     }
 
     if (f.color !== "any") {
@@ -120,7 +166,7 @@
       q: $("q").value.trim().toLowerCase(),
       sun: +$("sun").value || 3,
       height: +$("height").value || 60,
-      bloom: +$("bloom").value || 6,
+      bloomMonths: getBloomMonths(),
       color: $("color").value,
       sort: $("sort").value,
       onlyFav: $("onlyFav").value
@@ -183,7 +229,7 @@
     const f = collect();
     const sunV = rangeVisual(p.sunR, f.sun, 1, 5, "");
     const heightV = rangeVisual(p.heightR, f.height, 10, 200, " см");
-    const bloomV = rangeVisual(p.bloomR, f.bloom, 1, 12, "");
+    const bloomV = bloomRangeVisual(p.bloomR, f.bloomMonths);
 
     return `<article class="card plant">
 <button class="fav ${fav ? "active" : ""}" type="button" data-fav="${p.id}" aria-label="${fav ? "Убрать из избранного" : "В избранное"}">${fav ? "★" : "☆"}</button>
@@ -254,12 +300,13 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
   function applyProfile(name) {
     const p = PROFILES[name];
     if (!p) return;
-    ["sun", "height", "bloom"].forEach((k) => {
+    ["sun", "height"].forEach((k) => {
       if (p[k] != null) {
         $(k).value = p[k];
         $(k + "Range").value = p[k];
       }
     });
+    if (p.bloomMonths) setBloomMonths(p.bloomMonths);
     $("profile").value = name;
     updateParamOutputs();
     render();
@@ -272,6 +319,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     $("sort").value = "score";
     $("onlyFav").value = "all";
     applyProfile("partialShade");
+    setBloomMonths([6]);
     $("profile").value = "custom";
     currentView = "all";
     document.querySelectorAll(".chip").forEach((b, i) => b.classList.toggle("active", i === 0));
@@ -283,7 +331,35 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     const bloomEl = $("bloomValue");
     if (sunEl) sunEl.textContent = GARDEN_SUN_LABELS[+ $("sun").value] || $("sun").value;
     if (heightEl) heightEl.textContent = Number($("height").value).toLocaleString("ru-RU");
-    if (bloomEl) bloomEl.textContent = GARDEN_MONTH_LABELS[+ $("bloom").value] || $("bloom").value;
+    if (bloomEl) bloomEl.textContent = bloomSelectionLabel(getBloomMonths());
+  }
+
+  function buildBloomMonths() {
+    const wrap = $("bloomMonths");
+    if (!wrap || wrap.childElementCount) return;
+    for (let m = 1; m <= 12; m++) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "bloom-month";
+      btn.dataset.month = String(m);
+      btn.textContent = BLOOM_MONTH_SHORT[m];
+      btn.setAttribute("aria-pressed", "false");
+      btn.setAttribute("aria-label", GARDEN_MONTH_LABELS[m]);
+      btn.addEventListener("click", () => {
+        btn.classList.toggle("is-active");
+        btn.setAttribute("aria-pressed", btn.classList.contains("is-active") ? "true" : "false");
+        if (!getBloomMonths().length) {
+          btn.classList.add("is-active");
+          btn.setAttribute("aria-pressed", "true");
+          toast("Нужен хотя бы один месяц");
+        }
+        $("profile").value = "custom";
+        updateParamOutputs();
+        render();
+      });
+      wrap.appendChild(btn);
+    }
+    setBloomMonths([6]);
   }
 
   function wireFilterTabs() {
@@ -348,9 +424,9 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
   function init() {
     $("totalCount").textContent = PLANTS.length;
     saveFavs(favs());
+    buildBloomMonths();
     wireDual("sun", "sunRange");
     wireDual("height", "heightRange");
-    wireDual("bloom", "bloomRange");
     updateParamOutputs();
     wireFilterTabs();
 
@@ -425,8 +501,6 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
       a.click();
       URL.revokeObjectURL(a.href);
     });
-
-    runAudit();
 
     if (window.GardenPlantsPdf) {
       GardenPlantsPdf.bind({
