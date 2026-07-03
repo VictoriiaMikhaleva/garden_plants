@@ -1,13 +1,19 @@
 /**
- * Нормализация фото: холст 4:3, белый фон, растение целиком.
+ * Нормализация фото для каталога.
+ * Садовые сцены — портрет, без вырезания фона (сохраняем качество).
+ * Изолированные на белом — холст 4:3 (legacy).
  */
 const sharp = require("sharp");
 
 const CANVAS_W = 800;
 const CANVAS_H = 600;
 const SAFE_SCALE = 0.88;
-const WEBP_QUALITY = 86;
+const WEBP_QUALITY = 92;
 const BLACK_THRESH = 34;
+
+/** Портретные садовые фото: max-сторона, без агрессивной обработки */
+const GARDEN_MAX_W = 960;
+const GARDEN_MAX_H = 1200;
 
 async function stripNearBlackBackground(buf) {
   const { data, info } = await sharp(buf).rotate().ensureAlpha().raw().toBuffer({ resolveWithObject: true });
@@ -41,7 +47,7 @@ async function normalizeToWhiteCanvas(inputBuffer) {
   const padRight = CANVAS_W - nw - padLeft;
 
   return base
-    .resize(nw, nh, { fit: "inside" })
+    .resize(nw, nh, { fit: "inside", kernel: sharp.kernel.lanczos3 })
     .extend({
       top: padTop,
       bottom: padBottom,
@@ -49,7 +55,23 @@ async function normalizeToWhiteCanvas(inputBuffer) {
       right: padRight,
       background: "#ffffff"
     })
-    .webp({ quality: WEBP_QUALITY, effort: 4 });
+    .webp({ quality: WEBP_QUALITY, effort: 4, smartSubsample: false });
 }
 
-module.exports = { CANVAS_W, CANVAS_H, normalizeToWhiteCanvas };
+/** Садовые фото: сохраняем сцену целиком, портрет, мягкое сжатие */
+async function normalizeGardenPhoto(inputBuffer) {
+  return sharp(inputBuffer)
+    .rotate()
+    .resize(GARDEN_MAX_W, GARDEN_MAX_H, {
+      fit: "inside",
+      kernel: sharp.kernel.lanczos3
+    })
+    .webp({ quality: WEBP_QUALITY, effort: 4, smartSubsample: false });
+}
+
+module.exports = {
+  CANVAS_W,
+  CANVAS_H,
+  normalizeToWhiteCanvas,
+  normalizeGardenPhoto
+};

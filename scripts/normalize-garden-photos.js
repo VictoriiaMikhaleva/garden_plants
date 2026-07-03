@@ -8,7 +8,7 @@
  */
 const fs = require("fs");
 const path = require("path");
-const { normalizeToWhiteCanvas } = require("./photo-normalize-lib");
+const { normalizeGardenPhoto } = require("./photo-normalize-lib");
 
 const ROOT = path.join(__dirname, "..");
 const DATA_JS = path.join(ROOT, "assets", "js", "garden-plants-data.js");
@@ -66,7 +66,7 @@ async function main() {
     }
     const buf = fs.readFileSync(raw);
     const outPath = path.join(OUT_DIR, `${plant.id}.webp`);
-    await (await normalizeToWhiteCanvas(buf)).toFile(outPath);
+    await (await normalizeGardenPhoto(buf)).toFile(outPath);
     plant.photo = `assets/plants/${plant.id}.webp`;
     plant.photoSource = "custom";
     console.log(`${plant.id} ${plant.nameRu} — ok`);
