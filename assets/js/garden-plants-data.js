@@ -534,31 +534,13 @@ const GARDEN_RAW_PLANTS = [
   {
     "id": 50,
     "color": "purple",
-    "nameRu": "Гиацинт «Royal Novi»",
+    "nameRu": "Гиацинт Royal Novi/ Amethyst/Bismarck",
     "height": "20–30",
     "bloom": "3–4",
     "sun": "4–5",
     "bloomNote": "март — апрель",
     "photo": "assets/plants/50.webp",
     "photoSource": "custom"
-  },
-  {
-    "id": 51,
-    "color": "purple",
-    "nameRu": "Гиацинт «Amethyst»",
-    "height": "20–30",
-    "bloom": "3–4",
-    "sun": "4–5",
-    "bloomNote": "март — апрель"
-  },
-  {
-    "id": 52,
-    "color": "purple",
-    "nameRu": "Гиацинт «Bismarck»",
-    "height": "20–30",
-    "bloom": "3–4",
-    "sun": "4–5",
-    "bloomNote": "март — апрель"
   },
   {
     "id": 53,

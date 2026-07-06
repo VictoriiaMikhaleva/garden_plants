@@ -52,8 +52,6 @@ module.exports = {
   48: "Hesperis matronalis",
   49: "Clematis",
   50: "Hyacinthus orientalis",
-  51: "Hyacinthus orientalis",
-  52: "Hyacinthus orientalis",
   53: "Lilium",
   54: "Lilium",
   55: "Anemone nemorosa",
