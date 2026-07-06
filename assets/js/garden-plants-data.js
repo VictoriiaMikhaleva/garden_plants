@@ -230,7 +230,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "10–50",
     "bloom": "6–8",
     "sun": "4–5",
-    "bloomNote": "летом"
+    "bloomNote": "летом",
+    "photo": "assets/plants/21.webp",
+    "photoSource": "custom"
   },
   {
     "id": 22,
@@ -239,7 +241,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "30–60",
     "bloom": "5–8",
     "sun": "4–5",
-    "bloomNote": "май — август"
+    "bloomNote": "май — август",
+    "photo": "assets/plants/22.webp",
+    "photoSource": "custom"
   },
   {
     "id": 23,
@@ -248,7 +252,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "20–30",
     "bloom": "4–5",
     "sun": "2–4",
-    "bloomNote": "конец апреля — начало мая"
+    "bloomNote": "конец апреля — начало мая",
+    "photo": "assets/plants/23.webp",
+    "photoSource": "custom"
   },
   {
     "id": 24,
@@ -257,7 +263,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "10–30",
     "bloom": "5–6",
     "sun": "4–5",
-    "bloomNote": "май — июнь, белые цветки"
+    "bloomNote": "май — июнь, белые цветки",
+    "photo": "assets/plants/24.webp",
+    "photoSource": "custom"
   },
   {
     "id": 25,
@@ -266,7 +274,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "60–100",
     "bloom": "6–7",
     "sun": "2–5",
-    "bloomNote": "летом"
+    "bloomNote": "летом",
+    "photo": "assets/plants/25.webp",
+    "photoSource": "custom"
   },
   {
     "id": 26,
@@ -275,7 +285,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "150–180",
     "bloom": "6–9",
     "sun": "4–5",
-    "bloomNote": "июнь — конец сентября"
+    "bloomNote": "июнь — конец сентября",
+    "photo": "assets/plants/26.webp",
+    "photoSource": "custom"
   },
   {
     "id": 27,
@@ -284,7 +296,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "40–50",
     "bloom": "7–8",
     "sun": "1–2",
-    "bloomNote": "июль — август, фиолетовые цветы"
+    "bloomNote": "июль — август, фиолетовые цветы",
+    "photo": "assets/plants/27.webp",
+    "photoSource": "custom"
   },
   {
     "id": 28,
@@ -293,7 +307,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "30–40",
     "bloom": "7–7",
     "sun": "1–2",
-    "bloomNote": "июль"
+    "bloomNote": "июль",
+    "photo": "assets/plants/28.webp",
+    "photoSource": "custom"
   },
   {
     "id": 29,
@@ -302,7 +318,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "60–80",
     "bloom": "8–10",
     "sun": "1–2",
-    "bloomNote": "конец лета — заморозки"
+    "bloomNote": "конец лета — заморозки",
+    "photo": "assets/plants/29.webp",
+    "photoSource": "custom"
   },
   {
     "id": 30,
@@ -311,7 +329,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "40–50",
     "bloom": "7–8",
     "sun": "1–2",
-    "bloomNote": "июль — август, сиреневые цветы"
+    "bloomNote": "июль — август, сиреневые цветы",
+    "photo": "assets/plants/30.webp",
+    "photoSource": "custom"
   },
   {
     "id": 31,
@@ -320,7 +340,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "30–40",
     "bloom": "7–8",
     "sun": "2–5",
-    "bloomNote": "июль — август"
+    "bloomNote": "июль — август",
+    "photo": "assets/plants/31.webp",
+    "photoSource": "custom"
   },
   {
     "id": 32,
@@ -329,7 +351,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "80–100",
     "bloom": "8–8",
     "sun": "1–3",
-    "bloomNote": "август"
+    "bloomNote": "август",
+    "photo": "assets/plants/32.webp",
+    "photoSource": "custom"
   },
   {
     "id": 33,
@@ -338,7 +362,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "40–45",
     "bloom": "7–8",
     "sun": "1–4",
-    "bloomNote": "середина июля — август, лавандовые цветы"
+    "bloomNote": "середина июля — август, лавандовые цветы",
+    "photo": "assets/plants/33.webp",
+    "photoSource": "custom"
   },
   {
     "id": 34,
@@ -347,7 +373,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "80–120",
     "bloom": "6–6",
     "sun": "2–5",
-    "bloomNote": "июнь"
+    "bloomNote": "июнь",
+    "photo": "assets/plants/34.webp",
+    "photoSource": "custom"
   },
   {
     "id": 35,
@@ -356,7 +384,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "60–100",
     "bloom": "5–6",
     "sun": "4–5",
-    "bloomNote": "май — июнь"
+    "bloomNote": "май — июнь",
+    "photo": "assets/plants/35.webp",
+    "photoSource": "custom"
   },
   {
     "id": 36,
@@ -365,7 +395,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "60–80",
     "bloom": "9–10",
     "sun": "4–5",
-    "bloomNote": "сентябрь — октябрь"
+    "bloomNote": "сентябрь — октябрь",
+    "photo": "assets/plants/36.webp",
+    "photoSource": "custom"
   },
   {
     "id": 37,
