@@ -53,7 +53,6 @@ module.exports = {
   49: "Clematis",
   50: "Hyacinthus orientalis",
   53: "Lilium",
-  54: "Lilium",
   55: "Anemone nemorosa",
   56: "Symphyotrichum",
   57: "Vinca minor",

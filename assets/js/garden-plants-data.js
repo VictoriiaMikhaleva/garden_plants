@@ -545,22 +545,13 @@ const GARDEN_RAW_PLANTS = [
   {
     "id": 53,
     "color": "purple",
-    "nameRu": "Лилия «Purple Lady»",
+    "nameRu": "Лилия Purple Lady/ Purple Prince",
     "height": "40–150",
     "bloom": "8–8",
     "sun": "4–5",
     "bloomNote": "август",
     "photo": "assets/plants/53.webp",
     "photoSource": "custom"
-  },
-  {
-    "id": 54,
-    "color": "purple",
-    "nameRu": "Лилия «Purple Prince»",
-    "height": "40–150",
-    "bloom": "8–8",
-    "sun": "4–5",
-    "bloomNote": "август"
   },
   {
     "id": 55,
