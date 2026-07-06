@@ -19,6 +19,8 @@
   let lastFilterKey = "";
   let lastResults = [];
   let compareIds = new Set();
+  let sunTouched = false;
+  let heightTouched = false;
 
   function nums(s) {
     return (String(s || "").replace(/[–—]/g, "-").match(/\d+(?:[.,]\d+)?/g) || []).map((x) => +x.replace(",", "."));
@@ -128,19 +130,35 @@
     return score;
   }
 
+  function siteFiltersActive(f) {
+    return f.sun != null || f.height != null || f.bloomMonths.length > 0;
+  }
+
   function explain(p, f) {
     let score = 55;
     const reasons = [];
     const tips = [];
 
-    const s = distScore(f.sun, p.sunR, 30, 24, 0.45);
-    const h = distScore(f.height, p.heightR, 18, 24, 4);
+    const s = f.sun == null ? { points: 0, ok: true, delta: 0 } : distScore(f.sun, p.sunR, 30, 24, 0.45);
+    const h = f.height == null ? { points: 0, ok: true, delta: 0 } : distScore(f.height, p.heightR, 18, 24, 4);
     const b = bloomScore(f.bloomMonths, p.bloomR);
 
     score += s.points + h.points + b.points;
 
-    reasons.push(s.ok ? "освещённость участка подходит" : `освещённость отличается (~${s.delta.toFixed(1)} по шкале)`);
-    reasons.push(h.ok ? "высота в нужном диапазоне" : `высота отличается на ~${Math.round(h.delta)} см`);
+    reasons.push(
+      f.sun == null
+        ? "освещённость не задана — не влияет на балл"
+        : s.ok
+          ? "освещённость участка подходит"
+          : `освещённость отличается (~${s.delta.toFixed(1)} по шкале)`
+    );
+    reasons.push(
+      f.height == null
+        ? "высота не задана — не влияет на балл"
+        : h.ok
+          ? "высота в нужном диапазоне"
+          : `высота отличается на ~${Math.round(h.delta)} см`
+    );
     reasons.push(b.ok ? "цветение в выбранные месяцы" : `цветение не попадает в выбранные месяцы (~${Math.round(b.delta)} мес.)`);
 
     if (!s.ok) {
@@ -175,8 +193,8 @@
   function collect() {
     return {
       q: $("q").value.trim().toLowerCase(),
-      sun: +$("sun").value || 3,
-      height: +$("height").value || 60,
+      sun: sunTouched && $("sun").value !== "" ? +$("sun").value : null,
+      height: heightTouched && $("height").value !== "" ? +$("height").value : null,
       bloomMonths: getBloomMonths(),
       color: $("color").value,
       sort: $("sort").value,
@@ -210,6 +228,9 @@
   }
 
   function rangeVisual(r, current, domainMin, domainMax, unit) {
+    if (current == null) {
+      return `<small>Параметр не задан — сравнение не выполняется</small>`;
+    }
     const a = pct(r.min, domainMin, domainMax);
     const b = pct(r.max, domainMin, domainMax);
     const v = pct(current, domainMin, domainMax);
@@ -311,13 +332,19 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
 
     const ideal = arr.filter((p) => p.score >= 90);
     const rest = arr.filter((p) => p.score < 90);
-    const display = showLessSuitable ? [...ideal, ...rest] : ideal;
+    const browseMode = !f.q && !siteFiltersActive(f) && f.color === "any";
+    const searchMode = !!f.q;
+    const display = searchMode || browseMode ? arr : showLessSuitable ? [...ideal, ...rest] : ideal;
 
     lastResults = display;
     $("cards").innerHTML = display.map(card).join("");
     $("shownCount").textContent = display.length;
 
-    if (ideal.length) {
+    if (searchMode) {
+      $("resultTitle").textContent = display.length ? `Найдено: ${display.length}` : "Ничего не найдено";
+    } else if (browseMode) {
+      $("resultTitle").textContent = `Каталог: ${display.length}`;
+    } else if (ideal.length) {
       $("resultTitle").textContent = showLessSuitable && rest.length
         ? `Показано: ${display.length} (${ideal.length} идеальных)`
         : `Идеально: ${ideal.length}`;
@@ -325,12 +352,20 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
       $("resultTitle").textContent = rest.length ? "Идеальных совпадений нет" : `Найдено: 0 из ${PLANTS.length}`;
     }
 
-    $("resultSubtitle").textContent = topResultsSubtitle(ideal, rest, showLessSuitable);
+    if (searchMode) {
+      $("resultSubtitle").textContent = display.length
+        ? `По запросу «${$("q").value.trim()}» — сортировка по совпадению.`
+        : "Попробуйте другое название или сбросьте фильтры.";
+    } else if (browseMode) {
+      $("resultSubtitle").textContent = "Задайте параметры участка слева — список сузится до лучших совпадений.";
+    } else {
+      $("resultSubtitle").textContent = topResultsSubtitle(ideal, rest, showLessSuitable);
+    }
 
     const expandEl = $("expandResults");
     const expandBtn = $("showLessSuitableBtn");
     const expandNote = $("expandResultsNote");
-    if (rest.length) {
+    if (rest.length && !searchMode && !browseMode) {
       expandEl.hidden = false;
       if (showLessSuitable) {
         expandBtn.textContent = "Скрыть менее подходящие растения";
@@ -375,6 +410,8 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
       if (p[k] != null) {
         $(k).value = p[k];
         $(k + "Range").value = p[k];
+        if (k === "sun") sunTouched = true;
+        if (k === "height") heightTouched = true;
       }
     });
     if (p.bloomMonths) setBloomMonths(p.bloomMonths);
@@ -389,19 +426,33 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     $("color").value = "any";
     $("sort").value = "score";
     $("onlyFav").value = "all";
-    applyProfile("partialShade");
-    setBloomMonths([6]);
-    $("profile").value = "custom";
+    sunTouched = false;
+    heightTouched = false;
+    $("sun").value = "";
+    $("height").value = "";
+    $("sunRange").value = "3";
+    $("heightRange").value = "60";
+    setBloomMonths([]);
     showLessSuitable = false;
     lastFilterKey = "";
+    updateParamOutputs();
+    render();
   }
 
   function updateParamOutputs() {
     const sunEl = $("sunValue");
     const heightEl = $("heightValue");
     const bloomEl = $("bloomValue");
-    if (sunEl) sunEl.textContent = GARDEN_SUN_LABELS[+ $("sun").value] || $("sun").value;
-    if (heightEl) heightEl.textContent = Number($("height").value).toLocaleString("ru-RU");
+    if (sunEl) {
+      sunEl.textContent = sunTouched && $("sun").value !== ""
+        ? GARDEN_SUN_LABELS[+ $("sun").value] || $("sun").value
+        : "не указано";
+    }
+    if (heightEl) {
+      heightEl.textContent = heightTouched && $("height").value !== ""
+        ? Number($("height").value).toLocaleString("ru-RU")
+        : "не указано";
+    }
     if (bloomEl) bloomEl.textContent = bloomSelectionLabel(getBloomMonths());
   }
 
@@ -419,18 +470,12 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
       btn.addEventListener("click", () => {
         btn.classList.toggle("is-active");
         btn.setAttribute("aria-pressed", btn.classList.contains("is-active") ? "true" : "false");
-        if (!getBloomMonths().length) {
-          btn.classList.add("is-active");
-          btn.setAttribute("aria-pressed", "true");
-          toast("Нужен хотя бы один месяц");
-        }
         $("profile").value = "custom";
         updateParamOutputs();
         render();
       });
       wrap.appendChild(btn);
     }
-    setBloomMonths([6]);
   }
 
   function wireFilterTabs() {
@@ -454,14 +499,16 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     });
   }
 
-  function wireDual(a, b) {
+  function wireDual(a, b, markTouched) {
     $(a).addEventListener("input", () => {
+      markTouched();
       $(b).value = $(a).value;
       $("profile").value = "custom";
       updateParamOutputs();
       render();
     });
     $(b).addEventListener("input", () => {
+      markTouched();
       $(a).value = $(b).value;
       $("profile").value = "custom";
       updateParamOutputs();
@@ -496,8 +543,12 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     $("totalCount").textContent = PLANTS.length;
     saveFavs(favs());
     buildBloomMonths();
-    wireDual("sun", "sunRange");
-    wireDual("height", "heightRange");
+    wireDual("sun", "sunRange", () => {
+      sunTouched = true;
+    });
+    wireDual("height", "heightRange", () => {
+      heightTouched = true;
+    });
     updateParamOutputs();
     wireFilterTabs();
 
@@ -582,10 +633,10 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
 
     const qp = new URLSearchParams(location.search).get("profile") || localStorage.getItem("gardenfit.quickProfile");
     if (qp && PROFILES[qp]) applyProfile(qp);
-    else applyProfile("partialShade");
-
-    $("profile").value = qp && PROFILES[qp] ? qp : "custom";
-    render();
+    else {
+      $("profile").value = "custom";
+      render();
+    }
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

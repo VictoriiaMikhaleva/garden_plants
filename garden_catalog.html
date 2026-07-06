@@ -100,7 +100,7 @@
 <div class="filters-search">
 <label class="visually-hidden" for="q">Поиск</label>
 <span class="filters-search__icon" aria-hidden="true">⌕</span>
-<input id="q" type="search" class="filters-search__input" placeholder="Пион, хоста, астильба…" autocomplete="off">
+<input id="q" type="search" class="filters-search__input" placeholder="Пион, хоста, астра…" autocomplete="off">
 </div>
 <nav class="filters-tabs" role="tablist" aria-label="Разделы параметров">
 <button type="button" class="filters-tab is-active" role="tab" aria-selected="true" aria-controls="filtersPaneSite" id="filtersTabSite" data-filters-tab="site">Участок</button>
@@ -118,11 +118,11 @@
 <label class="param-card__label" for="sun">Освещённость</label>
 <span class="param-card__unit">1–5</span>
 </div>
-<output class="param-card__value" id="sunValue" for="sun sunRange">Полутень</output>
+<output class="param-card__value" id="sunValue" for="sun sunRange">не указано</output>
 </div>
 <div class="param-card__controls">
 <div class="param-card__input-row">
-<input id="sun" class="param-card__number" type="number" min="1" max="5" step="1" value="3" aria-label="Освещённость, шкала 1–5">
+<input id="sun" class="param-card__number" type="number" min="1" max="5" step="1" placeholder="—" aria-label="Освещённость, шкала 1–5">
 </div>
 <div class="param-card__track">
 <input id="sunRange" class="param-card__range" type="range" min="1" max="5" step="1" value="3" aria-label="Освещённость, шкала">
@@ -137,11 +137,11 @@
 <label class="param-card__label" for="height">Высота</label>
 <span class="param-card__unit">см</span>
 </div>
-<output class="param-card__value" id="heightValue" for="height heightRange">60</output>
+<output class="param-card__value" id="heightValue" for="height heightRange">не указано</output>
 </div>
 <div class="param-card__controls">
 <div class="param-card__input-row">
-<input id="height" class="param-card__number" type="number" min="10" max="200" step="5" value="60" aria-label="Желаемая высота, см">
+<input id="height" class="param-card__number" type="number" min="10" max="200" step="5" placeholder="—" aria-label="Желаемая высота, см">
 </div>
 <div class="param-card__track">
 <input id="heightRange" class="param-card__range" type="range" min="10" max="200" step="5" value="60" aria-label="Высота, шкала">
@@ -155,7 +155,7 @@
 <span class="param-card__label" id="bloomLabel">Месяцы цветения</span>
 <span class="param-card__unit">можно несколько</span>
 </div>
-<output class="param-card__value" id="bloomValue">июнь</output>
+<output class="param-card__value" id="bloomValue">не выбрано</output>
 </div>
 <div class="param-card__controls">
 <div class="bloom-months" id="bloomMonths" role="group" aria-labelledby="bloomLabel"></div>
