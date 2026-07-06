@@ -413,22 +413,13 @@ const GARDEN_RAW_PLANTS = [
   {
     "id": 38,
     "color": "purple",
-    "nameRu": "Астильба «Purple Rain»",
+    "nameRu": "Астильба «Purple Rain» / «Purple Lance»",
     "height": "100–150",
     "bloom": "7–8",
     "sun": "1–3",
     "bloomNote": "июль — август",
     "photo": "assets/plants/38.webp",
     "photoSource": "custom"
-  },
-  {
-    "id": 39,
-    "color": "purple",
-    "nameRu": "Астильба «Purple Lance»",
-    "height": "100–150",
-    "bloom": "7–8",
-    "sun": "1–3",
-    "bloomNote": "июль — август"
   },
   {
     "id": 40,

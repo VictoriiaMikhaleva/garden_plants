@@ -41,7 +41,6 @@ module.exports = {
   36: "Symphyotrichum novae-angliae",
   37: "Colchicum autumnale",
   38: "Astilbe",
-  39: "Astilbe",
   40: "Delphinium",
   41: "Campanula trachelium",
   42: "Crocus",
