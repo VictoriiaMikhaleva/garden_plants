@@ -555,7 +555,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 55,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Анемона (ветреница)",
     "height": "20–30",
     "bloom": "4–11",
@@ -566,7 +566,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 56,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Астра осенняя",
     "height": "30–50",
     "bloom": "8–11",
@@ -577,7 +577,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 57,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Барвинок малый",
     "height": "20–40",
     "bloom": "4–10",
@@ -588,7 +588,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 58,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Василёк многолетний",
     "height": "20–30",
     "bloom": "6–10",
@@ -597,7 +597,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 59,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Вероника дубравная",
     "height": "15–45",
     "bloom": "4–7",
@@ -608,7 +608,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 60,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Гиацинт",
     "height": "20–30",
     "bloom": "3–5",
@@ -619,7 +619,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 61,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Ирис",
     "height": "40–60",
     "bloom": "5–6",
@@ -630,7 +630,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 62,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Дельфиниум",
     "height": "150–200",
     "bloom": "6–6",
@@ -641,7 +641,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 63,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Живучка",
     "height": "10–20",
     "bloom": "5–10",
@@ -652,7 +652,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 64,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Иссоп",
     "height": "20–50",
     "bloom": "7–10",
@@ -663,7 +663,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 65,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Клематис",
     "height": "100–150",
     "bloom": "5–9",
@@ -674,7 +674,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 66,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Люпин",
     "height": "80–120",
     "bloom": "6–6",
@@ -1346,7 +1346,8 @@ const GARDEN_RAW_PLANTS = [
 
 const GARDEN_COLOR_LABELS = {
   white: "Белые",
-  blue: "Голубые / сине-зелёные",
+  blue: "Сине-зелёные (листва)",
+  sky: "Синие / голубые",
   purple: "Фиолетовые",
   yellow: "Жёлтые",
   orange: "Оранжевые",

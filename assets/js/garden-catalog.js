@@ -13,7 +13,7 @@
   };
 
   const BLOOM_MONTH_SHORT = ["", "янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
-  const COLOR_KEYS = ["white", "blue", "purple", "yellow", "orange", "red-orange", "red", "pink"];
+  const COLOR_KEYS = ["white", "sky", "blue", "purple", "yellow", "orange", "red-orange", "red", "pink"];
 
   const $ = (id) => document.getElementById(id);
   let showLessSuitable = false;
@@ -221,7 +221,7 @@
   }
 
   function colorIcon(color) {
-    return ({ white: "⚪", blue: "🔵", purple: "🟣", yellow: "🟡", orange: "🟠", "red-orange": "🔶", red: "🔴", pink: "🌸" }[color] || "🌿");
+    return ({ white: "⚪", sky: "🔵", blue: "🩵", purple: "🟣", yellow: "🟡", orange: "🟠", "red-orange": "🔶", red: "🔴", pink: "🌸" }[color] || "🌿");
   }
 
   function pct(x, min, max) {
