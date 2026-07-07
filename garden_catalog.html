@@ -166,20 +166,9 @@
 <fieldset class="filters-pane" id="filtersPaneCatalog" role="tabpanel" aria-labelledby="filtersTabCatalog" hidden>
 <legend class="visually-hidden">Каталог</legend>
 <div class="filters-field">
-<label class="filters-label" for="color">Цветовая группа</label>
-<div class="filters-select-wrap">
-<select id="color" class="filters-select">
-<option value="any">Любая</option>
-<option value="white">Белые</option>
-<option value="blue">Голубые / сине-зелёные</option>
-<option value="purple">Фиолетовые</option>
-<option value="yellow">Жёлтые</option>
-<option value="orange">Оранжевые</option>
-<option value="red-orange">Красно-оранжевые</option>
-<option value="red">Красные</option>
-<option value="pink">Розовые</option>
-</select>
-</div>
+<label class="filters-label" id="colorLabel">Цветовая группа</label>
+<p class="filters-hint" id="colorHint">Не выбрано — показываются все группы</p>
+<div class="color-groups" id="colorGroups" role="group" aria-labelledby="colorLabel"></div>
 </div>
 <div class="filters-row2">
 <div class="filters-field">

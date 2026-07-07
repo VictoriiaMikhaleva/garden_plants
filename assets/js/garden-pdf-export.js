@@ -156,7 +156,9 @@
           .map((m) => GARDEN_MONTH_LABELS[m] || m)
           .join(", ")
       : "любой";
-    const colorText = f.color === "any" ? "Любая" : GARDEN_COLOR_LABELS[f.color] || f.color;
+    const colorText = !f.colors?.length
+      ? "Любая"
+      : f.colors.map((c) => GARDEN_COLOR_LABELS[c] || c).join(", ");
 
     const paramCards = [
       renderParamCard("☀", "Освещённость", sunText),

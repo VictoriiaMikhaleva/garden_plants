@@ -13,6 +13,7 @@
   };
 
   const BLOOM_MONTH_SHORT = ["", "янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
+  const COLOR_KEYS = ["white", "blue", "purple", "yellow", "orange", "red-orange", "red", "pink"];
 
   const $ = (id) => document.getElementById(id);
   let showLessSuitable = false;
@@ -171,8 +172,8 @@
       tips.push("выберите соседние месяцы или расширьте период — растение цветёт в другое время");
     }
 
-    if (f.color !== "any") {
-      if (p.color === f.color) {
+    if (f.colors.length) {
+      if (f.colors.includes(p.color)) {
         score += 20;
         reasons.push(`совпадает цветовая группа: ${p.colorLabel}`);
       } else {
@@ -196,7 +197,7 @@
       sun: sunTouched && $("sun").value !== "" ? +$("sun").value : null,
       height: heightTouched && $("height").value !== "" ? +$("height").value : null,
       bloomMonths: getBloomMonths(),
-      color: $("color").value,
+      colors: getSelectedColors(),
       sort: $("sort").value,
       onlyFav: $("onlyFav").value
     };
@@ -290,7 +291,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
       sun: f.sun,
       height: f.height,
       bloomMonths: f.bloomMonths,
-      color: f.color,
+      colors: f.colors,
       onlyFav: f.onlyFav,
       sort: f.sort
     });
@@ -321,7 +322,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     const fs = favs();
     let arr = PLANTS.filter((p) => !f.q || p.text.includes(f.q)).map((p) => Object.assign({}, p, explain(p, f)));
 
-    if (f.color !== "any") arr = arr.filter((p) => p.color === f.color);
+    if (f.colors.length) arr = arr.filter((p) => f.colors.includes(p.color));
     arr = arr.filter((p) => p.score >= 50);
     if (f.onlyFav === "fav") arr = arr.filter((p) => fs.has(p.id));
 
@@ -332,7 +333,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
 
     const ideal = arr.filter((p) => p.score >= 90);
     const rest = arr.filter((p) => p.score < 90);
-    const browseMode = !f.q && !siteFiltersActive(f) && f.color === "any";
+    const browseMode = !f.q && !siteFiltersActive(f) && !f.colors.length;
     const searchMode = !!f.q;
     const display = searchMode || browseMode ? arr : showLessSuitable ? [...ideal, ...rest] : ideal;
 
@@ -423,7 +424,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
   function reset() {
     $("q").value = "";
     $("profile").value = "custom";
-    $("color").value = "any";
+    setSelectedColors([]);
     $("sort").value = "score";
     $("onlyFav").value = "all";
     sunTouched = false;
@@ -454,6 +455,59 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
         : "не указано";
     }
     if (bloomEl) bloomEl.textContent = bloomSelectionLabel(getBloomMonths());
+  }
+
+  function getSelectedColors() {
+    return [...document.querySelectorAll(".color-group.is-active")]
+      .map((b) => b.dataset.color)
+      .filter(Boolean);
+  }
+
+  function setSelectedColors(colors) {
+    const set = new Set(colors);
+    document.querySelectorAll(".color-group").forEach((b) => {
+      const on = set.has(b.dataset.color);
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    updateColorHint();
+  }
+
+  function colorSelectionLabel(colors) {
+    if (!colors.length) return "все группы";
+    if (colors.length === 1) return GARDEN_COLOR_LABELS[colors[0]] || colors[0];
+    return colors.map((c) => GARDEN_COLOR_LABELS[c] || c).join(", ");
+  }
+
+  function updateColorHint() {
+    const el = $("colorHint");
+    if (!el) return;
+    const colors = getSelectedColors();
+    el.textContent = colors.length
+      ? `Выбрано: ${colorSelectionLabel(colors)}`
+      : "Не выбрано — показываются все группы";
+  }
+
+  function buildColorGroups() {
+    const wrap = $("colorGroups");
+    if (!wrap || wrap.childElementCount) return;
+    COLOR_KEYS.forEach((key) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "color-group";
+      btn.dataset.color = key;
+      btn.textContent = GARDEN_COLOR_LABELS[key] || key;
+      btn.setAttribute("aria-pressed", "false");
+      btn.setAttribute("aria-label", GARDEN_COLOR_LABELS[key] || key);
+      btn.addEventListener("click", () => {
+        btn.classList.toggle("is-active");
+        btn.setAttribute("aria-pressed", btn.classList.contains("is-active") ? "true" : "false");
+        updateColorHint();
+        render();
+      });
+      wrap.appendChild(btn);
+    });
+    updateColorHint();
   }
 
   function buildBloomMonths() {
@@ -543,6 +597,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     $("totalCount").textContent = PLANTS.length;
     saveFavs(favs());
     buildBloomMonths();
+    buildColorGroups();
     wireDual("sun", "sunRange", () => {
       sunTouched = true;
     });
@@ -552,7 +607,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     updateParamOutputs();
     wireFilterTabs();
 
-    ["q", "color", "sort", "onlyFav"].forEach((id) => $(id).addEventListener("input", render));
+    ["q", "sort", "onlyFav"].forEach((id) => $(id).addEventListener("input", render));
 
     document.querySelectorAll("[data-profile]").forEach((b) =>
       b.addEventListener("click", () => applyProfile(b.dataset.profile))
