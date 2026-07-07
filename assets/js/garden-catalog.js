@@ -1,4 +1,4 @@
-/* Garden catalog — подбор уличных растений (продолжение PlantFit) */
+﻿/* Garden catalog вЂ” РїРѕРґР±РѕСЂ СѓР»РёС‡РЅС‹С… СЂР°СЃС‚РµРЅРёР№ (РїСЂРѕРґРѕР»Р¶РµРЅРёРµ PlantFit) */
 (function () {
   const LS_FAV = "gardenfit.v1.favs";
   const INDOOR_CATALOG_URL = "https://victoriiamikhaleva.github.io/Choose_your_plant/plant_selector_catalog_v6_photos_lux_fixed.html";
@@ -12,7 +12,7 @@
     autumnBloom: { bloomMonths: [9, 10, 11] }
   };
 
-  const BLOOM_MONTH_SHORT = ["", "янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
+  const BLOOM_MONTH_SHORT = ["", "СЏРЅРІ", "С„РµРІ", "РјР°СЂ", "Р°РїСЂ", "РјР°Р№", "РёСЋРЅ", "РёСЋР»", "Р°РІРі", "СЃРµРЅ", "РѕРєС‚", "РЅРѕСЏ", "РґРµРє"];
   const COLOR_KEYS = ["white", "sky", "blue", "purple", "yellow", "orange", "red-orange", "red", "pink"];
 
   const $ = (id) => document.getElementById(id);
@@ -24,7 +24,7 @@
   let heightTouched = false;
 
   function nums(s) {
-    return (String(s || "").replace(/[–—]/g, "-").match(/\d+(?:[.,]\d+)?/g) || []).map((x) => +x.replace(",", "."));
+    return (String(s || "").replace(/[вЂ“вЂ”]/g, "-").match(/\d+(?:[.,]\d+)?/g) || []).map((x) => +x.replace(",", "."));
   }
 
   function toRange(s, fallback = [0, Infinity]) {
@@ -72,12 +72,12 @@
   function sunLabel(r) {
     const a = GARDEN_SUN_LABELS[Math.round(r.min)] || r.min;
     const b = GARDEN_SUN_LABELS[Math.round(r.max)] || r.max;
-    return r.min === r.max ? a : `${a} — ${b}`;
+    return r.min === r.max ? a : `${a} вЂ” ${b}`;
   }
 
   function bloomLabel(r) {
     if (r.min === r.max) return GARDEN_MONTH_LABELS[r.min] || r.raw;
-    return `${GARDEN_MONTH_LABELS[r.min]} — ${GARDEN_MONTH_LABELS[r.max]}`;
+    return `${GARDEN_MONTH_LABELS[r.min]} вЂ” ${GARDEN_MONTH_LABELS[r.max]}`;
   }
 
   function getBloomMonths() {
@@ -96,12 +96,12 @@
   }
 
   function bloomSelectionLabel(months) {
-    if (!months.length) return "не выбрано";
+    if (!months.length) return "РЅРµ РІС‹Р±СЂР°РЅРѕ";
     if (months.length === 1) return GARDEN_MONTH_LABELS[months[0]] || String(months[0]);
     const sorted = [...months].sort((a, b) => a - b);
     const consecutive = sorted[sorted.length - 1] - sorted[0] + 1 === sorted.length;
     if (consecutive) {
-      return `${GARDEN_MONTH_LABELS[sorted[0]]} — ${GARDEN_MONTH_LABELS[sorted[sorted.length - 1]]}`;
+      return `${GARDEN_MONTH_LABELS[sorted[0]]} вЂ” ${GARDEN_MONTH_LABELS[sorted[sorted.length - 1]]}`;
     }
     return sorted.map((m) => BLOOM_MONTH_SHORT[m] || m).join(", ");
   }
@@ -118,7 +118,7 @@
 
   function bloomRangeVisual(plantR, months) {
     if (!months.length) {
-      return `<small>Месяцы не выбраны — учитываются все</small>`;
+      return `<small>РњРµСЃСЏС†С‹ РЅРµ РІС‹Р±СЂР°РЅС‹ вЂ” СѓС‡РёС‚С‹РІР°СЋС‚СЃСЏ РІСЃРµ</small>`;
     }
     const mid = (Math.min(...months) + Math.max(...months)) / 2;
     return rangeVisual(plantR, mid, 1, 12, "");
@@ -148,34 +148,34 @@
 
     reasons.push(
       f.sun == null
-        ? "освещённость не задана — не влияет на балл"
+        ? "РѕСЃРІРµС‰С‘РЅРЅРѕСЃС‚СЊ РЅРµ Р·Р°РґР°РЅР° вЂ” РЅРµ РІР»РёСЏРµС‚ РЅР° Р±Р°Р»Р»"
         : s.ok
-          ? "освещённость участка подходит"
-          : `освещённость отличается (~${s.delta.toFixed(1)} по шкале)`
+          ? "РѕСЃРІРµС‰С‘РЅРЅРѕСЃС‚СЊ СѓС‡Р°СЃС‚РєР° РїРѕРґС…РѕРґРёС‚"
+          : `РѕСЃРІРµС‰С‘РЅРЅРѕСЃС‚СЊ РѕС‚Р»РёС‡Р°РµС‚СЃСЏ (~${s.delta.toFixed(1)} РїРѕ С€РєР°Р»Рµ)`
     );
     reasons.push(
       f.height == null
-        ? "высота не задана — не влияет на балл"
+        ? "РІС‹СЃРѕС‚Р° РЅРµ Р·Р°РґР°РЅР° вЂ” РЅРµ РІР»РёСЏРµС‚ РЅР° Р±Р°Р»Р»"
         : h.ok
-          ? "высота в нужном диапазоне"
-          : `высота отличается на ~${Math.round(h.delta)} см`
+          ? "РІС‹СЃРѕС‚Р° РІ РЅСѓР¶РЅРѕРј РґРёР°РїР°Р·РѕРЅРµ"
+          : `РІС‹СЃРѕС‚Р° РѕС‚Р»РёС‡Р°РµС‚СЃСЏ РЅР° ~${Math.round(h.delta)} СЃРј`
     );
-    reasons.push(b.ok ? "цветение в выбранные месяцы" : `цветение не попадает в выбранные месяцы (~${Math.round(b.delta)} мес.)`);
+    reasons.push(b.ok ? "С†РІРµС‚РµРЅРёРµ РІ РІС‹Р±СЂР°РЅРЅС‹Рµ РјРµСЃСЏС†С‹" : `С†РІРµС‚РµРЅРёРµ РЅРµ РїРѕРїР°РґР°РµС‚ РІ РІС‹Р±СЂР°РЅРЅС‹Рµ РјРµСЃСЏС†С‹ (~${Math.round(b.delta)} РјРµСЃ.)`);
 
     if (!s.ok) {
-      tips.push(f.sun < p.sunR.min ? "выберите более солнечное место или проредите крону деревьев" : "добавьте притенение или посадите под кустарник");
+      tips.push(f.sun < p.sunR.min ? "РІС‹Р±РµСЂРёС‚Рµ Р±РѕР»РµРµ СЃРѕР»РЅРµС‡РЅРѕРµ РјРµСЃС‚Рѕ РёР»Рё РїСЂРѕСЂРµРґРёС‚Рµ РєСЂРѕРЅСѓ РґРµСЂРµРІСЊРµРІ" : "РґРѕР±Р°РІСЊС‚Рµ РїСЂРёС‚РµРЅРµРЅРёРµ РёР»Рё РїРѕСЃР°РґРёС‚Рµ РїРѕРґ РєСѓСЃС‚Р°СЂРЅРёРє");
     }
     if (!h.ok) {
-      tips.push(f.height < p.heightR.min ? "растение вырастет выше — учтите при планировании ярусов" : "для низкого бордюра лучше подобрать более компактный сорт");
+      tips.push(f.height < p.heightR.min ? "СЂР°СЃС‚РµРЅРёРµ РІС‹СЂР°СЃС‚РµС‚ РІС‹С€Рµ вЂ” СѓС‡С‚РёС‚Рµ РїСЂРё РїР»Р°РЅРёСЂРѕРІР°РЅРёРё СЏСЂСѓСЃРѕРІ" : "РґР»СЏ РЅРёР·РєРѕРіРѕ Р±РѕСЂРґСЋСЂР° Р»СѓС‡С€Рµ РїРѕРґРѕР±СЂР°С‚СЊ Р±РѕР»РµРµ РєРѕРјРїР°РєС‚РЅС‹Р№ СЃРѕСЂС‚");
     }
     if (!b.ok) {
-      tips.push("выберите соседние месяцы или расширьте период — растение цветёт в другое время");
+      tips.push("РІС‹Р±РµСЂРёС‚Рµ СЃРѕСЃРµРґРЅРёРµ РјРµСЃСЏС†С‹ РёР»Рё СЂР°СЃС€РёСЂСЊС‚Рµ РїРµСЂРёРѕРґ вЂ” СЂР°СЃС‚РµРЅРёРµ С†РІРµС‚С‘С‚ РІ РґСЂСѓРіРѕРµ РІСЂРµРјСЏ");
     }
 
     if (f.colors.length) {
       if (f.colors.includes(p.color)) {
         score += 20;
-        reasons.push(`совпадает цветовая группа: ${p.colorLabel}`);
+        reasons.push(`СЃРѕРІРїР°РґР°РµС‚ С†РІРµС‚РѕРІР°СЏ РіСЂСѓРїРїР°: ${p.colorLabel}`);
       } else {
         score -= 60;
       }
@@ -217,11 +217,11 @@
   }
 
   function label(score) {
-    return score >= 90 ? ["Идеально", "ok"] : score >= 80 ? ["Можно посадить", "ok"] : score >= 60 ? ["Потребуется корректировка условий", "warn"] : ["Не рекомендуется", "danger"];
+    return score >= 90 ? ["РРґРµР°Р»СЊРЅРѕ", "ok"] : score >= 80 ? ["РњРѕР¶РЅРѕ РїРѕСЃР°РґРёС‚СЊ", "ok"] : score >= 60 ? ["РџРѕС‚СЂРµР±СѓРµС‚СЃСЏ РєРѕСЂСЂРµРєС‚РёСЂРѕРІРєР° СѓСЃР»РѕРІРёР№", "warn"] : ["РќРµ СЂРµРєРѕРјРµРЅРґСѓРµС‚СЃСЏ", "danger"];
   }
 
   function colorIcon(color) {
-    return ({ white: "⚪", sky: "🔵", blue: "🩵", purple: "🟣", yellow: "🟡", orange: "🟠", "red-orange": "🔶", red: "🔴", pink: "🌸" }[color] || "🌿");
+    return ({ white: "вљЄ", sky: "рџ”µ", blue: "рџ©µ", purple: "рџџЈ", yellow: "рџџЎ", orange: "рџџ ", "red-orange": "рџ”¶", red: "рџ”ґ", pink: "рџЊё" }[color] || "рџЊї");
   }
 
   function pct(x, min, max) {
@@ -230,26 +230,26 @@
 
   function rangeVisual(r, current, domainMin, domainMax, unit) {
     if (current == null) {
-      return `<small>Параметр не задан — сравнение не выполняется</small>`;
+      return `<small>РџР°СЂР°РјРµС‚СЂ РЅРµ Р·Р°РґР°РЅ вЂ” СЃСЂР°РІРЅРµРЅРёРµ РЅРµ РІС‹РїРѕР»РЅСЏРµС‚СЃСЏ</small>`;
     }
     const a = pct(r.min, domainMin, domainMax);
     const b = pct(r.max, domainMin, domainMax);
     const v = pct(current, domainMin, domainMax);
     const ok = within(current, r);
-    const note = ok ? "ваше значение внутри диапазона" : current < r.min ? "ниже оптимума" : "выше оптимума";
-    return `<div class="paramTrack" aria-hidden="true" style="--a:${a.toFixed(2)}%;--w:${Math.max(3, b - a).toFixed(2)}%;--v:${v.toFixed(2)}%"><i></i><em></em></div><small>Ваше: ${esc(current)}${unit}</small><div class="metricNote ${ok ? "" : "warn"}">${note}</div>`;
+    const note = ok ? "РІР°С€Рµ Р·РЅР°С‡РµРЅРёРµ РІРЅСѓС‚СЂРё РґРёР°РїР°Р·РѕРЅР°" : current < r.min ? "РЅРёР¶Рµ РѕРїС‚РёРјСѓРјР°" : "РІС‹С€Рµ РѕРїС‚РёРјСѓРјР°";
+    return `<div class="paramTrack" aria-hidden="true" style="--a:${a.toFixed(2)}%;--w:${Math.max(3, b - a).toFixed(2)}%;--v:${v.toFixed(2)}%"><i></i><em></em></div><small>Р’Р°С€Рµ: ${esc(current)}${unit}</small><div class="metricNote ${ok ? "" : "warn"}">${note}</div>`;
   }
 
   function metricCard(title, value, unit, visual) {
     return `<div class="meter"><span>${title}</span><b><span class="valueText">${esc(value)}</span>${unit ? `<span class="unit">${esc(unit.trim())}</span>` : ""}</b>${visual || ""}</div>`;
   }
 
-  const PHOTO_CACHE_V = "20260707d";
+  const PHOTO_CACHE_V = "20260707e";
 
   function photo(p) {
     const src = p.photo ? `${p.photo}?v=${PHOTO_CACHE_V}` : "";
     if (src) {
-      return `<div class="plantPhoto"><img loading="lazy" src="${esc(src)}" alt="${esc(p.nameRu)} — фото" onerror="this.parentElement.className='plantPhoto fallback';this.outerHTML='${colorIcon(p.color)}'"></div>`;
+      return `<div class="plantPhoto"><img loading="lazy" src="${esc(src)}" alt="${esc(p.nameRu)} вЂ” С„РѕС‚Рѕ" onerror="this.parentElement.className='plantPhoto fallback';this.outerHTML='${colorIcon(p.color)}'"></div>`;
     }
     return `<div class="plantPhoto fallback">${colorIcon(p.color)}</div>`;
   }
@@ -261,11 +261,11 @@
     const comp = compareIds.has(p.id);
     const f = collect();
     const sunV = rangeVisual(p.sunR, f.sun, 1, 5, "");
-    const heightV = rangeVisual(p.heightR, f.height, 10, 200, " см");
+    const heightV = rangeVisual(p.heightR, f.height, 10, 200, " СЃРј");
     const bloomV = bloomRangeVisual(p.bloomR, f.bloomMonths);
 
     return `<article class="card plant">
-<button class="fav ${fav ? "active" : ""}" type="button" data-fav="${p.id}" aria-label="${fav ? "Убрать из избранного" : "В избранное"}">${fav ? "★" : "☆"}</button>
+<button class="fav ${fav ? "active" : ""}" type="button" data-fav="${p.id}" aria-label="${fav ? "РЈР±СЂР°С‚СЊ РёР· РёР·Р±СЂР°РЅРЅРѕРіРѕ" : "Р’ РёР·Р±СЂР°РЅРЅРѕРµ"}">${fav ? "в…" : "в†"}</button>
 ${photo(p)}
 <div class="plantTop"><div><h3>${esc(p.nameRu)}</h3><div class="lat">${esc(p.colorLabel)}</div></div></div>
 <div class="scorebar" aria-hidden="true" style="--w:${p.score}%"><i></i></div>
@@ -275,13 +275,13 @@ ${photo(p)}
 <span class="tag">${esc(sunLabel(p.sunR))}</span>
 </div>
 <div class="meters">
-${metricCard("Солнце", sunLabel(p.sunR), "", sunV)}
-${metricCard("Высота", p.height, " см", heightV)}
-${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
+${metricCard("РЎРѕР»РЅС†Рµ", sunLabel(p.sunR), "", sunV)}
+${metricCard("Р’С‹СЃРѕС‚Р°", p.height, " СЃРј", heightV)}
+${metricCard("Р¦РІРµС‚РµРЅРёРµ", bloomLabel(p.bloomR), "", bloomV)}
 </div>
-<details open><summary>Почему подходит</summary><ul class="reasons">${p.reasons.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></details>
-<div class="tips"><b>Советы</b><ul class="reasons">${(p.tips.length ? p.tips : ["условия близки к оптимальным"]).map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
-<div class="compareRow"><label><input type="checkbox" data-compare="${p.id}" ${comp ? "checked" : ""}> сравнить</label></div>
+<details open><summary>РџРѕС‡РµРјСѓ РїРѕРґС…РѕРґРёС‚</summary><ul class="reasons">${p.reasons.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></details>
+<div class="tips"><b>РЎРѕРІРµС‚С‹</b><ul class="reasons">${(p.tips.length ? p.tips : ["СѓСЃР»РѕРІРёСЏ Р±Р»РёР·РєРё Рє РѕРїС‚РёРјР°Р»СЊРЅС‹Рј"]).map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
+<div class="compareRow"><label><input type="checkbox" data-compare="${p.id}" ${comp ? "checked" : ""}> СЃСЂР°РІРЅРёС‚СЊ</label></div>
 </article>`;
   }
 
@@ -298,16 +298,16 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
   }
 
   function topResultsSubtitle(ideal, rest, expanded) {
-    if (!ideal.length && !rest.length) return "Попробуйте расширить условия или сменить цветовую группу.";
-    if (!ideal.length && rest.length) return "Идеальных совпадений (90+) нет — можно посмотреть менее подходящие варианты.";
+    if (!ideal.length && !rest.length) return "РџРѕРїСЂРѕР±СѓР№С‚Рµ СЂР°СЃС€РёСЂРёС‚СЊ СѓСЃР»РѕРІРёСЏ РёР»Рё СЃРјРµРЅРёС‚СЊ С†РІРµС‚РѕРІСѓСЋ РіСЂСѓРїРїСѓ.";
+    if (!ideal.length && rest.length) return "РРґРµР°Р»СЊРЅС‹С… СЃРѕРІРїР°РґРµРЅРёР№ (90+) РЅРµС‚ вЂ” РјРѕР¶РЅРѕ РїРѕСЃРјРѕС‚СЂРµС‚СЊ РјРµРЅРµРµ РїРѕРґС…РѕРґСЏС‰РёРµ РІР°СЂРёР°РЅС‚С‹.";
     const topScore = Math.max(...ideal.map((p) => p.score));
     const tied = ideal.filter((p) => p.score === topScore).sort((a, b) => a.nameRu.localeCompare(b.nameRu, "ru"));
     let lead =
       tied.length === 1
-        ? `Лучший вариант: ${tied[0].nameRu}, ${topScore} баллов.`
-        : `Лучшие варианты (${topScore} баллов): ${tied.slice(0, 3).map((p) => p.nameRu).join(", ")}${tied.length > 3 ? " и другие" : ""}.`;
-    if (expanded && rest.length) lead += ` Также показано ${rest.length} с оценкой ниже 90.`;
-    else if (rest.length) lead += ` Ещё ${rest.length} — по кнопке ниже.`;
+        ? `Р›СѓС‡С€РёР№ РІР°СЂРёР°РЅС‚: ${tied[0].nameRu}, ${topScore} Р±Р°Р»Р»РѕРІ.`
+        : `Р›СѓС‡С€РёРµ РІР°СЂРёР°РЅС‚С‹ (${topScore} Р±Р°Р»Р»РѕРІ): ${tied.slice(0, 3).map((p) => p.nameRu).join(", ")}${tied.length > 3 ? " Рё РґСЂСѓРіРёРµ" : ""}.`;
+    if (expanded && rest.length) lead += ` РўР°РєР¶Рµ РїРѕРєР°Р·Р°РЅРѕ ${rest.length} СЃ РѕС†РµРЅРєРѕР№ РЅРёР¶Рµ 90.`;
+    else if (rest.length) lead += ` Р•С‰С‘ ${rest.length} вЂ” РїРѕ РєРЅРѕРїРєРµ РЅРёР¶Рµ.`;
     return lead;
   }
 
@@ -342,23 +342,23 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     $("shownCount").textContent = display.length;
 
     if (searchMode) {
-      $("resultTitle").textContent = display.length ? `Найдено: ${display.length}` : "Ничего не найдено";
+      $("resultTitle").textContent = display.length ? `РќР°Р№РґРµРЅРѕ: ${display.length}` : "РќРёС‡РµРіРѕ РЅРµ РЅР°Р№РґРµРЅРѕ";
     } else if (browseMode) {
-      $("resultTitle").textContent = `Каталог: ${display.length}`;
+      $("resultTitle").textContent = `РљР°С‚Р°Р»РѕРі: ${display.length}`;
     } else if (ideal.length) {
       $("resultTitle").textContent = showLessSuitable && rest.length
-        ? `Показано: ${display.length} (${ideal.length} идеальных)`
-        : `Идеально: ${ideal.length}`;
+        ? `РџРѕРєР°Р·Р°РЅРѕ: ${display.length} (${ideal.length} РёРґРµР°Р»СЊРЅС‹С…)`
+        : `РРґРµР°Р»СЊРЅРѕ: ${ideal.length}`;
     } else {
-      $("resultTitle").textContent = rest.length ? "Идеальных совпадений нет" : `Найдено: 0 из ${PLANTS.length}`;
+      $("resultTitle").textContent = rest.length ? "РРґРµР°Р»СЊРЅС‹С… СЃРѕРІРїР°РґРµРЅРёР№ РЅРµС‚" : `РќР°Р№РґРµРЅРѕ: 0 РёР· ${PLANTS.length}`;
     }
 
     if (searchMode) {
       $("resultSubtitle").textContent = display.length
-        ? `По запросу «${$("q").value.trim()}» — сортировка по совпадению.`
-        : "Попробуйте другое название или сбросьте фильтры.";
+        ? `РџРѕ Р·Р°РїСЂРѕСЃСѓ В«${$("q").value.trim()}В» вЂ” СЃРѕСЂС‚РёСЂРѕРІРєР° РїРѕ СЃРѕРІРїР°РґРµРЅРёСЋ.`
+        : "РџРѕРїСЂРѕР±СѓР№С‚Рµ РґСЂСѓРіРѕРµ РЅР°Р·РІР°РЅРёРµ РёР»Рё СЃР±СЂРѕСЃСЊС‚Рµ С„РёР»СЊС‚СЂС‹.";
     } else if (browseMode) {
-      $("resultSubtitle").textContent = "Задайте параметры участка слева — список сузится до лучших совпадений.";
+      $("resultSubtitle").textContent = "Р—Р°РґР°Р№С‚Рµ РїР°СЂР°РјРµС‚СЂС‹ СѓС‡Р°СЃС‚РєР° СЃР»РµРІР° вЂ” СЃРїРёСЃРѕРє СЃСѓР·РёС‚СЃСЏ РґРѕ Р»СѓС‡С€РёС… СЃРѕРІРїР°РґРµРЅРёР№.";
     } else {
       $("resultSubtitle").textContent = topResultsSubtitle(ideal, rest, showLessSuitable);
     }
@@ -369,10 +369,10 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     if (rest.length && !searchMode && !browseMode) {
       expandEl.hidden = false;
       if (showLessSuitable) {
-        expandBtn.textContent = "Скрыть менее подходящие растения";
-        expandNote.textContent = `Дополнительно показано ${rest.length} с оценкой 50–89.`;
+        expandBtn.textContent = "РЎРєСЂС‹С‚СЊ РјРµРЅРµРµ РїРѕРґС…РѕРґСЏС‰РёРµ СЂР°СЃС‚РµРЅРёСЏ";
+        expandNote.textContent = `Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅРѕ РїРѕРєР°Р·Р°РЅРѕ ${rest.length} СЃ РѕС†РµРЅРєРѕР№ 50вЂ“89.`;
       } else {
-        expandBtn.textContent = `Показать менее подходящие растения (${rest.length})`;
+        expandBtn.textContent = `РџРѕРєР°Р·Р°С‚СЊ РјРµРЅРµРµ РїРѕРґС…РѕРґСЏС‰РёРµ СЂР°СЃС‚РµРЅРёСЏ (${rest.length})`;
         expandNote.textContent = "";
       }
     } else {
@@ -382,10 +382,10 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     const emptyEl = $("empty");
     if (!display.length) {
       emptyEl.style.display = "block";
-      emptyEl.querySelector("h2").textContent = ideal.length ? "Ничего не найдено" : "Идеальных совпадений нет";
+      emptyEl.querySelector("h2").textContent = ideal.length ? "РќРёС‡РµРіРѕ РЅРµ РЅР°Р№РґРµРЅРѕ" : "РРґРµР°Р»СЊРЅС‹С… СЃРѕРІРїР°РґРµРЅРёР№ РЅРµС‚";
       emptyEl.querySelector("p").textContent = rest.length
-        ? "Ослабьте фильтры или нажмите кнопку ниже, чтобы увидеть менее подходящие варианты."
-        : "Ослабьте фильтр по цвету или измените параметры участка.";
+        ? "РћСЃР»Р°Р±СЊС‚Рµ С„РёР»СЊС‚СЂС‹ РёР»Рё РЅР°Р¶РјРёС‚Рµ РєРЅРѕРїРєСѓ РЅРёР¶Рµ, С‡С‚РѕР±С‹ СѓРІРёРґРµС‚СЊ РјРµРЅРµРµ РїРѕРґС…РѕРґСЏС‰РёРµ РІР°СЂРёР°РЅС‚С‹."
+        : "РћСЃР»Р°Р±СЊС‚Рµ С„РёР»СЊС‚СЂ РїРѕ С†РІРµС‚Сѓ РёР»Рё РёР·РјРµРЅРёС‚Рµ РїР°СЂР°РјРµС‚СЂС‹ СѓС‡Р°СЃС‚РєР°.";
     } else {
       emptyEl.style.display = "none";
     }
@@ -399,7 +399,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     $("compareGrid").innerHTML = chosen
       .map(
         (p) =>
-          `<div class="compareBox"><b>${esc(p.nameRu)}</b><p>Цвет: ${esc(p.colorLabel)}<br>Солнце: ${esc(sunLabel(p.sunR))}<br>Высота: ${esc(p.height)} см<br>Цветение: ${esc(p.bloomNote)}</p></div>`
+          `<div class="compareBox"><b>${esc(p.nameRu)}</b><p>Р¦РІРµС‚: ${esc(p.colorLabel)}<br>РЎРѕР»РЅС†Рµ: ${esc(sunLabel(p.sunR))}<br>Р’С‹СЃРѕС‚Р°: ${esc(p.height)} СЃРј<br>Р¦РІРµС‚РµРЅРёРµ: ${esc(p.bloomNote)}</p></div>`
       )
       .join("");
   }
@@ -447,12 +447,12 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     if (sunEl) {
       sunEl.textContent = sunTouched && $("sun").value !== ""
         ? GARDEN_SUN_LABELS[+ $("sun").value] || $("sun").value
-        : "не указано";
+        : "РЅРµ СѓРєР°Р·Р°РЅРѕ";
     }
     if (heightEl) {
       heightEl.textContent = heightTouched && $("height").value !== ""
         ? Number($("height").value).toLocaleString("ru-RU")
-        : "не указано";
+        : "РЅРµ СѓРєР°Р·Р°РЅРѕ";
     }
     if (bloomEl) bloomEl.textContent = bloomSelectionLabel(getBloomMonths());
   }
@@ -474,7 +474,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
   }
 
   function colorSelectionLabel(colors) {
-    if (!colors.length) return "все группы";
+    if (!colors.length) return "РІСЃРµ РіСЂСѓРїРїС‹";
     if (colors.length === 1) return GARDEN_COLOR_LABELS[colors[0]] || colors[0];
     return colors.map((c) => GARDEN_COLOR_LABELS[c] || c).join(", ");
   }
@@ -484,8 +484,8 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     if (!el) return;
     const colors = getSelectedColors();
     el.textContent = colors.length
-      ? `Выбрано: ${colorSelectionLabel(colors)}`
-      : "Не выбрано — показываются все группы";
+      ? `Р’С‹Р±СЂР°РЅРѕ: ${colorSelectionLabel(colors)}`
+      : "РќРµ РІС‹Р±СЂР°РЅРѕ вЂ” РїРѕРєР°Р·С‹РІР°СЋС‚СЃСЏ РІСЃРµ РіСЂСѓРїРїС‹";
   }
 
   function buildColorGroups() {
@@ -583,14 +583,14 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
   function runAudit() {
     const issues = [];
     PLANTS.forEach((p) => {
-      if (p.sunR.min < 1 || p.sunR.max > 5) issues.push(`${p.nameRu}: проверьте солнце «${p.sun}»`);
-      if (!p.nameRu) issues.push(`${p.id}: нет названия`);
-      if (!p.color) issues.push(`${p.nameRu}: нет цветовой группы`);
+      if (p.sunR.min < 1 || p.sunR.max > 5) issues.push(`${p.nameRu}: РїСЂРѕРІРµСЂСЊС‚Рµ СЃРѕР»РЅС†Рµ В«${p.sun}В»`);
+      if (!p.nameRu) issues.push(`${p.id}: РЅРµС‚ РЅР°Р·РІР°РЅРёСЏ`);
+      if (!p.color) issues.push(`${p.nameRu}: РЅРµС‚ С†РІРµС‚РѕРІРѕР№ РіСЂСѓРїРїС‹`);
     });
-    $("auditSummary").textContent = `Проверено ${PLANTS.length} записей. Замечаний: ${issues.length}.`;
+    $("auditSummary").textContent = `РџСЂРѕРІРµСЂРµРЅРѕ ${PLANTS.length} Р·Р°РїРёСЃРµР№. Р—Р°РјРµС‡Р°РЅРёР№: ${issues.length}.`;
     $("auditList").innerHTML =
-      (issues.slice(0, 8).map((x) => `<li>${esc(x)}</li>`).join("") || "<li>Критичных замечаний не найдено.</li>") +
-      (issues.length > 8 ? `<li>Ещё ${issues.length - 8} замечаний скрыто.</li>` : "");
+      (issues.slice(0, 8).map((x) => `<li>${esc(x)}</li>`).join("") || "<li>РљСЂРёС‚РёС‡РЅС‹С… Р·Р°РјРµС‡Р°РЅРёР№ РЅРµ РЅР°Р№РґРµРЅРѕ.</li>") +
+      (issues.length > 8 ? `<li>Р•С‰С‘ ${issues.length - 8} Р·Р°РјРµС‡Р°РЅРёР№ СЃРєСЂС‹С‚Рѕ.</li>` : "");
   }
 
   function init() {
@@ -634,7 +634,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
         s.has(id) ? s.delete(id) : s.add(id);
         saveFavs(s);
         render();
-        toast(s.has(id) ? "Добавлено в избранное" : "Убрано из избранного");
+        toast(s.has(id) ? "Р”РѕР±Р°РІР»РµРЅРѕ РІ РёР·Р±СЂР°РЅРЅРѕРµ" : "РЈР±СЂР°РЅРѕ РёР· РёР·Р±СЂР°РЅРЅРѕРіРѕ");
       }
     });
 
@@ -643,7 +643,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
         const id = +e.target.dataset.compare;
         if (e.target.checked && compareIds.size >= 3) {
           e.target.checked = false;
-          toast("Можно сравнить до 3 растений");
+          toast("РњРѕР¶РЅРѕ СЃСЂР°РІРЅРёС‚СЊ РґРѕ 3 СЂР°СЃС‚РµРЅРёР№");
           return;
         }
         e.target.checked ? compareIds.add(id) : compareIds.delete(id);
@@ -654,11 +654,11 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     $("copyList").addEventListener("click", async () => {
       const text = lastResults
         .slice(0, 25)
-        .map((p, i) => `${i + 1}. ${p.nameRu} (${p.colorLabel}) — ${p.score} баллов; ${p.bloomNote}`)
+        .map((p, i) => `${i + 1}. ${p.nameRu} (${p.colorLabel}) вЂ” ${p.score} Р±Р°Р»Р»РѕРІ; ${p.bloomNote}`)
         .join("\n");
       try {
         await navigator.clipboard.writeText(text);
-        toast("Текст скопирован");
+        toast("РўРµРєСЃС‚ СЃРєРѕРїРёСЂРѕРІР°РЅ");
       } catch {
         alert(text);
       }
@@ -666,7 +666,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
 
     $("exportCsv").addEventListener("click", () => {
       const rows = [
-        ["Название", "Цвет", "Баллы", "Солнце", "Высота см", "Цветение", "Примечание"],
+        ["РќР°Р·РІР°РЅРёРµ", "Р¦РІРµС‚", "Р‘Р°Р»Р»С‹", "РЎРѕР»РЅС†Рµ", "Р’С‹СЃРѕС‚Р° СЃРј", "Р¦РІРµС‚РµРЅРёРµ", "РџСЂРёРјРµС‡Р°РЅРёРµ"],
         ...lastResults.map((p) => [p.nameRu, p.colorLabel, p.score, sunLabel(p.sunR), p.height, bloomLabel(p.bloomR), p.bloomNote])
       ];
       const blob = new Blob([csv(rows)], { type: "text/csv;charset=utf-8" });
@@ -697,3 +697,4 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
 })();
+
