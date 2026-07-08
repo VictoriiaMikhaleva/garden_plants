@@ -696,21 +696,25 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 68,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Мускари",
     "height": "10–30",
     "bloom": "4–4",
     "sun": "2–5",
-    "bloomNote": "апрель"
+    "bloomNote": "апрель",
+    "photo": "assets/plants/68.webp",
+    "photoSource": "custom"
   },
   {
     "id": 69,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Медуница",
     "height": "10–50",
     "bloom": "5–5",
     "sun": "1–3",
-    "bloomNote": "середина мая"
+    "bloomNote": "середина мая",
+    "photo": "assets/plants/69.webp",
+    "photoSource": "custom"
   },
   {
     "id": 70,
@@ -719,70 +723,86 @@ const GARDEN_RAW_PLANTS = [
     "height": "10–50",
     "bloom": "5–6",
     "sun": "1–3",
-    "bloomNote": "май — середина июня"
+    "bloomNote": "май — середина июня",
+    "photo": "assets/plants/70.webp",
+    "photoSource": "custom"
   },
   {
     "id": 71,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Печеночница",
     "height": "15–25",
     "bloom": "4–5",
     "sun": "1–5",
-    "bloomNote": "апрель — май"
+    "bloomNote": "апрель — май",
+    "photo": "assets/plants/71.webp",
+    "photoSource": "custom"
   },
   {
     "id": 72,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Пролеска",
     "height": "30–35",
     "bloom": "4–5",
     "sun": "2–5",
-    "bloomNote": "конец апреля — май"
+    "bloomNote": "конец апреля — май",
+    "photo": "assets/plants/72.webp",
+    "photoSource": "custom"
   },
   {
     "id": 73,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Платикодон",
     "height": "15–60",
     "bloom": "7–8",
     "sun": "2–5",
-    "bloomNote": "июль — август"
+    "bloomNote": "июль — август",
+    "photo": "assets/plants/73.webp",
+    "photoSource": "custom"
   },
   {
     "id": 74,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Синюха голубая",
     "height": "60–80",
     "bloom": "6–7",
     "sun": "2–5",
-    "bloomNote": "июнь — июль"
+    "bloomNote": "июнь — июль",
+    "photo": "assets/plants/74.webp",
+    "photoSource": "custom"
   },
   {
     "id": 75,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Флокс растопыренный",
     "height": "25–30",
     "bloom": "5–6",
     "sun": "2–5",
-    "bloomNote": "середина мая — июнь"
+    "bloomNote": "середина мая — июнь",
+    "photo": "assets/plants/75.webp",
+    "photoSource": "custom"
   },
   {
     "id": 76,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Хионодокса Люцилии",
     "height": "10–20",
     "bloom": "3–4",
     "sun": "2–5",
-    "bloomNote": "март — апрель"
+    "bloomNote": "март — апрель",
+    "photo": "assets/plants/76.webp",
+    "photoSource": "custom"
   },
   {
     "id": 77,
-    "color": "yellow",
+    "color": "sky",
     "nameRu": "Шалфей луговой",
     "height": "30–60",
     "bloom": "6–9",
     "sun": "4–5",
-    "bloomNote": "июнь — сентябрь"
+    "bloomNote": "июнь — сентябрь",
+    "photo": "assets/plants/77.webp",
+    "photoSource": "custom"
   },
   {
     "id": 78,
