@@ -593,7 +593,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "20–30",
     "bloom": "6–10",
     "sun": "4–5",
-    "bloomNote": "июнь — до заморозков"
+    "bloomNote": "июнь — до заморозков",
+    "photo": "assets/plants/58.webp",
+    "photoSource": "custom"
   },
   {
     "id": 59,
