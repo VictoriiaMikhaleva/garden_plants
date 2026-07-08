@@ -686,11 +686,11 @@ const GARDEN_RAW_PLANTS = [
   {
     "id": 67,
     "color": "sky",
-    "nameRu": "˸�",
-    "height": "40�60",
-    "bloom": "6�8",
-    "sun": "4�5",
-    "bloomNote": "�������� ���� � �������� �������",
+    "nameRu": "Лён",
+    "height": "40–60",
+    "bloom": "6–8",
+    "sun": "4–5",
+    "bloomNote": "середина июня — середина августа",
     "photo": "assets/plants/67.webp",
     "photoSource": "custom"
   },
