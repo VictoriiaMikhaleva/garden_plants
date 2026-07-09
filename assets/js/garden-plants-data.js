@@ -808,7 +808,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 78,
-    "color": "orange",
+    "color": "yellow",
     "nameRu": "Бархатцы",
     "height": "20–30",
     "bloom": "5–6",
@@ -819,7 +819,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 79,
-    "color": "orange",
+    "color": "yellow",
     "nameRu": "Виола",
     "height": "15–30",
     "bloom": "3–5",
@@ -830,7 +830,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 80,
-    "color": "orange",
+    "color": "yellow",
     "nameRu": "Тюльпан",
     "height": "40–60",
     "bloom": "4–5",
@@ -841,7 +841,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 81,
-    "color": "orange",
+    "color": "yellow",
     "nameRu": "Нарцисс",
     "height": "15–50",
     "bloom": "4–5",
@@ -852,7 +852,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 82,
-    "color": "orange",
+    "color": "yellow",
     "nameRu": "Жёлтые ромашки",
     "height": "25–100",
     "bloom": "4–10",
@@ -863,7 +863,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 83,
-    "color": "orange",
+    "color": "yellow",
     "nameRu": "Лилия",
     "height": "40–150",
     "bloom": "7–8",
@@ -874,7 +874,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 84,
-    "color": "orange",
+    "color": "yellow",
     "nameRu": "Хризантема",
     "height": "35–70",
     "bloom": "8–10",
@@ -885,7 +885,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 85,
-    "color": "orange",
+    "color": "yellow",
     "nameRu": "Астра",
     "height": "30–70",
     "bloom": "9–11",
@@ -896,7 +896,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 86,
-    "color": "orange",
+    "color": "yellow",
     "nameRu": "Гладиолус",
     "height": "80–150",
     "bloom": "7–8",
@@ -907,7 +907,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 87,
-    "color": "orange",
+    "color": "yellow",
     "nameRu": "Ирис",
     "height": "120–180",
     "bloom": "5–6",
@@ -918,7 +918,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 88,
-    "color": "orange",
+    "color": "yellow",
     "nameRu": "Гиацинт",
     "height": "10–50",
     "bloom": "3–5",
@@ -929,7 +929,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 89,
-    "color": "orange",
+    "color": "yellow",
     "nameRu": "Дороникум",
     "height": "30–50",
     "bloom": "6–7",
@@ -940,7 +940,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 90,
-    "color": "orange",
+    "color": "yellow",
     "nameRu": "Пион",
     "height": "60–100",
     "bloom": "6–7",
