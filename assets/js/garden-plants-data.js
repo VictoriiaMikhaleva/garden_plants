@@ -1055,7 +1055,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "15–30",
     "bloom": "4–6",
     "sun": "2–5",
-    "bloomNote": "апрель — июнь"
+    "bloomNote": "апрель — июнь",
+    "photo": "assets/plants/100.webp",
+    "photoSource": "custom"
   },
   {
     "id": 101,
@@ -1064,7 +1066,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "60–80",
     "bloom": "6–10",
     "sun": "4–5",
-    "bloomNote": "июнь — до морозов"
+    "bloomNote": "июнь — до морозов",
+    "photo": "assets/plants/101.webp",
+    "photoSource": "custom"
   },
   {
     "id": 102,
@@ -1073,7 +1077,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "50–150",
     "bloom": "7–8",
     "sun": "4–5",
-    "bloomNote": "июль — август"
+    "bloomNote": "июль — август",
+    "photo": "assets/plants/102.webp",
+    "photoSource": "custom"
   },
   {
     "id": 103,
@@ -1082,7 +1088,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "35–45",
     "bloom": "6–7",
     "sun": "1–3",
-    "bloomNote": "июнь — июль"
+    "bloomNote": "июнь — июль",
+    "photo": "assets/plants/103.webp",
+    "photoSource": "custom"
   },
   {
     "id": 104,
@@ -1091,7 +1099,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "25–40",
     "bloom": "6–8",
     "sun": "1–3",
-    "bloomNote": "июнь — август"
+    "bloomNote": "июнь — август",
+    "photo": "assets/plants/104.webp",
+    "photoSource": "custom"
   },
   {
     "id": 105,
@@ -1100,7 +1110,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "80–100",
     "bloom": "6–6",
     "sun": "4–5",
-    "bloomNote": "июнь"
+    "bloomNote": "июнь",
+    "photo": "assets/plants/105.webp",
+    "photoSource": "custom"
   },
   {
     "id": 106,
@@ -1109,7 +1121,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "50–70",
     "bloom": "6–8",
     "sun": "2–5",
-    "bloomNote": "июнь — август"
+    "bloomNote": "июнь — август",
+    "photo": "assets/plants/106.webp",
+    "photoSource": "custom"
   },
   {
     "id": 107,
@@ -1118,7 +1132,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "60–90",
     "bloom": "7–8",
     "sun": "2–5",
-    "bloomNote": "конец июля — август"
+    "bloomNote": "конец июля — август",
+    "photo": "assets/plants/107.webp",
+    "photoSource": "custom"
   },
   {
     "id": 108,
@@ -1127,7 +1143,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "60–70",
     "bloom": "9–10",
     "sun": "4–5",
-    "bloomNote": "сентябрь — октябрь"
+    "bloomNote": "сентябрь — октябрь",
+    "photo": "assets/plants/108.webp",
+    "photoSource": "custom"
   },
   {
     "id": 109,
@@ -1136,7 +1154,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "20–30",
     "bloom": "8–9",
     "sun": "4–5",
-    "bloomNote": "август — сентябрь"
+    "bloomNote": "август — сентябрь",
+    "photo": "assets/plants/109.webp",
+    "photoSource": "custom"
   },
   {
     "id": 110,
@@ -1145,7 +1165,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "80–100",
     "bloom": "6–7",
     "sun": "2–5",
-    "bloomNote": "июнь — июль"
+    "bloomNote": "июнь — июль",
+    "photo": "assets/plants/110.webp",
+    "photoSource": "custom"
   },
   {
     "id": 111,
@@ -1154,7 +1176,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "50–60",
     "bloom": "6–8",
     "sun": "2–5",
-    "bloomNote": "июнь — август"
+    "bloomNote": "июнь — август",
+    "photo": "assets/plants/111.webp",
+    "photoSource": "custom"
   },
   {
     "id": 112,
@@ -1163,7 +1187,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "35–70",
     "bloom": "8–9",
     "sun": "4–5",
-    "bloomNote": "август — сентябрь"
+    "bloomNote": "август — сентябрь",
+    "photo": "assets/plants/112.webp",
+    "photoSource": "custom"
   },
   {
     "id": 113,
@@ -1172,7 +1198,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "60–120",
     "bloom": "6–9",
     "sun": "2–5",
-    "bloomNote": "июнь — сентябрь"
+    "bloomNote": "июнь — сентябрь",
+    "photo": "assets/plants/113.webp",
+    "photoSource": "custom"
   },
   {
     "id": 114,
@@ -1181,7 +1209,9 @@ const GARDEN_RAW_PLANTS = [
     "height": "20–100",
     "bloom": "5–6",
     "sun": "4–5",
-    "bloomNote": "май — июнь"
+    "bloomNote": "май — июнь",
+    "photo": "assets/plants/114.webp",
+    "photoSource": "custom"
   },
   {
     "id": 115,
