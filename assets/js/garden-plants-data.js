@@ -951,7 +951,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 91,
-    "color": "red-orange",
+    "color": "orange",
     "nameRu": "Бархатцы",
     "height": "20–30",
     "bloom": "5–6",
@@ -962,7 +962,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 92,
-    "color": "red-orange",
+    "color": "orange",
     "nameRu": "Календула",
     "height": "15–30",
     "bloom": "6–9",
@@ -973,7 +973,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 93,
-    "color": "red-orange",
+    "color": "orange",
     "nameRu": "Эхинацея",
     "height": "100–150",
     "bloom": "7–10",
@@ -984,7 +984,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 94,
-    "color": "red-orange",
+    "color": "orange",
     "nameRu": "Настурция",
     "height": "20–30",
     "bloom": "7–8",
@@ -995,7 +995,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 95,
-    "color": "red-orange",
+    "color": "orange",
     "nameRu": "Гайлардия",
     "height": "35–75",
     "bloom": "6–10",
@@ -1006,7 +1006,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 96,
-    "color": "red-orange",
+    "color": "orange",
     "nameRu": "Тюльпан",
     "height": "40–60",
     "bloom": "4–5",
@@ -1017,7 +1017,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 97,
-    "color": "red-orange",
+    "color": "orange",
     "nameRu": "Хризантема",
     "height": "35–70",
     "bloom": "8–10",
@@ -1028,7 +1028,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 98,
-    "color": "red-orange",
+    "color": "orange",
     "nameRu": "Рудбекия",
     "height": "50–60",
     "bloom": "7–10",
@@ -1039,7 +1039,7 @@ const GARDEN_RAW_PLANTS = [
   },
   {
     "id": 99,
-    "color": "red-orange",
+    "color": "orange",
     "nameRu": "Роза",
     "height": "20–100",
     "bloom": "5–7",
