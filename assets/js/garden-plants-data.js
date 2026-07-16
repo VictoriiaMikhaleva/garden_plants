@@ -1352,10 +1352,10 @@ const GARDEN_RAW_PLANTS = [
     "id": 130,
     "color": "pink",
     "nameRu": "Анемона японская",
-    "height": "10–20",
-    "bloom": "5–6",
+    "height": "80–100",
+    "bloom": "8–9",
     "sun": "1–2",
-    "bloomNote": "май — начало июня"
+    "bloomNote": "август — сентябрь"
   },
   {
     "id": 131,
