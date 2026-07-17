@@ -88,10 +88,11 @@
   }
 
   function setBloomMonths(months) {
-    const set = new Set(months);
+    const set = new Set((months || []).map(Number));
     document.querySelectorAll(".bloom-month").forEach((b) => {
-      b.classList.toggle("is-active", set.has(+b.dataset.month));
-      b.setAttribute("aria-pressed", set.has(+b.dataset.month) ? "true" : "false");
+      const on = set.has(Number(b.dataset.month));
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
     });
   }
 
@@ -142,8 +143,10 @@
     const reasons = [];
     const tips = [];
 
-    const s = f.sun == null ? { points: 0, ok: true, delta: 0 } : distScore(f.sun, p.sunR, 30, 24, 0.45);
-    const h = f.height == null ? { points: 0, ok: true, delta: 0 } : distScore(f.height, p.heightR, 18, 24, 4);
+    // Незаданные параметры дают полный балл — иначе профили только по цветению
+    // (весна/лето/осень) не набирают 90+ и выглядят «сломанными».
+    const s = f.sun == null ? { points: 30, ok: true, delta: 0 } : distScore(f.sun, p.sunR, 30, 24, 0.45);
+    const h = f.height == null ? { points: 18, ok: true, delta: 0 } : distScore(f.height, p.heightR, 18, 24, 4);
     const b = bloomScore(f.bloomMonths, p.bloomR);
 
     score += s.points + h.points + b.points;
