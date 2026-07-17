@@ -61,7 +61,7 @@
     <div class="catalog-stat"><b id="totalCount">—</b><span>в каталоге</span></div>
     <div class="catalog-stat"><b id="shownCount">—</b><span>по критериям</span></div>
     <div class="catalog-stat"><b id="favCount">0</b><span>в избранном</span></div>
-    <div class="catalog-stat"><b>8</b><span>цветовых групп</span></div>
+    <div class="catalog-stat"><b id="colorGroupCount">—</b><span>цветовых групп</span></div>
   </div>
   <div class="catalog-hero__quick">
     <p class="catalog-hero__quick-label">Быстрые профили участка</p>
@@ -96,6 +96,12 @@
         </span>
         <span>Летнее цветение</span>
       </button>
+      <button class="catalog-quick-btn" type="button" data-profile="autumnBloom">
+        <span class="catalog-quick-btn__icon-wrap" aria-hidden="true">
+          <img class="catalog-quick-btn__icon" src="assets/icons/garden/autumn-bloom.svg" alt="" width="40" height="40" decoding="async">
+        </span>
+        <span>Осеннее цветение</span>
+      </button>
     </div>
   </div>
 </section>
@@ -106,7 +112,7 @@
 <header class="filters-form__head">
 <div class="filters-form__title-row">
 <span class="filters-form__badge" aria-hidden="true">◈</span>
-<h2 class="filters-form__title">Параметры участка</h2>
+<h2 class="filters-form__title">Подбор по параметрам</h2>
 </div>
 <p class="filters-form__subtitle">Подбор в реальном времени — список обновляется сразу</p>
 </header>
@@ -115,13 +121,9 @@
 <span class="filters-search__icon" aria-hidden="true">⌕</span>
 <input id="q" type="search" class="filters-search__input" placeholder="Пион, хоста, астра…" autocomplete="off">
 </div>
-<nav class="filters-tabs" role="tablist" aria-label="Разделы параметров">
-<button type="button" class="filters-tab is-active" role="tab" aria-selected="true" aria-controls="filtersPaneSite" id="filtersTabSite" data-filters-tab="site">Участок</button>
-<button type="button" class="filters-tab" role="tab" aria-selected="false" aria-controls="filtersPaneCatalog" id="filtersTabCatalog" data-filters-tab="catalog" tabindex="-1">Каталог</button>
-</nav>
 <div class="filters-panes">
-<fieldset class="filters-pane is-active" id="filtersPaneSite" role="tabpanel" aria-labelledby="filtersTabSite">
-<legend class="visually-hidden">Участок</legend>
+<fieldset class="filters-pane is-active" id="filtersPaneSite">
+<legend class="visually-hidden">Подбор по параметрам</legend>
 <input type="hidden" id="profile" value="custom">
 <div class="param-grid">
 <div class="param-card" data-param="sun">
@@ -175,9 +177,6 @@
 </div>
 </div>
 </div>
-</fieldset>
-<fieldset class="filters-pane" id="filtersPaneCatalog" role="tabpanel" aria-labelledby="filtersTabCatalog" hidden>
-<legend class="visually-hidden">Каталог</legend>
 <div class="filters-field">
 <label class="filters-label" id="colorLabel">Цветовая группа</label>
 <p class="filters-hint" id="colorHint">Не выбрано — показываются все группы</p>

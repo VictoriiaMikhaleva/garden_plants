@@ -30,7 +30,6 @@ const COLOR_QUERY = {
   purple: "purple flower",
   yellow: "yellow flower",
   orange: "orange flower",
-  "red-orange": "orange red flower",
   red: "red flower",
   pink: "pink flower"
 };

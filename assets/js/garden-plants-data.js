@@ -1485,7 +1485,6 @@ const GARDEN_COLOR_LABELS = {
   purple: "Фиолетовые",
   yellow: "Жёлтые",
   orange: "Оранжевые",
-  "red-orange": "Красно-оранжевые",
   red: "Красные",
   pink: "Розовые"
 };

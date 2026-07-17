@@ -433,14 +433,7 @@
 }
 
 .catalog-page .filters-tabs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.35rem;
-  margin: 0.75rem 1.15rem 0;
-  padding: 0.25rem;
-  background: #eef3ea;
-  border: 1px solid rgba(23, 32, 24, 0.05);
-  border-radius: 14px;
+  display: none;
 }
 
 .catalog-page .filters-tab {

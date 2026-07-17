@@ -13,7 +13,7 @@
   };
 
   const BLOOM_MONTH_SHORT = ["", "янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
-  const COLOR_KEYS = ["white", "sky", "blue", "purple", "yellow", "orange", "red-orange", "red", "pink"];
+  const COLOR_KEYS = ["white", "sky", "blue", "purple", "yellow", "orange", "red", "pink"];
 
   const $ = (id) => document.getElementById(id);
   let showLessSuitable = false;
@@ -227,7 +227,7 @@
   }
 
   function colorIcon(color) {
-    return ({ white: "⚪", sky: "🔵", blue: "🩵", purple: "🟣", yellow: "🟡", orange: "🟠", "red-orange": "🔶", red: "🔴", pink: "🌸" }[color] || "🌿");
+    return ({ white: "⚪", sky: "🔵", blue: "🩵", purple: "🟣", yellow: "🟡", orange: "🟠", red: "🔴", pink: "🌸" }[color] || "🌿");
   }
 
   function pct(x, min, max) {
@@ -413,14 +413,25 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
   function applyProfile(name) {
     const p = PROFILES[name];
     if (!p) return;
-    ["sun", "height"].forEach((k) => {
-      if (p[k] != null) {
-        $(k).value = p[k];
-        $(k + "Range").value = p[k];
-        if (k === "sun") sunTouched = true;
-        if (k === "height") heightTouched = true;
-      }
-    });
+    // Профили не должны наслаиваться: сначала сброс параметров участка
+    sunTouched = false;
+    heightTouched = false;
+    $("sun").value = "";
+    $("height").value = "";
+    $("sunRange").value = "3";
+    $("heightRange").value = "60";
+    setBloomMonths([]);
+
+    if (p.sun != null) {
+      $("sun").value = p.sun;
+      $("sunRange").value = p.sun;
+      sunTouched = true;
+    }
+    if (p.height != null) {
+      $("height").value = p.height;
+      $("heightRange").value = p.height;
+      heightTouched = true;
+    }
     if (p.bloomMonths) setBloomMonths(p.bloomMonths);
     $("profile").value = name;
     updateParamOutputs();
@@ -539,24 +550,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
   }
 
   function wireFilterTabs() {
-    const tabs = document.querySelectorAll("[data-filters-tab]");
-    const panes = document.querySelectorAll(".filters-pane");
-    tabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        const id = tab.dataset.filtersTab;
-        tabs.forEach((t) => {
-          const on = t === tab;
-          t.classList.toggle("is-active", on);
-          t.setAttribute("aria-selected", on ? "true" : "false");
-          t.tabIndex = on ? 0 : -1;
-        });
-        panes.forEach((pane) => {
-          const on = pane.id === "filtersPaneSite" ? id === "site" : id === "catalog";
-          pane.classList.toggle("is-active", on);
-          pane.hidden = !on;
-        });
-      });
-    });
+    /* вкладки убраны — один столбец «Подбор по параметрам» */
   }
 
   function wireDual(a, b, markTouched) {
@@ -601,6 +595,8 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
 
   function init() {
     $("totalCount").textContent = PLANTS.length;
+    const colorCountEl = $("colorGroupCount");
+    if (colorCountEl) colorCountEl.textContent = COLOR_KEYS.length;
     saveFavs(favs());
     buildBloomMonths();
     buildColorGroups();
