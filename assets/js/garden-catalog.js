@@ -113,6 +113,8 @@
     const userMin = Math.min(...months);
     const userMax = Math.max(...months);
     const d = userMax < plantR.min ? plantR.min - userMax : userMin - plantR.max;
+    // Менее подходящие по цветению — только соседний месяц (±1). Дальше не показываем.
+    if (d > 1) return { points: -200, ok: false, delta: d, far: true };
     return { points: -Math.min(18, d / 0.55), ok: false, delta: d };
   }
 
@@ -169,7 +171,11 @@
       tips.push(f.height < p.heightR.min ? "растение вырастет выше — учтите при планировании ярусов" : "для низкого бордюра лучше подобрать более компактный сорт");
     }
     if (!b.ok) {
-      tips.push("выберите соседние месяцы или расширьте период — растение цветёт в другое время");
+      tips.push(
+        b.far
+          ? "цветение слишком далеко от выбранных месяцев — растение не показывается в подборе"
+          : "выберите соседние месяцы или расширьте период — растение цветёт в другое время"
+      );
     }
 
     if (f.colors.length) {
@@ -244,7 +250,7 @@
     return `<div class="meter"><span>${title}</span><b><span class="valueText">${esc(value)}</span>${unit ? `<span class="unit">${esc(unit.trim())}</span>` : ""}</b>${visual || ""}</div>`;
   }
 
-  const PHOTO_CACHE_V = "20260713b";
+  const PHOTO_CACHE_V = "20260717a";
 
   function photo(p) {
     const src = p.photo ? `${p.photo}?v=${PHOTO_CACHE_V}` : "";
