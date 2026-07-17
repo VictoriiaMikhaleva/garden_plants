@@ -253,7 +253,7 @@
     return `<div class="meter"><span>${title}</span><b><span class="valueText">${esc(value)}</span>${unit ? `<span class="unit">${esc(unit.trim())}</span>` : ""}</b>${visual || ""}</div>`;
   }
 
-  const PHOTO_CACHE_V = "20260717a";
+  const PHOTO_CACHE_V = "20260717b";
 
   function photo(p) {
     const src = p.photo ? `${p.photo}?v=${PHOTO_CACHE_V}` : "";
