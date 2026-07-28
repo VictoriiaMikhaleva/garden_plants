@@ -22,6 +22,30 @@
   let compareIds = new Set();
   let sunTouched = false;
   let heightTouched = false;
+  let deepLinkPlantId = null;
+  let deepLinkHandled = false;
+
+  const CYR_TO_LAT = {
+    а: "a", б: "b", в: "v", г: "g", д: "d", е: "e", ё: "e", ж: "zh", з: "z",
+    и: "i", й: "y", к: "k", л: "l", м: "m", н: "n", о: "o", п: "p", р: "r",
+    с: "s", т: "t", у: "u", ф: "f", х: "h", ц: "ts", ч: "ch", ш: "sh", щ: "sch",
+    ъ: "", ы: "y", ь: "", э: "e", ю: "yu", я: "ya"
+  };
+
+  function translitRu(s) {
+    return String(s || "")
+      .toLowerCase()
+      .split("")
+      .map((ch) => (Object.prototype.hasOwnProperty.call(CYR_TO_LAT, ch) ? CYR_TO_LAT[ch] : ch))
+      .join("");
+  }
+
+  function plantSlug(s) {
+    return translitRu(s)
+      .replace(/['’«»]/g, "")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  }
 
   function nums(s) {
     return (String(s || "").replace(/[–—]/g, "-").match(/\d+(?:[.,]\d+)?/g) || []).map((x) => +x.replace(",", "."));
@@ -57,7 +81,30 @@
     };
   }
 
-  const PLANTS = GARDEN_RAW_PLANTS.map(normPlant);
+  const PLANTS = (() => {
+    const base = GARDEN_RAW_PLANTS.map(normPlant);
+    const counts = {};
+    base.forEach((p) => {
+      const key = plantSlug(p.nameRu) || `plant-${p.id}`;
+      counts[key] = (counts[key] || 0) + 1;
+    });
+    return base.map((p) => {
+      const key = plantSlug(p.nameRu) || `plant-${p.id}`;
+      const slug = counts[key] > 1 ? `${key}-${p.id}` : key;
+      return { ...p, slug };
+    });
+  })();
+
+  const PLANT_BY_SLUG = Object.fromEntries(PLANTS.map((p) => [p.slug, p]));
+  const PLANT_BY_ID = Object.fromEntries(PLANTS.map((p) => [p.id, p]));
+
+  function resolvePlantFromParams(params) {
+    const slug = (params.get("plant") || "").trim().toLowerCase();
+    const id = params.get("id");
+    if (slug && PLANT_BY_SLUG[slug]) return PLANT_BY_SLUG[slug];
+    if (id != null && id !== "" && PLANT_BY_ID[+id]) return PLANT_BY_ID[+id];
+    return null;
+  }
 
   function within(value, r) {
     return value >= r.min && value <= r.max;
@@ -272,8 +319,9 @@
     const sunV = rangeVisual(p.sunR, f.sun, 1, 5, "");
     const heightV = rangeVisual(p.heightR, f.height, 10, 200, " см");
     const bloomV = bloomRangeVisual(p.bloomR, f.bloomMonths);
+    const hl = deepLinkPlantId === p.id && !deepLinkHandled ? " plant--highlight" : "";
 
-    return `<article class="card plant">
+    return `<article class="card plant${hl}" id="plant-${esc(p.slug)}" data-plant-id="${p.id}" data-plant-slug="${esc(p.slug)}">
 <button class="fav ${fav ? "active" : ""}" type="button" data-fav="${p.id}" aria-label="${fav ? "Убрать из избранного" : "В избранное"}">${fav ? "★" : "☆"}</button>
 ${photo(p)}
 <div class="plantTop"><div><h3>${esc(p.nameRu)}</h3><div class="lat">${esc(p.colorLabel)}</div></div></div>
@@ -344,7 +392,15 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     const rest = arr.filter((p) => p.score < 90);
     const browseMode = !f.q && !siteFiltersActive(f) && !f.colors.length;
     const searchMode = !!f.q;
-    const display = searchMode || browseMode ? arr : showLessSuitable ? [...ideal, ...rest] : ideal;
+    let display = searchMode || browseMode ? arr : showLessSuitable ? [...ideal, ...rest] : ideal;
+
+    // Глубокая ссылка: карточка видна даже вне «идеальных» / при жёстких фильтрах
+    if (deepLinkPlantId != null && !display.some((p) => p.id === deepLinkPlantId)) {
+      const base = PLANT_BY_ID[deepLinkPlantId];
+      if (base) {
+        display = [Object.assign({}, base, explain(base, f)), ...display.filter((p) => p.id !== deepLinkPlantId)];
+      }
+    }
 
     lastResults = display;
     $("cards").innerHTML = display.map(card).join("");
@@ -397,6 +453,19 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
         : "Ослабьте фильтр по цвету или измените параметры участка.";
     } else {
       emptyEl.style.display = "none";
+    }
+
+    if (deepLinkPlantId != null && !deepLinkHandled) {
+      const linked = PLANT_BY_ID[deepLinkPlantId];
+      const el = linked && document.getElementById("plant-" + linked.slug);
+      if (el) {
+        deepLinkHandled = true;
+        requestAnimationFrame(() => {
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+          el.classList.add("plant--highlight");
+          setTimeout(() => el.classList.remove("plant--highlight"), 3200);
+        });
+      }
     }
 
     renderCompare();
@@ -691,7 +760,11 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
       });
     }
 
-    const qp = new URLSearchParams(location.search).get("profile") || localStorage.getItem("gardenfit.quickProfile");
+    const params = new URLSearchParams(location.search);
+    const deep = resolvePlantFromParams(params);
+    if (deep) deepLinkPlantId = deep.id;
+
+    const qp = params.get("profile") || localStorage.getItem("gardenfit.quickProfile");
     if (qp && PROFILES[qp]) applyProfile(qp);
     else {
       $("profile").value = "custom";
