@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110702359', 'ym');
+
+    ym(110702359, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110702359" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2f7d4f">
+<meta name="description" content="Демо-версия подбора уличных растений: 12 позиций из разных цветовых групп для презентации клиентам.">
+<title>Демо · Подбор растений</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<style>
+:root{--bg:#f3f7ef;--card:#fff;--ink:#172018;--muted:#617067;--brand:#2f7d4f;--brand2:#7fb069;--line:#d9e7d4;--soft:#f8fbf5;--danger:#b33a3a;--warn:#b7791f;--ok:#2f7d4f;--blue:#2d6cdf;--shadow:0 16px 40px rgba(24,50,30,.11);--r:24px;color-scheme:light}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:radial-gradient(circle at 10% 0%,#e3f1d8 0,#f3f7ef 38%,#eef5ea 100%);color:var(--ink)}button,input,select,textarea{font:inherit}button{border:0;cursor:pointer}.skip-link{position:absolute;left:-9999px;top:12px;z-index:99;padding:12px 16px;border-radius:14px;background:var(--brand);color:#fff;font-weight:850}.skip-link:focus{left:12px}.wrap{max-width:1280px;margin:0 auto;padding:0 22px}.layout{display:grid;grid-template-columns:380px minmax(0,1fr);gap:20px;align-items:start;padding-bottom:46px}.panel,.card{background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}.filters{position:sticky;top:14px;padding:18px}.filters h2,.results h2{margin:0 0 14px;font-size:23px}.btns{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.btn{border-radius:999px;padding:12px 16px;font-weight:900;background:var(--brand);color:#fff}.btn.secondary{background:#edf5e9;color:#245136;border:1px solid var(--line)}.btn.ghost{background:#fff;color:var(--brand);border:1px solid var(--line)}.btn.small{padding:8px 11px;font-size:13px}.summary{padding:16px 18px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.summary strong{color:var(--brand)}.tabs{display:flex;gap:8px;flex-wrap:wrap}.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 12px;font-size:13px;font-weight:850;color:#314839}.chip.active{background:var(--brand);color:#fff;border-color:var(--brand)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;align-items:stretch}.plant{padding:18px;gap:13px;display:flex;flex-direction:column;position:relative}.plantPhoto{width:100%;aspect-ratio:4/3;border-radius:22px;border:1px solid var(--line);background:linear-gradient(135deg,#eef7e9,#fff);display:grid;place-items:center;overflow:hidden}.plantPhoto.fallback{font-size:54px}.plantTop{padding-right:42px}.plant h3{margin:0;font-size:19px}.lat{font-size:13px;color:var(--muted);margin-top:3px}.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:5px 8px;font-size:12px;font-weight:850}.tag.ok{background:#eaf8ee;color:var(--ok)}.tag.warn{background:#fff8e8;color:var(--warn)}.tag.danger{background:#fff0f0;color:var(--danger)}.tag.blue{background:#eef4ff;color:var(--blue)}.meters{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:11px}.meter{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:12px;font-size:13px;min-height:96px;display:flex;flex-direction:column;gap:7px}.meter span{text-transform:uppercase;letter-spacing:.045em;color:var(--muted);font-size:10px;font-weight:900}.meter b{font-size:15px;font-weight:900}.paramTrack{position:relative;height:10px;border-radius:999px;background:#e7efe3;overflow:hidden;border:1px solid rgba(47,125,79,.12)}.paramTrack i{position:absolute;top:0;bottom:0;left:var(--a);width:var(--w);border-radius:999px;background:linear-gradient(90deg,#b9ddb0,#2f7d4f)}.paramTrack em{position:absolute;top:-4px;left:var(--v);width:4px;height:18px;border-radius:999px;background:#172018;box-shadow:0 0 0 2px rgba(255,255,255,.9);transform:translateX(-2px);font-style:normal}.metricNote{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--muted)}.metricNote::before{content:'';width:7px;height:7px;border-radius:999px;background:var(--ok)}.metricNote.warn::before{background:var(--warn)}.scorebar{height:9px;border-radius:999px;background:#edf2ea;overflow:hidden}.scorebar i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--brand2),var(--brand))}.reasons{margin:0;padding-left:18px;color:var(--muted);font-size:13px}.tips{border-top:1px dashed var(--line);padding-top:10px}.fav{position:absolute;right:12px;top:12px;background:#fff;border:1px solid var(--line);width:38px;height:38px;border-radius:14px;color:#9a6b00;font-size:18px}.fav.active{background:#fff8df}.compareRow label{font-size:12.5px;color:var(--muted)}.empty{display:none;text-align:center;padding:34px}.drawer,.audit{margin-top:14px;padding:16px}.compareGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.compareBox{border:1px solid var(--line);border-radius:16px;padding:12px;background:var(--soft);font-size:13px}.mini{font-size:12px;color:var(--muted)}details summary{cursor:pointer;color:var(--brand);font-weight:900}.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#172018;color:#fff;padding:12px 16px;border-radius:999px;display:none;z-index:100}.toast.show{display:block}@media(max-width:1050px){.layout{grid-template-columns:1fr}.filters{position:static}}@media(max-width:640px){.wrap{padding:0 14px}.grid,.compareGrid{grid-template-columns:1fr}}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/catalog.css">
+<link rel="stylesheet" href="assets/css/pdf-print.css">
+</head>
+<body class="catalog-page catalog-page--demo">
+<a class="skip-link" href="#results">К результатам</a>
+
+<div class="demo-banner" role="status">
+  <div class="wrap demo-banner__inner">
+    <strong>Демо-версия для презентации</strong>
+    <span>Укороченный каталог — 12 растений из разных цветовых групп. Можно проверить фильтры и сценарии.</span>
+  </div>
+</div>
+
+<header class="site-header catalog-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="garden_catalog_demo.html">
+      <span class="brand__mark" aria-hidden="true">🌿</span>
+      <span class="brand__text">
+        <span class="brand__name">Подбор растений</span>
+        <span class="brand__tag">демо · условия в саду</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Навигация">
+      <a href="https://victoriiamikhaleva.github.io/Choose_your_plant/plant_selector_catalog_v6_photos_lux_fixed.html">Каталог комнатных растений</a>
+    </nav>
+    <div class="site-header__actions">
+      <span class="btn btn-small btn-ghost" aria-disabled="true">Демо</span>
+    </div>
+  </div>
+</header>
+
+<section class="catalog-hero wrap">
+  <div class="catalog-hero__intro">
+    <p class="catalog-hero__eyebrow">Демо · В соавторстве с ландшафтным дизайнером Анной Колесовой</p>
+    <h1 class="catalog-hero__title">Подбор уличных растений</h1>
+    <p class="catalog-hero__lead">Укороченный каталог для презентации: освещённость, высота, сроки цветения и цвет — с баллами совпадения. Попробуйте быстрые сценарии и фильтры слева.</p>
+  </div>
+  <div class="catalog-hero__stats">
+    <div class="catalog-stat"><b id="totalCount">—</b><span>в каталоге</span></div>
+    <div class="catalog-stat"><b id="shownCount">—</b><span>по критериям</span></div>
+    <div class="catalog-stat"><b id="favCount">0</b><span>в избранном</span></div>
+    <div class="catalog-stat"><b id="colorGroupCount">—</b><span>цветовых групп</span></div>
+  </div>
+  <div class="catalog-hero__quick">
+    <p class="catalog-hero__quick-label">Быстрые сценарии</p>
+    <div class="catalog-quick-btns">
+      <button class="catalog-quick-btn" type="button" data-profile="shadeBorder">
+        <span class="catalog-quick-btn__icon-wrap" aria-hidden="true">
+          <img class="catalog-quick-btn__icon" src="assets/icons/garden/shade-border.svg" alt="" width="40" height="40" decoding="async">
+        </span>
+        <span>Тенистый бордюр</span>
+      </button>
+      <button class="catalog-quick-btn" type="button" data-profile="partialShade">
+        <span class="catalog-quick-btn__icon-wrap" aria-hidden="true">
+          <img class="catalog-quick-btn__icon" src="assets/icons/garden/partial-shade.svg" alt="" width="40" height="40" decoding="async">
+        </span>
+        <span>Полутень</span>
+      </button>
+      <button class="catalog-quick-btn" type="button" data-profile="sunnyBed">
+        <span class="catalog-quick-btn__icon-wrap" aria-hidden="true">
+          <img class="catalog-quick-btn__icon" src="assets/icons/garden/sunny-bed.svg" alt="" width="40" height="40" decoding="async">
+        </span>
+        <span>Солнечная клумба</span>
+      </button>
+      <button class="catalog-quick-btn" type="button" data-profile="springBloom">
+        <span class="catalog-quick-btn__icon-wrap" aria-hidden="true">
+          <img class="catalog-quick-btn__icon" src="assets/icons/garden/spring-bloom.svg" alt="" width="40" height="40" decoding="async">
+        </span>
+        <span>Весеннее цветение</span>
+      </button>
+      <button class="catalog-quick-btn" type="button" data-profile="summerBloom">
+        <span class="catalog-quick-btn__icon-wrap" aria-hidden="true">
+          <img class="catalog-quick-btn__icon" src="assets/icons/garden/summer-bloom.svg" alt="" width="40" height="40" decoding="async">
+        </span>
+        <span>Летнее цветение</span>
+      </button>
+      <button class="catalog-quick-btn" type="button" data-profile="autumnBloom">
+        <span class="catalog-quick-btn__icon-wrap" aria-hidden="true">
+          <img class="catalog-quick-btn__icon" src="assets/icons/garden/autumn-bloom.svg" alt="" width="40" height="40" decoding="async">
+        </span>
+        <span>Осеннее цветение</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<main class="wrap layout">
+<aside class="panel filters filters-panel" id="filtersPanel">
+<form id="filterForm" class="filters-form">
+<header class="filters-form__head">
+<div class="filters-form__title-row">
+<span class="filters-form__badge" aria-hidden="true">◈</span>
+<h2 class="filters-form__title">Подбор по параметрам</h2>
+</div>
+<p class="filters-form__subtitle">Подбор в реальном времени — список обновляется сразу</p>
+</header>
+<div class="filters-search">
+<label class="visually-hidden" for="q">Поиск</label>
+<span class="filters-search__icon" aria-hidden="true">⌕</span>
+<input id="q" type="search" class="filters-search__input" placeholder="Пион, хоста, астра…" autocomplete="off">
+</div>
+<div class="filters-panes">
+<fieldset class="filters-pane is-active" id="filtersPaneSite">
+<legend class="visually-hidden">Подбор по параметрам</legend>
+<input type="hidden" id="profile" value="custom">
+<div class="param-grid">
+<div class="param-card" data-param="sun">
+<div class="param-card__head">
+<span class="param-card__icon" aria-hidden="true">☀</span>
+<div class="param-card__meta">
+<label class="param-card__label" for="sun">Освещённость</label>
+<span class="param-card__unit">1–5</span>
+</div>
+<output class="param-card__value" id="sunValue" for="sun sunRange">не указано</output>
+</div>
+<div class="param-card__controls">
+<div class="param-card__input-row">
+<input id="sun" class="param-card__number" type="number" min="1" max="5" step="1" placeholder="—" aria-label="Освещённость, шкала 1–5">
+</div>
+<div class="param-card__track">
+<input id="sunRange" class="param-card__range" type="range" min="1" max="5" step="1" value="3" aria-label="Освещённость, шкала">
+</div>
+</div>
+<p class="filters-hint">1 — тень, 3 — полутень, 5 — полное солнце</p>
+</div>
+<div class="param-card" data-param="height">
+<div class="param-card__head">
+<span class="param-card__icon" aria-hidden="true">📏</span>
+<div class="param-card__meta">
+<label class="param-card__label" for="height">Высота</label>
+<span class="param-card__unit">см</span>
+</div>
+<output class="param-card__value" id="heightValue" for="height heightRange">не указано</output>
+</div>
+<div class="param-card__controls">
+<div class="param-card__input-row">
+<input id="height" class="param-card__number" type="number" min="10" max="200" step="5" placeholder="—" aria-label="Желаемая высота, см">
+</div>
+<div class="param-card__track">
+<input id="heightRange" class="param-card__range" type="range" min="10" max="200" step="5" value="60" aria-label="Высота, шкала">
+</div>
+</div>
+</div>
+<div class="param-card" data-param="bloom">
+<div class="param-card__head">
+<span class="param-card__icon" aria-hidden="true">🌸</span>
+<div class="param-card__meta">
+<span class="param-card__label" id="bloomLabel">Месяцы цветения</span>
+<span class="param-card__unit">можно несколько</span>
+</div>
+<output class="param-card__value" id="bloomValue">не выбрано</output>
+</div>
+<div class="param-card__controls">
+<div class="bloom-months" id="bloomMonths" role="group" aria-labelledby="bloomLabel"></div>
+</div>
+</div>
+</div>
+<div class="filters-field">
+<label class="filters-label" id="colorLabel">Цветовая группа</label>
+<p class="filters-hint" id="colorHint">Не выбрано — показываются все группы</p>
+<div class="color-groups" id="colorGroups" role="group" aria-labelledby="colorLabel"></div>
+</div>
+<div class="filters-row2">
+<div class="filters-field">
+<label class="filters-label" for="onlyFav">Показать</label>
+<div class="filters-select-wrap">
+<select id="onlyFav" class="filters-select">
+<option value="all">Все растения</option>
+<option value="fav">Только избранное</option>
+</select>
+</div>
+</div>
+<div class="filters-field">
+<label class="filters-label" for="sort">Сортировка</label>
+<div class="filters-select-wrap">
+<select id="sort" class="filters-select">
+<option value="score">Лучшее совпадение</option>
+<option value="name">По названию</option>
+<option value="height">По высоте</option>
+<option value="bloom">По сроку цветения</option>
+</select>
+</div>
+</div>
+</div>
+</fieldset>
+</div>
+<footer class="filters-actions">
+<div class="filters-actions__primary">
+<button class="btn filters-btn-submit" type="submit">Подобрать</button>
+<button class="btn secondary" type="button" id="reset">Сбросить</button>
+</div>
+<div class="filters-actions__export">
+<button class="btn ghost btn-small" type="button" id="exportCsv">CSV</button>
+<button class="btn ghost btn-small" type="button" id="copyList">Текст</button>
+</div>
+</footer>
+</form>
+</aside>
+
+<section id="results" class="results" tabindex="-1" aria-live="polite">
+<div class="panel summary">
+<div>
+<strong id="resultTitle">Рекомендации</strong><br>
+<span class="mini" id="resultSubtitle">Показаны идеальные совпадения — 90 баллов и выше.</span>
+<div class="summary-actions">
+<button type="button" class="pdf-export-btn" id="pdfPrintBtn">Подготовить проект для клиента</button>
+</div>
+</div>
+</div>
+<div id="cards" class="grid"></div>
+<div id="expandResults" class="results-expand" hidden>
+<button type="button" class="btn secondary results-expand__btn" id="showLessSuitableBtn">Показать менее подходящие растения</button>
+<p class="mini results-expand__note" id="expandResultsNote"></p>
+</div>
+<div id="empty" class="panel empty">
+<h2>Ничего не найдено</h2>
+<p>Ослабьте фильтр по цвету или измените параметры участка.</p>
+</div>
+<section class="panel drawer" id="comparePanel">
+<h2>Сравнение</h2>
+<p class="mini">Отметьте до 3 растений для сравнения условий.</p>
+<div id="compareGrid" class="compareGrid"></div>
+</section>
+<section class="panel audit">
+<h2>Аудит данных каталога</h2>
+<p class="mini" id="auditSummary"></p>
+<ul id="auditList"></ul>
+</section>
+<section class="panel drawer">
+<h2>Памятка по посадке</h2>
+<div class="careGrid">
+<div class="careItem"><b>Солнце</b>Учитывайте тень от зданий и деревьев в разное время дня.</div>
+<div class="careItem"><b>Высота</b>Планируйте ярусы: низкие растения — на передний план, высокие — на задний план.</div>
+<div class="careItem"><b>Цветение</b>Сочетайте весенние, летние и осенние виды растений для непрерывного цветения.</div>
+<div class="careItem"><b>Связь</b>Этот каталог — продолжение <a href="https://victoriiamikhaleva.github.io/Choose_your_plant/plant_selector_catalog_v6_photos_lux_fixed.html">каталога комнатных растений</a>.</div>
+</div>
+</section>
+</section>
+</main>
+
+<footer class="catalog-footer">
+<div class="wrap catalog-footer__inner">
+Каталог уличных растений работает локально. Каталог по цвету · в соавторстве с ландшафтным дизайнером Анной Колесовой.
+<a href="https://victoriiamikhaleva.github.io/Choose_your_plant/plant_selector_catalog_v6_photos_lux_fixed.html">← Каталог комнатных растений</a>
+</div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<div id="pdf-template" class="pdf-template" aria-hidden="true">
+  <div class="pdf-doc">
+    <header class="pdf-cover-block">
+      <p class="pdf-cover-eyebrow">Проект озеленения</p>
+      <h1 class="pdf-cover-title">Подбор растений для участка</h1>
+      <p class="pdf-cover-date"></p>
+    </header>
+    <section class="pdf-params-section">
+      <h2 class="pdf-section-title">Параметры участка</h2>
+      <div class="pdf-params-grid"></div>
+    </section>
+    <section class="pdf-summary-section">
+      <div class="pdf-summary-box"><p></p></div>
+    </section>
+    <section class="pdf-plants-section">
+      <h2 class="pdf-section-title">Лучшие растения</h2>
+      <div class="pdf-plants-list"></div>
+    </section>
+    <section class="pdf-recs-section pdf-recs">
+      <h2 class="pdf-section-title">Рекомендации по посадке</h2>
+      <ul></ul>
+    </section>
+    <footer class="pdf-footer">
+      Подбор сформирован сервисом <strong>«Подбор растений»</strong> · каталог уличных растений<br>
+      victoriiamikhaleva.github.io
+    </footer>
+  </div>
+</div>
+
+<script>
+  window.GARDEN_IS_DEMO = true;
+</script>
+<script src="assets/js/garden-plants-demo-data.js"></script>
+<script src="assets/js/garden-pdf-export.js"></script>
+<script src="assets/js/garden-catalog.js"></script>
+<script src="assets/js/footer-credit.js"></script>
+</body>
+</html>

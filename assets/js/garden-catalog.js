@@ -1,6 +1,6 @@
 ﻿/* Garden catalog — подбор уличных растений (продолжение PlantFit) */
 (function () {
-  const LS_FAV = "gardenfit.v1.favs";
+  const LS_FAV = window.GARDEN_IS_DEMO || window.GARDEN_DEMO_IDS ? "gardenfit.v1.demo.favs" : "gardenfit.v1.favs";
   const INDOOR_CATALOG_URL = "https://victoriiamikhaleva.github.io/Choose_your_plant/plant_selector_catalog_v6_photos_lux_fixed.html";
 
   const PROFILES = {
@@ -82,7 +82,11 @@
   }
 
   const PLANTS = (() => {
-    const base = GARDEN_RAW_PLANTS.map(normPlant);
+    const demoIds = Array.isArray(window.GARDEN_DEMO_IDS) ? new Set(window.GARDEN_DEMO_IDS.map(Number)) : null;
+    const source = demoIds
+      ? GARDEN_RAW_PLANTS.filter((p) => demoIds.has(p.id))
+      : GARDEN_RAW_PLANTS;
+    const base = source.map(normPlant);
     const counts = {};
     base.forEach((p) => {
       const key = plantSlug(p.nameRu) || `plant-${p.id}`;
