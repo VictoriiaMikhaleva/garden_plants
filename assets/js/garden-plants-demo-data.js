@@ -1,5 +1,5 @@
 /**
- * Демо-каталог уличных растений (12 позиций) — для презентации клиентам.
+ * Демо-каталог уличных растений (14 позиций) — для презентации клиентам.
  * Полный каталог в этот файл не включается.
  */
 const GARDEN_RAW_PLANTS = [
@@ -122,6 +122,28 @@ const GARDEN_RAW_PLANTS = [
     "sun": "1–5",
     "bloomNote": "конец апреля — май",
     "photo": "assets/plants/115.webp",
+    "photoSource": "custom"
+  },
+  {
+    "id": 117,
+    "color": "pink",
+    "nameRu": "Обриета культурная",
+    "height": "10–15",
+    "bloom": "5–5",
+    "sun": "4–5",
+    "bloomNote": "май",
+    "photo": "assets/plants/117.webp",
+    "photoSource": "custom"
+  },
+  {
+    "id": 119,
+    "color": "pink",
+    "nameRu": "Флокс шиловидный",
+    "height": "15–20",
+    "bloom": "5–6",
+    "sun": "2–5",
+    "bloomNote": "середина мая — конец июня",
+    "photo": "assets/plants/119.webp",
     "photoSource": "custom"
   },
   {
