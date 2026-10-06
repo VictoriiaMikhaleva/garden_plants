@@ -567,6 +567,15 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
         : "не указано";
     }
     if (bloomEl) bloomEl.textContent = bloomSelectionLabel(getBloomMonths());
+    ["sunRange", "heightRange"].forEach((id) => {
+      const el = $(id);
+      if (!el) return;
+      const min = +el.min;
+      const max = +el.max;
+      const val = +el.value;
+      const pct = max > min ? ((val - min) / (max - min)) * 100 : 0;
+      el.style.setProperty("--fill", `${pct.toFixed(2)}%`);
+    });
   }
 
   function getSelectedColors() {
