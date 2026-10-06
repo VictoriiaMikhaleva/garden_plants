@@ -473,6 +473,16 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     }
 
     renderCompare();
+    syncScenarioButtons();
+  }
+
+  function syncScenarioButtons() {
+    const name = $("profile").value;
+    document.querySelectorAll(".catalog-quick-btn[data-profile]").forEach((b) => {
+      const on = b.dataset.profile === name;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
   }
 
   function renderCompare() {
