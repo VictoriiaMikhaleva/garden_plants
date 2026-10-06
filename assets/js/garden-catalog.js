@@ -148,14 +148,17 @@
   }
 
   function bloomSelectionLabel(months) {
-    if (!months.length) return "не выбрано";
-    if (months.length === 1) return GARDEN_MONTH_LABELS[months[0]] || String(months[0]);
-    const sorted = [...months].sort((a, b) => a - b);
-    const consecutive = sorted[sorted.length - 1] - sorted[0] + 1 === sorted.length;
-    if (consecutive) {
-      return `${GARDEN_MONTH_LABELS[sorted[0]]} — ${GARDEN_MONTH_LABELS[sorted[sorted.length - 1]]}`;
+    if (!months.length) return "Любые месяцы";
+    let label;
+    if (months.length === 1) label = GARDEN_MONTH_LABELS[months[0]] || String(months[0]);
+    else {
+      const sorted = [...months].sort((a, b) => a - b);
+      const consecutive = sorted[sorted.length - 1] - sorted[0] + 1 === sorted.length;
+      label = consecutive
+        ? `${GARDEN_MONTH_LABELS[sorted[0]]} — ${GARDEN_MONTH_LABELS[sorted[sorted.length - 1]]}`
+        : sorted.map((m) => BLOOM_MONTH_SHORT[m] || m).join(", ");
     }
-    return sorted.map((m) => BLOOM_MONTH_SHORT[m] || m).join(", ");
+    return `Выбрано: ${label}`;
   }
 
   function bloomScore(months, plantR) {
@@ -594,7 +597,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     const colors = getSelectedColors();
     el.textContent = colors.length
       ? `Выбрано: ${colorSelectionLabel(colors)}`
-      : "Не выбрано — показываются все группы";
+      : "Любой цвет";
   }
 
   function buildColorGroups() {
