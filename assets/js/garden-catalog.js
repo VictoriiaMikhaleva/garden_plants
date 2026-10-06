@@ -384,7 +384,8 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     let arr = PLANTS.filter((p) => !f.q || p.text.includes(f.q)).map((p) => Object.assign({}, p, explain(p, f)));
 
     if (f.colors.length) arr = arr.filter((p) => f.colors.includes(p.color));
-    arr = arr.filter((p) => p.score >= 50);
+    const browseMode = !f.q && !siteFiltersActive(f) && !f.colors.length;
+    if (!browseMode) arr = arr.filter((p) => p.score >= 50);
     if (f.onlyFav === "fav") arr = arr.filter((p) => fs.has(p.id));
 
     if (f.sort === "score") arr.sort((a, b) => b.score - a.score || a.nameRu.localeCompare(b.nameRu, "ru"));
@@ -394,7 +395,6 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
 
     const ideal = arr.filter((p) => p.score >= 90);
     const rest = arr.filter((p) => p.score < 90);
-    const browseMode = !f.q && !siteFiltersActive(f) && !f.colors.length;
     const searchMode = !!f.q;
     let display = searchMode || browseMode ? arr : showLessSuitable ? [...ideal, ...rest] : ideal;
 
@@ -529,6 +529,12 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     setBloomMonths([]);
     showLessSuitable = false;
     lastFilterKey = "";
+    try { localStorage.removeItem("gardenfit.quickProfile"); } catch (e) {}
+    const url = new URL(location.href);
+    if (url.searchParams.has("profile")) {
+      url.searchParams.delete("profile");
+      history.replaceState(null, "", url.pathname + url.search + url.hash);
+    }
     updateParamOutputs();
     render();
   }
