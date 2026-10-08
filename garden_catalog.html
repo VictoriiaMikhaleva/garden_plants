@@ -157,6 +157,55 @@
 <div class="bloom-months" id="bloomMonths" role="group" aria-labelledby="bloomLabel"></div>
 </div>
 </div>
+<div class="param-card" data-param="usda">
+<div class="param-card__head">
+<div class="param-card__meta">
+<label class="param-card__label" for="usdaZone">USDA-зона</label>
+<span class="param-card__unit">Ваша зона зимостойкости</span>
+</div>
+<output class="param-card__value" id="usdaZoneValue" for="usdaZone">Любая</output>
+</div>
+<p class="param-card__help-row">
+<button type="button" class="param-help-trigger" id="usdaHelpTrigger" data-help-id="usda-zones" aria-expanded="false" aria-controls="paramHelp">Как работают USDA-зоны?</button>
+</p>
+<div class="param-card__controls">
+<div class="filters-select-wrap">
+<select id="usdaZone" class="filters-select" aria-label="USDA-зона зимостойкости">
+<option value="">Любая</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<div class="filters-field">
+<label class="filters-label" id="lifeCycleLabel">Жизненный цикл</label>
+<p class="filters-hint" id="lifeCycleHint">Любой цикл</p>
+<div class="filter-choices" id="lifeCycleChoices" role="group" aria-labelledby="lifeCycleLabel">
+<button type="button" class="filter-choice" data-life="Однолетник" aria-pressed="false">Однолетники</button>
+<button type="button" class="filter-choice" data-life="Двулетник" aria-pressed="false">Двулетники</button>
+<button type="button" class="filter-choice" data-life="Многолетник" aria-pressed="false">Многолетники</button>
+</div>
+</div>
+<div class="filters-field">
+<label class="filters-label" id="winteringLabel">Зимовка в средней полосе</label>
+<p class="filters-hint" id="winteringHint">Любая зимовка</p>
+<div class="filter-choices filter-choices--winter" id="winteringChoices" role="group" aria-labelledby="winteringLabel">
+<button type="button" class="filter-choice" data-winter="open" aria-pressed="false">В открытом грунте</button>
+<button type="button" class="filter-choice" data-winter="cover" aria-pressed="false">С укрытием</button>
+<button type="button" class="filter-choice" data-winter="lift" aria-pressed="false">Выкапывать / заносить</button>
+<button type="button" class="filter-choice" data-winter="border" aria-pressed="false">Пограничная зимовка</button>
+<button type="button" class="filter-choice" data-winter="review" aria-pressed="false">Требует уточнения</button>
+</div>
 </div>
 <div class="filters-field">
 <label class="filters-label" id="colorLabel">Цветовая группа</label>
@@ -261,6 +310,17 @@
 </footer>
 
 <div class="toast" id="toast"></div>
+
+<div class="param-help" id="paramHelp" hidden>
+  <div class="param-help__backdrop" data-help-dismiss></div>
+  <div class="param-help__dialog" role="dialog" aria-modal="true" aria-labelledby="paramHelpTitle" tabindex="-1">
+    <div class="param-help__top">
+      <h2 class="param-help__title" id="paramHelpTitle"></h2>
+      <button type="button" class="param-help__close" id="paramHelpClose" aria-label="Закрыть справку">×</button>
+    </div>
+    <div class="param-help__body" id="paramHelpBody"></div>
+  </div>
+</div>
 
 <div id="pdf-template" class="pdf-template" aria-hidden="true">
   <div class="pdf-doc">

@@ -15,6 +15,55 @@
   const BLOOM_MONTH_SHORT = ["", "янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
   const COLOR_KEYS = ["white", "sky", "blue", "purple", "yellow", "orange", "red", "pink"];
 
+  const WINTERING_UI = {
+    open: ["Зимует в открытом грунте"],
+    cover: ["Зимует с укрытием"],
+    lift: ["Выкапывают на зиму", "Зимует в помещении", "Не зимует в открытом грунте"],
+    border: ["Пограничная зимовка"],
+    review: ["Требует уточнения"]
+  };
+
+  const WINTERING_LABELS = {
+    open: "В открытом грунте",
+    cover: "С укрытием",
+    lift: "Выкапывать / заносить",
+    border: "Пограничная зимовка",
+    review: "Требует уточнения"
+  };
+
+  const LIFE_LABELS = {
+    Однолетник: "Однолетники",
+    Двулетник: "Двулетники",
+    Многолетник: "Многолетники"
+  };
+
+  const PARAM_HELP_CONTENT = {
+    "usda-zones": {
+      title: "Как работают USDA-зоны?",
+      html: `<p>USDA-зоны зимостойкости основаны на средней ежегодной экстремально низкой зимней температуре. Чем меньше номер зоны, тем более холодные зимние условия она описывает.</p>
+<p>Диапазон в карточке, например USDA 4–8, означает, что растение обычно относят к зонам 4–8.</p>
+<p>Это температурный ориентир, а не точная температура гибели растения и не гарантия зимовки на конкретном участке.</p>
+<p>Зоны не учитывают полностью зимнюю сырость, оттепели, бесснежье, вымокание, ветер и микроклимат. Поэтому в каталоге отдельно указана практическая зимовка в средней полосе России.</p>
+<table class="param-help__table">
+<caption class="visually-hidden">Температурные границы USDA-зон</caption>
+<thead><tr><th scope="col">Зона</th><th scope="col">Средняя ежегодная экстремально низкая температура</th></tr></thead>
+<tbody>
+<tr><th scope="row">2</th><td>−45,6…−40,0 °C</td></tr>
+<tr><th scope="row">3</th><td>−40,0…−34,4 °C</td></tr>
+<tr><th scope="row">4</th><td>−34,4…−28,9 °C</td></tr>
+<tr><th scope="row">5</th><td>−28,9…−23,3 °C</td></tr>
+<tr><th scope="row">6</th><td>−23,3…−17,8 °C</td></tr>
+<tr><th scope="row">7</th><td>−17,8…−12,2 °C</td></tr>
+<tr><th scope="row">8</th><td>−12,2…−6,7 °C</td></tr>
+<tr><th scope="row">9</th><td>−6,7…−1,1 °C</td></tr>
+<tr><th scope="row">10</th><td>−1,1…+4,4 °C</td></tr>
+<tr><th scope="row">11</th><td>+4,4…+10,0 °C</td></tr>
+</tbody>
+</table>
+<p class="param-help__source">Источник: <a href="https://planthardiness.ars.usda.gov/" target="_blank" rel="noopener noreferrer">USDA Plant Hardiness Zone Map 2023</a></p>`
+    }
+  };
+
   const $ = (id) => document.getElementById(id);
   let showLessSuitable = false;
   let lastFilterKey = "";
@@ -255,12 +304,16 @@
   }
 
   function collect() {
+    const usdaRaw = $("usdaZone") ? $("usdaZone").value : "";
     return {
       q: $("q").value.trim().toLowerCase(),
       sun: sunTouched && $("sun").value !== "" ? +$("sun").value : null,
       height: heightTouched && $("height").value !== "" ? +$("height").value : null,
       bloomMonths: getBloomMonths(),
       colors: getSelectedColors(),
+      lifeCycles: getSelectedLifeCycles(),
+      wintering: getSelectedWintering(),
+      usdaZone: usdaRaw === "" ? null : +usdaRaw,
       sort: $("sort").value,
       onlyFav: $("onlyFav").value
     };
@@ -307,6 +360,36 @@
     return `<div class="meter"><span>${title}</span><b><span class="valueText">${esc(value)}</span>${unit ? `<span class="unit">${esc(unit.trim())}</span>` : ""}</b>${visual || ""}</div>`;
   }
 
+  function formatOrientTemp(v) {
+    if (v == null || v === "") return "";
+    const n = Math.round(Number(v));
+    if (!Number.isFinite(n)) return "";
+    return `${n < 0 ? "−" : ""}${Math.abs(n)}\u00A0°C`;
+  }
+
+  function displayLifeCycle(p) {
+    const garden = String(p.gardenCycle || "").trim();
+    if (garden) return garden;
+    const life = String(p.lifeCycle || "").trim();
+    if (life) return life;
+    return "Требует уточнения";
+  }
+
+  function displayHardiness(p) {
+    if (p.hardinessStatus === "applicable" && p.hardinessZoneMin != null && p.hardinessZoneMax != null) {
+      const t = formatOrientTemp(p.hardinessMinTempC);
+      return t
+        ? `USDA ${p.hardinessZoneMin}–${p.hardinessZoneMax} · ориентир ${t}`
+        : `USDA ${p.hardinessZoneMin}–${p.hardinessZoneMax}`;
+    }
+    if (p.hardinessStatus === "not_applicable") return "Не применяется для однолетника";
+    return "Требует уточнения";
+  }
+
+  function displayWintering(p) {
+    return String(p.russiaWintering || "").trim() || "Требует уточнения";
+  }
+
   const PHOTO_CACHE_V = "20260810a";
 
   function photo(p) {
@@ -343,6 +426,11 @@ ${metricCard("Солнце", sunLabel(p.sunR), "", sunV)}
 ${metricCard("Высота", p.height, " см", heightV)}
 ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
 </div>
+<dl class="plant-facts">
+<div class="plant-fact"><dt>Жизненный цикл</dt><dd>${esc(displayLifeCycle(p))}</dd></div>
+<div class="plant-fact"><dt>Зимостойкость</dt><dd>${esc(displayHardiness(p))}</dd></div>
+<div class="plant-fact"><dt>Зимовка в средней полосе</dt><dd>${esc(displayWintering(p))}</dd></div>
+</dl>
 <details open><summary>Почему подходит</summary><ul class="reasons">${p.reasons.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></details>
 <div class="tips"><b>Советы</b><ul class="reasons">${(p.tips.length ? p.tips : ["условия близки к оптимальным"]).map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
 <div class="compareRow"><label><input type="checkbox" data-compare="${p.id}" ${comp ? "checked" : ""}> сравнить</label></div>
@@ -356,6 +444,9 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
       height: f.height,
       bloomMonths: f.bloomMonths,
       colors: f.colors,
+      lifeCycles: f.lifeCycles,
+      wintering: f.wintering,
+      usdaZone: f.usdaZone,
       onlyFav: f.onlyFav,
       sort: f.sort
     });
@@ -387,6 +478,21 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     let arr = PLANTS.filter((p) => !f.q || p.text.includes(f.q)).map((p) => Object.assign({}, p, explain(p, f)));
 
     if (f.colors.length) arr = arr.filter((p) => f.colors.includes(p.color));
+    if (f.lifeCycles.length) arr = arr.filter((p) => f.lifeCycles.includes(p.lifeCycle));
+    if (f.wintering.length) {
+      const allowed = new Set(f.wintering.flatMap((key) => WINTERING_UI[key] || []));
+      arr = arr.filter((p) => allowed.has(p.russiaWintering));
+    }
+    if (f.usdaZone != null) {
+      arr = arr.filter(
+        (p) =>
+          p.hardinessStatus === "applicable" &&
+          p.hardinessZoneMin != null &&
+          p.hardinessZoneMax != null &&
+          p.hardinessZoneMin <= f.usdaZone &&
+          p.hardinessZoneMax >= f.usdaZone
+      );
+    }
     const browseMode = !f.q && !siteFiltersActive(f) && !f.colors.length;
     if (!browseMode) arr = arr.filter((p) => p.score >= 50);
     if (f.onlyFav === "fav") arr = arr.filter((p) => fs.has(p.id));
@@ -540,6 +646,9 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     $("sunRange").value = "3";
     $("heightRange").value = "60";
     setBloomMonths([]);
+    setSelectedLifeCycles([]);
+    setSelectedWintering([]);
+    if ($("usdaZone")) $("usdaZone").value = "";
     showLessSuitable = false;
     lastFilterKey = "";
     try { localStorage.removeItem("gardenfit.quickProfile"); } catch (e) {}
@@ -567,6 +676,10 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
         : "не указано";
     }
     if (bloomEl) bloomEl.textContent = bloomSelectionLabel(getBloomMonths());
+    const usdaEl = $("usdaZoneValue");
+    if (usdaEl && $("usdaZone")) {
+      usdaEl.textContent = $("usdaZone").value === "" ? "Любая" : $("usdaZone").value;
+    }
     ["sunRange", "heightRange"].forEach((id) => {
       const el = $(id);
       if (!el) return;
@@ -582,6 +695,153 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     return [...document.querySelectorAll(".color-group.is-active")]
       .map((b) => b.dataset.color)
       .filter(Boolean);
+  }
+
+  function getSelectedLifeCycles() {
+    return [...document.querySelectorAll("#lifeCycleChoices .filter-choice.is-active")]
+      .map((b) => b.dataset.life)
+      .filter(Boolean);
+  }
+
+  function setSelectedLifeCycles(values) {
+    const set = new Set(values);
+    document.querySelectorAll("#lifeCycleChoices .filter-choice").forEach((b) => {
+      const on = set.has(b.dataset.life);
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    updateLifeCycleHint();
+  }
+
+  function updateLifeCycleHint() {
+    const el = $("lifeCycleHint");
+    if (!el) return;
+    const selected = getSelectedLifeCycles();
+    el.textContent = selected.length
+      ? `Выбрано: ${selected.map((k) => LIFE_LABELS[k] || k).join(", ")}`
+      : "Любой цикл";
+  }
+
+  function getSelectedWintering() {
+    return [...document.querySelectorAll("#winteringChoices .filter-choice.is-active")]
+      .map((b) => b.dataset.winter)
+      .filter(Boolean);
+  }
+
+  function setSelectedWintering(values) {
+    const set = new Set(values);
+    document.querySelectorAll("#winteringChoices .filter-choice").forEach((b) => {
+      const on = set.has(b.dataset.winter);
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    updateWinteringHint();
+  }
+
+  function updateWinteringHint() {
+    const el = $("winteringHint");
+    if (!el) return;
+    const selected = getSelectedWintering();
+    el.textContent = selected.length
+      ? `Выбрано: ${selected.map((k) => WINTERING_LABELS[k] || k).join(", ")}`
+      : "Любая зимовка";
+  }
+
+  function wireChoiceGroup(wrapId) {
+    const wrap = $(wrapId);
+    if (!wrap) return;
+    wrap.addEventListener("click", (e) => {
+      const btn = e.target.closest(".filter-choice");
+      if (!btn || !wrap.contains(btn)) return;
+      btn.classList.toggle("is-active");
+      btn.setAttribute("aria-pressed", btn.classList.contains("is-active") ? "true" : "false");
+      updateLifeCycleHint();
+      updateWinteringHint();
+      render();
+    });
+  }
+
+  function createParameterHelp() {
+    const root = $("paramHelp");
+    const titleEl = $("paramHelpTitle");
+    const bodyEl = $("paramHelpBody");
+    const closeBtn = $("paramHelpClose");
+    const dialog = root && root.querySelector(".param-help__dialog");
+    let lastTrigger = null;
+    let open = false;
+
+    function getFocusable() {
+      if (!root) return [];
+      return [...root.querySelectorAll("a[href], button:not([disabled]), [tabindex]:not([tabindex='-1'])")]
+        .filter((el) => !el.hasAttribute("hidden") && el.offsetParent !== null || el === closeBtn);
+    }
+
+    function setOpen(next, trigger) {
+      if (!root) return;
+      open = next;
+      root.hidden = !next;
+      document.body.classList.toggle("param-help-open", next);
+      document.querySelectorAll(".param-help-trigger").forEach((btn) => {
+        btn.setAttribute("aria-expanded", next && btn === trigger ? "true" : "false");
+      });
+      if (next) {
+        lastTrigger = trigger || lastTrigger;
+        requestAnimationFrame(() => {
+          (closeBtn || dialog)?.focus();
+        });
+      } else if (lastTrigger) {
+        lastTrigger.focus();
+      }
+    }
+
+    function openHelp(helpId, trigger) {
+      const content = PARAM_HELP_CONTENT[helpId];
+      if (!content || !root) return;
+      titleEl.textContent = content.title;
+      bodyEl.innerHTML = content.html;
+      setOpen(true, trigger);
+    }
+
+    function closeHelp() {
+      setOpen(false);
+    }
+
+    if (root) {
+      root.addEventListener("click", (e) => {
+        if (e.target.closest("[data-help-dismiss]") || e.target.closest(".param-help__close")) {
+          closeHelp();
+        }
+      });
+      document.addEventListener("keydown", (e) => {
+        if (!open) return;
+        if (e.key === "Escape") {
+          e.preventDefault();
+          closeHelp();
+          return;
+        }
+        if (e.key !== "Tab") return;
+        const items = getFocusable();
+        if (!items.length) return;
+        const first = items[0];
+        const last = items[items.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      });
+    }
+
+    document.addEventListener("click", (e) => {
+      const trigger = e.target.closest("[data-help-id]");
+      if (!trigger) return;
+      e.preventDefault();
+      openHelp(trigger.dataset.helpId, trigger);
+    });
+
+    return { open: openHelp, close: closeHelp };
   }
 
   function setSelectedColors(colors) {
@@ -704,6 +964,9 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     saveFavs(favs());
     buildBloomMonths();
     buildColorGroups();
+    wireChoiceGroup("lifeCycleChoices");
+    wireChoiceGroup("winteringChoices");
+    createParameterHelp();
     wireDual("sun", "sunRange", () => {
       sunTouched = true;
     });
@@ -714,6 +977,12 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     wireFilterTabs();
 
     ["q", "sort", "onlyFav"].forEach((id) => $(id).addEventListener("input", render));
+    if ($("usdaZone")) {
+      $("usdaZone").addEventListener("change", () => {
+        updateParamOutputs();
+        render();
+      });
+    }
 
     document.querySelectorAll("[data-profile]").forEach((b) =>
       b.addEventListener("click", () => applyProfile(b.dataset.profile))

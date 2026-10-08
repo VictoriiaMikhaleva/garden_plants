@@ -12,7 +12,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "май",
     "photo": "assets/plants/1.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 2,
@@ -23,7 +30,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "конец апреля — начало мая",
     "photo": "assets/plants/2.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 3,
@@ -34,7 +48,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "апрель",
     "photo": "assets/plants/3.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "unknown",
+    "hardinessZoneMin": null,
+    "hardinessZoneMax": null,
+    "hardinessMinTempC": null,
+    "russiaWintering": "Требует уточнения"
   },
   {
     "id": 4,
@@ -45,7 +66,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "3–4",
     "bloomNote": "апрель — май",
     "photo": "assets/plants/4.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 5,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -28.9,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 5,
@@ -56,7 +84,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июнь — июль",
     "photo": "assets/plants/5.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 6,
@@ -67,7 +102,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "май — июль",
     "photo": "assets/plants/6.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 7,
@@ -78,7 +120,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "август — осень",
     "photo": "assets/plants/7.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 5,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -28.9,
+    "russiaWintering": "Требует уточнения"
   },
   {
     "id": 8,
@@ -89,7 +138,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июль — сентябрь",
     "photo": "assets/plants/8.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник, выращиваемый как однолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 7,
+    "hardinessZoneMax": 10,
+    "hardinessMinTempC": -17.8,
+    "russiaWintering": "Выкапывают на зиму"
   },
   {
     "id": 9,
@@ -100,7 +156,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "середина марта — конец мая",
     "photo": "assets/plants/9.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "",
+    "gardenCycle": "",
+    "hardinessStatus": "unknown",
+    "hardinessZoneMin": null,
+    "hardinessZoneMax": null,
+    "hardinessMinTempC": null,
+    "russiaWintering": "Требует уточнения"
   },
   {
     "id": 10,
@@ -111,7 +174,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июнь",
     "photo": "assets/plants/10.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 7,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 11,
@@ -122,7 +192,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "май и август",
     "photo": "assets/plants/11.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 12,
@@ -133,7 +210,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "1–3",
     "bloomNote": "июнь — август",
     "photo": "assets/plants/12.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 13,
@@ -144,7 +228,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июнь — июль",
     "photo": "assets/plants/13.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 14,
@@ -155,7 +246,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июнь",
     "photo": "assets/plants/14.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 7,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 15,
@@ -166,7 +264,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "конец апреля — начало мая",
     "photo": "assets/plants/15.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 16,
@@ -177,7 +282,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "летом декоративна листвой",
     "photo": "assets/plants/16.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 17,
@@ -188,7 +300,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июль, белые цветки",
     "photo": "assets/plants/17.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 7,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Пограничная зимовка"
   },
   {
     "id": 18,
@@ -199,7 +318,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "летом",
     "photo": "assets/plants/18.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Пограничная зимовка"
   },
   {
     "id": 19,
@@ -210,7 +336,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "летом",
     "photo": "assets/plants/19.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Пограничная зимовка"
   },
   {
     "id": 20,
@@ -221,7 +354,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "летом",
     "photo": "assets/plants/20.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 7,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Пограничная зимовка"
   },
   {
     "id": 21,
@@ -232,7 +372,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "летом",
     "photo": "assets/plants/21.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник, выращиваемый как однолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 7,
+    "hardinessZoneMax": 10,
+    "hardinessMinTempC": -17.8,
+    "russiaWintering": "Не зимует в открытом грунте"
   },
   {
     "id": 22,
@@ -243,7 +390,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "май — август",
     "photo": "assets/plants/22.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 23,
@@ -254,7 +408,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–4",
     "bloomNote": "конец апреля — начало мая",
     "photo": "assets/plants/23.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 24,
@@ -265,7 +426,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "май — июнь, белые цветки",
     "photo": "assets/plants/24.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 25,
@@ -276,7 +444,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "летом",
     "photo": "assets/plants/25.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 10,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 26,
@@ -287,7 +462,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июнь — конец сентября",
     "photo": "assets/plants/26.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Двулетник",
+    "gardenCycle": "Двулетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Требует уточнения"
   },
   {
     "id": 27,
@@ -298,7 +480,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "1–2",
     "bloomNote": "июль — август, фиолетовые цветы",
     "photo": "assets/plants/27.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 28,
@@ -309,7 +498,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "1–2",
     "bloomNote": "июль",
     "photo": "assets/plants/28.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 29,
@@ -320,7 +516,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "1–2",
     "bloomNote": "конец лета — заморозки",
     "photo": "assets/plants/29.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 30,
@@ -331,7 +534,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "1–2",
     "bloomNote": "июль — август, сиреневые цветы",
     "photo": "assets/plants/30.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 31,
@@ -342,7 +552,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июль — август",
     "photo": "assets/plants/31.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 32,
@@ -353,7 +570,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "1–3",
     "bloomNote": "август",
     "photo": "assets/plants/32.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 33,
@@ -364,7 +588,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "1–4",
     "bloomNote": "середина июля — август, лавандовые цветы",
     "photo": "assets/plants/33.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 34,
@@ -375,7 +606,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июнь",
     "photo": "assets/plants/34.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 35,
@@ -386,7 +624,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "май — июнь",
     "photo": "assets/plants/35.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 10,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 36,
@@ -397,7 +642,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "сентябрь — октябрь",
     "photo": "assets/plants/36.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 37,
@@ -408,7 +660,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "сентябрь — октябрь",
     "photo": "assets/plants/37.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 38,
@@ -419,7 +678,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "1–3",
     "bloomNote": "июль — август",
     "photo": "assets/plants/38.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 40,
@@ -430,7 +696,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июнь",
     "photo": "assets/plants/40.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 7,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 41,
@@ -441,7 +714,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "1–5",
     "bloomNote": "июнь — август",
     "photo": "assets/plants/41.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 5,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -28.9,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 42,
@@ -452,7 +732,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "март — май",
     "photo": "assets/plants/42.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 43,
@@ -463,7 +750,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июнь — август",
     "photo": "assets/plants/43.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 44,
@@ -474,7 +768,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "август — сентябрь",
     "photo": "assets/plants/44.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 5,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -28.9,
+    "russiaWintering": "Требует уточнения"
   },
   {
     "id": 45,
@@ -485,7 +786,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июль — осень",
     "photo": "assets/plants/45.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник, выращиваемый как однолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 7,
+    "hardinessZoneMax": 10,
+    "hardinessMinTempC": -17.8,
+    "russiaWintering": "Выкапывают на зиму"
   },
   {
     "id": 46,
@@ -496,7 +804,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июль — август",
     "photo": "assets/plants/46.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник, выращиваемый как однолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 7,
+    "hardinessZoneMax": 10,
+    "hardinessMinTempC": -17.8,
+    "russiaWintering": "Выкапывают на зиму"
   },
   {
     "id": 47,
@@ -507,7 +822,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июль — заморозки",
     "photo": "assets/plants/47.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 7,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 48,
@@ -518,7 +840,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "1–3",
     "bloomNote": "май — август",
     "photo": "assets/plants/48.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Двулетник",
+    "gardenCycle": "Двулетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 49,
@@ -529,7 +858,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "май — сентябрь",
     "photo": "assets/plants/49.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует с укрытием"
   },
   {
     "id": 50,
@@ -540,7 +876,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "март — апрель",
     "photo": "assets/plants/50.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует с укрытием"
   },
   {
     "id": 53,
@@ -551,7 +894,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "август",
     "photo": "assets/plants/53.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует с укрытием"
   },
   {
     "id": 55,
@@ -562,7 +912,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–4",
     "bloomNote": "апрель — май",
     "photo": "assets/plants/55.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 5,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -28.9,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 56,
@@ -573,7 +930,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "конец августа — ноябрь",
     "photo": "assets/plants/56.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 57,
@@ -584,7 +948,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "1–2",
     "bloomNote": "апрель — до холодов",
     "photo": "assets/plants/57.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 58,
@@ -595,7 +966,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июнь — до заморозков",
     "photo": "assets/plants/58.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 59,
@@ -606,7 +984,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "апрель — июль",
     "photo": "assets/plants/59.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 60,
@@ -617,7 +1002,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "март — май",
     "photo": "assets/plants/60.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует с укрытием"
   },
   {
     "id": 61,
@@ -628,7 +1020,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "май — июнь",
     "photo": "assets/plants/61.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Требует уточнения"
   },
   {
     "id": 62,
@@ -639,7 +1038,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июнь",
     "photo": "assets/plants/62.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 7,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 63,
@@ -650,7 +1056,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "май — поздняя осень",
     "photo": "assets/plants/63.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 10,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 64,
@@ -661,7 +1074,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июль — октябрь",
     "photo": "assets/plants/64.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 65,
@@ -672,7 +1092,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "май — сентябрь",
     "photo": "assets/plants/65.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует с укрытием"
   },
   {
     "id": 66,
@@ -683,7 +1110,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июнь",
     "photo": "assets/plants/66.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 67,
@@ -694,7 +1128,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "середина июня — середина августа",
     "photo": "assets/plants/67.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Однолетник",
+    "gardenCycle": "Однолетник",
+    "hardinessStatus": "not_applicable",
+    "hardinessZoneMin": null,
+    "hardinessZoneMax": null,
+    "hardinessMinTempC": null,
+    "russiaWintering": "Не применяется"
   },
   {
     "id": 68,
@@ -705,7 +1146,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "апрель",
     "photo": "assets/plants/68.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 69,
@@ -716,7 +1164,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "1–3",
     "bloomNote": "середина мая",
     "photo": "assets/plants/69.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 70,
@@ -727,7 +1182,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "1–3",
     "bloomNote": "май — середина июня",
     "photo": "assets/plants/70.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Двулетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Пограничная зимовка"
   },
   {
     "id": 71,
@@ -738,7 +1200,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "1–5",
     "bloomNote": "апрель — май",
     "photo": "assets/plants/71.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 72,
@@ -749,7 +1218,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "конец апреля — май",
     "photo": "assets/plants/72.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 2,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -45.6,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 73,
@@ -760,7 +1236,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июль — август",
     "photo": "assets/plants/73.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 74,
@@ -771,7 +1254,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июнь — июль",
     "photo": "assets/plants/74.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 75,
@@ -782,7 +1272,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "середина мая — июнь",
     "photo": "assets/plants/75.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 76,
@@ -793,7 +1290,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "март — апрель",
     "photo": "assets/plants/76.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 77,
@@ -804,7 +1308,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июнь — сентябрь",
     "photo": "assets/plants/77.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 78,
@@ -815,7 +1326,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "май — июнь",
     "photo": "assets/plants/78.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Однолетник",
+    "gardenCycle": "Однолетник",
+    "hardinessStatus": "not_applicable",
+    "hardinessZoneMin": null,
+    "hardinessZoneMax": null,
+    "hardinessMinTempC": null,
+    "russiaWintering": "Не применяется"
   },
   {
     "id": 79,
@@ -826,7 +1344,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "середина марта — конец мая",
     "photo": "assets/plants/79.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "",
+    "gardenCycle": "",
+    "hardinessStatus": "unknown",
+    "hardinessZoneMin": null,
+    "hardinessZoneMax": null,
+    "hardinessMinTempC": null,
+    "russiaWintering": "Требует уточнения"
   },
   {
     "id": 80,
@@ -837,7 +1362,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "конец апреля — начало мая",
     "photo": "assets/plants/80.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 81,
@@ -848,7 +1380,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "конец апреля — начало мая",
     "photo": "assets/plants/81.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 82,
@@ -859,7 +1398,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "апрель — конец осени",
     "photo": "assets/plants/82.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "",
+    "gardenCycle": "",
+    "hardinessStatus": "unknown",
+    "hardinessZoneMin": null,
+    "hardinessZoneMax": null,
+    "hardinessMinTempC": null,
+    "russiaWintering": "Требует уточнения"
   },
   {
     "id": 83,
@@ -870,7 +1416,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июль — август",
     "photo": "assets/plants/83.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует с укрытием"
   },
   {
     "id": 84,
@@ -881,7 +1434,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "август — осень",
     "photo": "assets/plants/84.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 5,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -28.9,
+    "russiaWintering": "Требует уточнения"
   },
   {
     "id": 85,
@@ -892,7 +1452,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "сентябрь — ноябрь",
     "photo": "assets/plants/85.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "",
+    "gardenCycle": "",
+    "hardinessStatus": "unknown",
+    "hardinessZoneMin": null,
+    "hardinessZoneMax": null,
+    "hardinessMinTempC": null,
+    "russiaWintering": "Требует уточнения"
   },
   {
     "id": 86,
@@ -903,7 +1470,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июль — август",
     "photo": "assets/plants/86.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник, выращиваемый как однолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 7,
+    "hardinessZoneMax": 10,
+    "hardinessMinTempC": -17.8,
+    "russiaWintering": "Выкапывают на зиму"
   },
   {
     "id": 87,
@@ -914,7 +1488,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "май — июнь",
     "photo": "assets/plants/87.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 10,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 88,
@@ -925,7 +1506,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "март — май",
     "photo": "assets/plants/88.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует с укрытием"
   },
   {
     "id": 89,
@@ -936,7 +1524,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июнь — июль",
     "photo": "assets/plants/89.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 90,
@@ -947,7 +1542,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июнь — июль",
     "photo": "assets/plants/90.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 91,
@@ -958,7 +1560,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "май — июнь",
     "photo": "assets/plants/91.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Однолетник",
+    "gardenCycle": "Однолетник",
+    "hardinessStatus": "not_applicable",
+    "hardinessZoneMin": null,
+    "hardinessZoneMax": null,
+    "hardinessMinTempC": null,
+    "russiaWintering": "Не применяется"
   },
   {
     "id": 92,
@@ -969,7 +1578,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июнь — сентябрь",
     "photo": "assets/plants/92.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Однолетник",
+    "gardenCycle": "Однолетник",
+    "hardinessStatus": "not_applicable",
+    "hardinessZoneMin": null,
+    "hardinessZoneMax": null,
+    "hardinessMinTempC": null,
+    "russiaWintering": "Не применяется"
   },
   {
     "id": 93,
@@ -980,7 +1596,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июль — октябрь",
     "photo": "assets/plants/93.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 94,
@@ -991,7 +1614,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июль — август",
     "photo": "assets/plants/94.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Однолетник",
+    "gardenCycle": "Однолетник",
+    "hardinessStatus": "not_applicable",
+    "hardinessZoneMin": null,
+    "hardinessZoneMax": null,
+    "hardinessMinTempC": null,
+    "russiaWintering": "Не применяется"
   },
   {
     "id": 95,
@@ -1002,7 +1632,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июнь — до заморозков",
     "photo": "assets/plants/95.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "",
+    "gardenCycle": "",
+    "hardinessStatus": "unknown",
+    "hardinessZoneMin": null,
+    "hardinessZoneMax": null,
+    "hardinessMinTempC": null,
+    "russiaWintering": "Требует уточнения"
   },
   {
     "id": 96,
@@ -1013,7 +1650,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "конец апреля — начало мая",
     "photo": "assets/plants/96.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 97,
@@ -1024,7 +1668,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "август — осень",
     "photo": "assets/plants/97.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 5,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -28.9,
+    "russiaWintering": "Требует уточнения"
   },
   {
     "id": 98,
@@ -1035,7 +1686,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июль — до заморозков",
     "photo": "assets/plants/98.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 99,
@@ -1046,7 +1704,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "май — июль",
     "photo": "assets/plants/99.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 5,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -28.9,
+    "russiaWintering": "Зимует с укрытием"
   },
   {
     "id": 100,
@@ -1057,7 +1722,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "апрель — июнь",
     "photo": "assets/plants/100.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 101,
@@ -1068,7 +1740,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июнь — до морозов",
     "photo": "assets/plants/101.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Однолетник",
+    "gardenCycle": "Однолетник",
+    "hardinessStatus": "not_applicable",
+    "hardinessZoneMin": null,
+    "hardinessZoneMax": null,
+    "hardinessMinTempC": null,
+    "russiaWintering": "Не применяется"
   },
   {
     "id": 102,
@@ -1079,7 +1758,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июль — август",
     "photo": "assets/plants/102.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 103,
@@ -1090,7 +1776,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "1–3",
     "bloomNote": "июнь — июль",
     "photo": "assets/plants/103.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 5,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -28.9,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 104,
@@ -1101,7 +1794,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "1–3",
     "bloomNote": "июнь — август",
     "photo": "assets/plants/104.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник, выращиваемый как однолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 9,
+    "hardinessZoneMax": 11,
+    "hardinessMinTempC": -6.7,
+    "russiaWintering": "Не зимует в открытом грунте"
   },
   {
     "id": 105,
@@ -1112,7 +1812,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июнь",
     "photo": "assets/plants/105.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 7,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 106,
@@ -1123,7 +1830,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июнь — август",
     "photo": "assets/plants/106.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 7,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 107,
@@ -1134,7 +1848,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "конец июля — август",
     "photo": "assets/plants/107.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 108,
@@ -1145,7 +1866,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "сентябрь — октябрь",
     "photo": "assets/plants/108.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 5,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -28.9,
+    "russiaWintering": "Зимует с укрытием"
   },
   {
     "id": 109,
@@ -1156,7 +1884,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июнь — август",
     "photo": "assets/plants/109.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Однолетник",
+    "gardenCycle": "Однолетник",
+    "hardinessStatus": "not_applicable",
+    "hardinessZoneMin": null,
+    "hardinessZoneMax": null,
+    "hardinessMinTempC": null,
+    "russiaWintering": "Не применяется"
   },
   {
     "id": 110,
@@ -1167,7 +1902,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июнь — июль",
     "photo": "assets/plants/110.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 111,
@@ -1178,7 +1920,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июнь — август",
     "photo": "assets/plants/111.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует с укрытием"
   },
   {
     "id": 112,
@@ -1189,7 +1938,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "август — сентябрь",
     "photo": "assets/plants/112.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 5,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -28.9,
+    "russiaWintering": "Требует уточнения"
   },
   {
     "id": 113,
@@ -1200,7 +1956,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июнь — сентябрь",
     "photo": "assets/plants/113.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 114,
@@ -1211,7 +1974,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "май — июнь",
     "photo": "assets/plants/114.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 5,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -28.9,
+    "russiaWintering": "Зимует с укрытием"
   },
   {
     "id": 115,
@@ -1222,7 +1992,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "1–5",
     "bloomNote": "конец апреля — май",
     "photo": "assets/plants/115.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 116,
@@ -1233,7 +2010,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "май",
     "photo": "assets/plants/116.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 117,
@@ -1244,7 +2028,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "май",
     "photo": "assets/plants/117.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Пограничная зимовка"
   },
   {
     "id": 118,
@@ -1255,7 +2046,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "апрель",
     "photo": "assets/plants/118.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 119,
@@ -1266,7 +2064,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "середина мая — конец июня",
     "photo": "assets/plants/119.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 120,
@@ -1277,7 +2082,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июнь",
     "photo": "assets/plants/120.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 5,
+    "hardinessZoneMax": 7,
+    "hardinessMinTempC": -28.9,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 121,
@@ -1288,7 +2100,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "сентябрь — октябрь",
     "photo": "assets/plants/121.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 122,
@@ -1299,7 +2118,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "сентябрь",
     "photo": "assets/plants/122.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 123,
@@ -1310,7 +2136,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июнь",
     "photo": "assets/plants/123.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 124,
@@ -1321,7 +2154,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июнь — июль",
     "photo": "assets/plants/124.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 125,
@@ -1332,7 +2172,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "1–3",
     "bloomNote": "июль",
     "photo": "assets/plants/125.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 126,
@@ -1343,7 +2190,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июнь",
     "photo": "assets/plants/126.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 7,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 127,
@@ -1354,7 +2208,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "сентябрь",
     "photo": "assets/plants/127.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 128,
@@ -1365,7 +2226,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "конец сентября — октябрь",
     "photo": "assets/plants/128.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 129,
@@ -1376,7 +2244,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "сентябрь — до заморозков",
     "photo": "assets/plants/129.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 5,
+    "hardinessZoneMax": 9,
+    "hardinessMinTempC": -28.9,
+    "russiaWintering": "Зимует с укрытием"
   },
   {
     "id": 130,
@@ -1387,7 +2262,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "1–2",
     "bloomNote": "август — сентябрь",
     "photo": "assets/plants/130.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует с укрытием"
   },
   {
     "id": 131,
@@ -1398,7 +2280,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "август",
     "photo": "assets/plants/131.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 132,
@@ -1409,7 +2298,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июнь — июль",
     "photo": "assets/plants/132.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 133,
@@ -1420,7 +2316,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "май — июнь",
     "photo": "assets/plants/133.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Зимует в открытом грунте"
   },
   {
     "id": 134,
@@ -1431,7 +2334,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "июнь — июль",
     "photo": "assets/plants/134.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "",
+    "gardenCycle": "",
+    "hardinessStatus": "unknown",
+    "hardinessZoneMin": null,
+    "hardinessZoneMax": null,
+    "hardinessMinTempC": null,
+    "russiaWintering": "Требует уточнения"
   },
   {
     "id": 135,
@@ -1442,7 +2352,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июль — осень",
     "photo": "assets/plants/135.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник, выращиваемый как однолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 7,
+    "hardinessZoneMax": 10,
+    "hardinessMinTempC": -17.8,
+    "russiaWintering": "Выкапывают на зиму"
   },
   {
     "id": 136,
@@ -1453,7 +2370,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июнь — август",
     "photo": "assets/plants/136.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник, выращиваемый как однолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 10,
+    "hardinessZoneMax": 11,
+    "hardinessMinTempC": -1.1,
+    "russiaWintering": "Зимует в помещении"
   },
   {
     "id": 137,
@@ -1464,7 +2388,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июль — август",
     "photo": "assets/plants/137.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник, выращиваемый как однолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 7,
+    "hardinessZoneMax": 10,
+    "hardinessMinTempC": -17.8,
+    "russiaWintering": "Выкапывают на зиму"
   },
   {
     "id": 138,
@@ -1475,7 +2406,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "2–5",
     "bloomNote": "апрель — ноябрь",
     "photo": "assets/plants/138.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Двулетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 4,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -34.4,
+    "russiaWintering": "Пограничная зимовка"
   },
   {
     "id": 139,
@@ -1486,7 +2424,14 @@ const GARDEN_RAW_PLANTS = [
     "sun": "4–5",
     "bloomNote": "июнь — июль",
     "photo": "assets/plants/139.webp",
-    "photoSource": "custom"
+    "photoSource": "custom",
+    "lifeCycle": "Многолетник",
+    "gardenCycle": "Многолетник",
+    "hardinessStatus": "applicable",
+    "hardinessZoneMin": 3,
+    "hardinessZoneMax": 8,
+    "hardinessMinTempC": -40,
+    "russiaWintering": "Зимует в открытом грунте"
   }
 ];
 
