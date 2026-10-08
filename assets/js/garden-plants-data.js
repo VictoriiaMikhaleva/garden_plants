@@ -558,9 +558,9 @@ const GARDEN_RAW_PLANTS = [
     "color": "sky",
     "nameRu": "Анемона (ветреница)",
     "height": "20–30",
-    "bloom": "4–11",
+    "bloom": "4–5",
     "sun": "2–4",
-    "bloomNote": "апрель — ноябрь",
+    "bloomNote": "апрель — май",
     "photo": "assets/plants/55.webp",
     "photoSource": "custom"
   },
@@ -1152,9 +1152,9 @@ const GARDEN_RAW_PLANTS = [
     "color": "red",
     "nameRu": "Адонис изысканный",
     "height": "20–30",
-    "bloom": "8–9",
+    "bloom": "6–8",
     "sun": "4–5",
-    "bloomNote": "август — сентябрь",
+    "bloomNote": "июнь — август",
     "photo": "assets/plants/109.webp",
     "photoSource": "custom"
   },
