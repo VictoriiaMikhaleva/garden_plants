@@ -149,7 +149,7 @@
   }
 
   function normPlant(p) {
-    const text = [p.nameRu, p.bloomNote, GARDEN_COLOR_LABELS[p.color]].join(" ").toLowerCase();
+    const text = [p.nameRu, p.nameLat, p.bloomNote, GARDEN_COLOR_LABELS[p.color]].join(" ").toLowerCase();
     return {
       ...p,
       sunR: toRange(p.sun, [1, 5]),
