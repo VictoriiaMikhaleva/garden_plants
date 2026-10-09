@@ -213,15 +213,23 @@
     return { points: -Math.min(penalty, d / scale), ok: false, delta: d };
   }
 
+  function boxText(value) {
+    return String(value ?? "").replace(/\s*[—–]\s*(\S)?/gu, (match, next) => {
+      const spaced = /\s/.test(match);
+      const ch = next && /[A-ZА-ЯЁ]/.test(next) ? next.toLowerCase() : (next || "");
+      return (spaced ? " - " : "-") + ch;
+    });
+  }
+
   function sunLabel(r) {
     const a = GARDEN_SUN_LABELS[Math.round(r.min)] || r.min;
     const b = GARDEN_SUN_LABELS[Math.round(r.max)] || r.max;
-    return r.min === r.max ? a : `${a} — ${b}`;
+    return r.min === r.max ? a : boxText(`${a} — ${b}`);
   }
 
   function bloomLabel(r) {
     if (r.min === r.max) return GARDEN_MONTH_LABELS[r.min] || r.raw;
-    return `${GARDEN_MONTH_LABELS[r.min]} — ${GARDEN_MONTH_LABELS[r.max]}`;
+    return boxText(`${GARDEN_MONTH_LABELS[r.min]} — ${GARDEN_MONTH_LABELS[r.max]}`);
   }
 
   function getBloomMonths() {
@@ -268,7 +276,7 @@
 
   function bloomRangeVisual(plantR, months) {
     if (!months.length) {
-      return `<small>Месяцы не выбраны — учитываются все</small>`;
+      return `<small>${boxText("Месяцы не выбраны — учитываются все")}</small>`;
     }
     const mid = (Math.min(...months) + Math.max(...months)) / 2;
     return rangeVisual(plantR, mid, 1, 12, "");
@@ -392,7 +400,7 @@
 
   function rangeVisual(r, current, domainMin, domainMax, unit) {
     if (current == null) {
-      return `<small>Параметр не задан — сравнение не выполняется</small>`;
+      return `<small>${boxText("Параметр не задан — сравнение не выполняется")}</small>`;
     }
     const a = pct(r.min, domainMin, domainMax);
     const b = pct(r.max, domainMin, domainMax);
@@ -424,9 +432,9 @@
   function displayHardiness(p) {
     if (p.hardinessStatus === "applicable" && p.hardinessZoneMin != null && p.hardinessZoneMax != null) {
       const t = formatOrientTemp(p.hardinessMinTempC);
-      return t
+      return boxText(t
         ? `USDA ${p.hardinessZoneMin}–${p.hardinessZoneMax} · ориентир ${t}`
-        : `USDA ${p.hardinessZoneMin}–${p.hardinessZoneMax}`;
+        : `USDA ${p.hardinessZoneMin}–${p.hardinessZoneMax}`);
     }
     if (p.hardinessStatus === "not_applicable") return "Не применяется для однолетника";
     return "Требует уточнения";
@@ -436,15 +444,24 @@
     return String(p.russiaWintering || "").trim() || "Требует уточнения";
   }
 
+  function hardinessApplies(p) {
+    return p.hardinessStatus !== "not_applicable";
+  }
+
+  function winteringApplies(p) {
+    const w = String(p.russiaWintering || "").trim();
+    return Boolean(w) && !w.startsWith("Не применяется");
+  }
+
   function displayMoisture(p) {
     const a = p.soilMoistureMin;
     const b = p.soilMoistureMax;
     if (a === "dry" && b === "dry") return "Сухой грунт";
-    if (a === "dry" && b === "moderate") return "Сухой — умеренно влажный";
+    if (a === "dry" && b === "moderate") return boxText("Сухой — умеренно влажный");
     if (a === "moderate" && b === "moderate") return "Умеренно влажный грунт";
-    if (a === "moderate" && b === "moist") return "Умеренно влажный — равномерно влажный";
+    if (a === "moderate" && b === "moist") return boxText("Умеренно влажный — равномерно влажный");
     if (a === "moist" && b === "moist") return "Равномерно влажный грунт";
-    if (a === "moist" && b === "wet") return "Равномерно — постоянно влажный";
+    if (a === "moist" && b === "wet") return boxText("Равномерно — постоянно влажный");
     if (a === "wet" && b === "wet") return "Постоянно влажный грунт";
     return "";
   }
@@ -473,12 +490,12 @@
     if (a === "slightly_acidic" && b === "slightly_acidic") return "Слабокислая почва";
     if (a === "neutral" && b === "neutral") return "Нейтральная почва";
     if (a === "alkaline" && b === "alkaline") return "Щелочная почва";
-    if (a === "acidic" && b === "slightly_acidic") return "Кислая — слабокислая";
-    if (a === "acidic" && b === "neutral") return "Кислая — нейтральная";
-    if (a === "acidic" && b === "alkaline") return "Кислая — щелочная";
-    if (a === "slightly_acidic" && b === "neutral") return "Слабокислая — нейтральная";
-    if (a === "slightly_acidic" && b === "alkaline") return "Слабокислая — щелочная";
-    if (a === "neutral" && b === "alkaline") return "Нейтральная — щелочная";
+    if (a === "acidic" && b === "slightly_acidic") return boxText("Кислая — слабокислая");
+    if (a === "acidic" && b === "neutral") return boxText("Кислая — нейтральная");
+    if (a === "acidic" && b === "alkaline") return boxText("Кислая — щелочная");
+    if (a === "slightly_acidic" && b === "neutral") return boxText("Слабокислая — нейтральная");
+    if (a === "slightly_acidic" && b === "alkaline") return boxText("Слабокислая — щелочная");
+    if (a === "neutral" && b === "alkaline") return boxText("Нейтральная — щелочная");
     return "";
   }
 
@@ -521,18 +538,18 @@ ${photo(p)}
 <div class="scorebar" aria-hidden="true" style="--w:${p.score}%"><i></i></div>
 <div class="tags">
 <span class="tag ${cls}">${lab}: ${p.score}</span>
-<span class="tag blue">${esc(p.bloomNote)}</span>
+<span class="tag blue">${esc(boxText(p.bloomNote))}</span>
 <span class="tag">${esc(sunLabel(p.sunR))}</span>
 </div>
 <div class="meters">
 ${metricCard("Солнце", sunLabel(p.sunR), "", sunV)}
-${metricCard("Высота", p.height, " см", heightV)}
+${metricCard("Высота", boxText(p.height), " см", heightV)}
 ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
 </div>
 <dl class="plant-facts">
 <div class="plant-fact"><dt>Жизненный цикл</dt><dd>${esc(displayLifeCycle(p))}</dd></div>
-<div class="plant-fact"><dt>Зона морозостойкости</dt><dd>${esc(displayHardiness(p))}</dd></div>
-<div class="plant-fact"><dt>Зимовка в средней полосе</dt><dd>${esc(displayWintering(p))}</dd></div>
+${hardinessApplies(p) ? `<div class="plant-fact"><dt>Зона морозостойкости</dt><dd>${esc(displayHardiness(p))}</dd></div>` : ""}
+${winteringApplies(p) ? `<div class="plant-fact"><dt>Зимовка в средней полосе</dt><dd>${esc(displayWintering(p))}</dd></div>` : ""}
 <div class="plant-fact"><dt>Влажность грунта</dt><dd>${esc(displayMoisture(p))}${drainageLine(p) ? `<span class="plant-fact__drain">${esc(drainageLine(p))}</span>` : ""}</dd></div>
 ${displayPh(p) ? `<div class="plant-fact"><dt>Кислотность почвы</dt><dd>${esc(displayPh(p))}</dd></div>` : ""}
 </dl>
