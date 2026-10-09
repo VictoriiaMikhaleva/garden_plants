@@ -37,6 +37,14 @@
     Многолетник: "Многолетники"
   };
 
+  const MOISTURE_RANK = { dry: 1, moderate: 2, moist: 3, wet: 4 };
+  const MOISTURE_FILTER_LABELS = {
+    dry: "Сухой",
+    moderate: "Умеренно влажный",
+    moist: "Равномерно влажный",
+    wet: "Постоянно влажный"
+  };
+
   const PARAM_HELP_CONTENT = {
     "usda-zones": {
       title: "Что означают зоны морозостойкости?",
@@ -66,6 +74,23 @@
 </tbody>
 </table>
 <p class="param-help__source">Источник: <a href="https://planthardiness.ars.usda.gov/" target="_blank" rel="noopener noreferrer">USDA Plant Hardiness Zone Map 2023</a></p>`
+    },
+    "soil-moisture": {
+      title: "Как понять влажность грунта и дренаж?",
+      html: `<p>Влажность грунта в каталоге — это то, сколько воды обычно должно быть доступно корням в период активного роста.</p>
+<p>Это не влажность воздуха и не расписание полива.</p>
+<p>Сухой грунт — почва большую часть сезона заметно просыхает.</p>
+<p>Умеренно влажный — обычная садовая почва: после дождя или полива она влажная, а затем постепенно просыхает.</p>
+<p>Равномерно влажный — почва в зоне корней не должна надолго пересыхать. Это не значит, что она должна быть мокрой.</p>
+<p>Постоянно влажный — высокая влажность почвы является нормальным условием для растения, а не просто переносится им время от времени.</p>
+<p>Влажность и дренаж — разные вещи.</p>
+<p>Растению может быть нужен равномерно влажный грунт и одновременно быстрый уход лишней воды.</p>
+<p>Если указано: «Важно: без застоя воды», не высаживайте растение там, где после дождя вода долго стоит у корней.</p>
+<p>Оценивайте почву не только по поверхности. Раздвиньте или слегка копните грунт в зоне корней и посмотрите, как долго он остаётся влажным после дождя или полива.</p>
+<p>Песчаная почва отдаёт воду быстрее, глинистая удерживает её дольше, поэтому одинаково сухая поверхность не означает одинаковую влажность в глубине.</p>
+<p>Простой влагомер можно использовать как ориентир и для сравнения одного места с самим собой, но его цифра не является универсальной нормой для всех типов грунта.</p>
+<p>У луковичных и клубневых режим во время роста может отличаться от периода покоя и хранения.</p>
+<p>В каталоге указан прежде всего режим влажности во время садовой вегетации.</p>`
     }
   };
 
@@ -318,6 +343,7 @@
       colors: getSelectedColors(),
       lifeCycles: getSelectedLifeCycles(),
       wintering: getSelectedWintering(),
+      moisture: getSelectedMoisture(),
       usdaZone: usdaRaw === "" ? null : +usdaRaw,
       sort: $("sort").value,
       onlyFav: $("onlyFav").value
@@ -395,6 +421,36 @@
     return String(p.russiaWintering || "").trim() || "Требует уточнения";
   }
 
+  function displayMoisture(p) {
+    const a = p.soilMoistureMin;
+    const b = p.soilMoistureMax;
+    if (a === "dry" && b === "dry") return "Сухой грунт";
+    if (a === "dry" && b === "moderate") return "Сухой — умеренно влажный";
+    if (a === "moderate" && b === "moderate") return "Умеренно влажный грунт";
+    if (a === "moderate" && b === "moist") return "Умеренно влажный — равномерно влажный";
+    if (a === "moist" && b === "moist") return "Равномерно влажный грунт";
+    if (a === "moist" && b === "wet") return "Равномерно — постоянно влажный";
+    if (a === "wet" && b === "wet") return "Постоянно влажный грунт";
+    return "";
+  }
+
+  function drainageLine(p) {
+    if (p.drainageDisplay === "avoid_stagnation") return "Важно: без застоя воды";
+    if (p.drainageDisplay === "tolerates_wet") return "Переносит более сырые участки";
+    return "";
+  }
+
+  function moistureMatches(p, selected) {
+    if (!selected.length) return true;
+    const min = MOISTURE_RANK[p.soilMoistureMin];
+    const max = MOISTURE_RANK[p.soilMoistureMax];
+    if (min == null || max == null) return false;
+    return selected.some((key) => {
+      const z = MOISTURE_RANK[key];
+      return z != null && min <= z && z <= max;
+    });
+  }
+
   const PHOTO_CACHE_V = "20260810a";
 
   function photo(p) {
@@ -435,6 +491,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
 <div class="plant-fact"><dt>Жизненный цикл</dt><dd>${esc(displayLifeCycle(p))}</dd></div>
 <div class="plant-fact"><dt>Зона морозостойкости</dt><dd>${esc(displayHardiness(p))}</dd></div>
 <div class="plant-fact"><dt>Зимовка в средней полосе</dt><dd>${esc(displayWintering(p))}</dd></div>
+<div class="plant-fact"><dt>Влажность грунта</dt><dd>${esc(displayMoisture(p))}${drainageLine(p) ? `<span class="plant-fact__drain">${esc(drainageLine(p))}</span>` : ""}</dd></div>
 </dl>
 <details open><summary>Почему подходит</summary><ul class="reasons">${p.reasons.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></details>
 <div class="tips"><b>Советы</b><ul class="reasons">${(p.tips.length ? p.tips : ["условия близки к оптимальным"]).map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
@@ -451,6 +508,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
       colors: f.colors,
       lifeCycles: f.lifeCycles,
       wintering: f.wintering,
+      moisture: f.moisture,
       usdaZone: f.usdaZone,
       onlyFav: f.onlyFav,
       sort: f.sort
@@ -488,6 +546,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
       const allowed = new Set(f.wintering.flatMap((key) => WINTERING_UI[key] || []));
       arr = arr.filter((p) => allowed.has(p.russiaWintering));
     }
+    if (f.moisture.length) arr = arr.filter((p) => moistureMatches(p, f.moisture));
     if (f.usdaZone != null) {
       arr = arr.filter(
         (p) =>
@@ -653,6 +712,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     setBloomMonths([]);
     setSelectedLifeCycles([]);
     setSelectedWintering([]);
+    setSelectedMoisture([]);
     if ($("usdaZone")) $("usdaZone").value = "";
     showLessSuitable = false;
     lastFilterKey = "";
@@ -685,6 +745,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     if (usdaEl && $("usdaZone")) {
       usdaEl.textContent = $("usdaZone").value === "" ? "Любая" : $("usdaZone").value;
     }
+    updateMoistureHint();
     ["sunRange", "heightRange"].forEach((id) => {
       const el = $(id);
       if (!el) return;
@@ -752,6 +813,31 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
       : "Любая зимовка";
   }
 
+  function getSelectedMoisture() {
+    return [...document.querySelectorAll("#moistureChoices .filter-choice.is-active")]
+      .map((b) => b.dataset.moisture)
+      .filter(Boolean);
+  }
+
+  function setSelectedMoisture(values) {
+    const set = new Set(values);
+    document.querySelectorAll("#moistureChoices .filter-choice").forEach((b) => {
+      const on = set.has(b.dataset.moisture);
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    updateMoistureHint();
+  }
+
+  function updateMoistureHint() {
+    const el = $("moistureValue");
+    if (!el) return;
+    const selected = getSelectedMoisture();
+    el.textContent = selected.length
+      ? selected.map((k) => MOISTURE_FILTER_LABELS[k] || k).join(", ")
+      : "Любая влажность";
+  }
+
   function wireChoiceGroup(wrapId) {
     const wrap = $(wrapId);
     if (!wrap) return;
@@ -762,6 +848,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
       btn.setAttribute("aria-pressed", btn.classList.contains("is-active") ? "true" : "false");
       updateLifeCycleHint();
       updateWinteringHint();
+      updateMoistureHint();
       render();
     });
   }
@@ -955,6 +1042,10 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
       if (p.sunR.min < 1 || p.sunR.max > 5) issues.push(`${p.nameRu}: проверьте солнце «${p.sun}»`);
       if (!p.nameRu) issues.push(`${p.id}: нет названия`);
       if (!p.color) issues.push(`${p.nameRu}: нет цветовой группы`);
+      const min = MOISTURE_RANK[p.soilMoistureMin];
+      const max = MOISTURE_RANK[p.soilMoistureMax];
+      if (min == null || max == null) issues.push(`${p.nameRu}: нет moisture min/max`);
+      else if (min > max) issues.push(`${p.nameRu}: moisture min > max`);
     });
     $("auditSummary").textContent = `Проверено ${PLANTS.length} записей. Замечаний: ${issues.length}.`;
     $("auditList").innerHTML =
@@ -971,6 +1062,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     buildColorGroups();
     wireChoiceGroup("lifeCycleChoices");
     wireChoiceGroup("winteringChoices");
+    wireChoiceGroup("moistureChoices");
     createParameterHelp();
     wireDual("sun", "sunRange", () => {
       sunTouched = true;

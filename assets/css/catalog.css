@@ -2286,6 +2286,19 @@
   grid-column: 1;
 }
 
+.catalog-page .param-card[data-param="moisture"] .param-card__value {
+  white-space: normal;
+}
+
+.catalog-page .plant-fact__drain {
+  display: block;
+  margin-top: 0.12rem;
+  font-size: inherit;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: inherit;
+}
+
 .catalog-page .param-card[data-param="bloom"] .param-card__unit,
 .catalog-page .param-card[data-param="usda"] .param-card__unit {
   display: block;
