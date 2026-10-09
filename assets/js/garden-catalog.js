@@ -45,6 +45,15 @@
     wet: "Постоянно влажный"
   };
 
+  const PH_RANK = { acidic: 1, slightly_acidic: 2, neutral: 3, alkaline: 4 };
+  const PH_FILTER_LABELS = {
+    acidic: "Кислая",
+    slightly_acidic: "Слабокислая",
+    neutral: "Нейтральная",
+    alkaline: "Щелочная"
+  };
+  const PH_EXPECTED_COUNTS = { acidic: 48, slightly_acidic: 133, neutral: 126, alkaline: 88 };
+
   const PARAM_HELP_CONTENT = {
     "usda-zones": {
       title: "Что означают зоны морозостойкости?",
@@ -88,6 +97,14 @@
 <p>Проверяйте почву не только сверху: на песчаном грунте вода уходит быстрее, на глинистом — задерживается дольше.</p>
 <p>Влагомер можно использовать как ориентир, но его показания не являются универсальной нормой.</p>
 <p>У луковичных и клубневых растений потребность во влаге во время роста может отличаться от периода покоя и хранения.</p>`
+    },
+    "soil-ph": {
+      title: "Как понять кислотность почвы?",
+      html: `<p>Кислотность почвы измеряют по шкале pH. Значение около 7 соответствует нейтральной почве: ниже — почва кислее, выше — более щелочная.</p>
+<p>В каталоге: кислая — примерно pH 4,5–5,5; слабокислая — 5,6–6,5; нейтральная — 6,6–7,2; щелочная — 7,3–8,0.</p>
+<p>Кислотность влияет на то, насколько легко растение получает питательные вещества из почвы.</p>
+<p>Узнать pH грунта можно с помощью почвенного теста, pH-метра или анализа почвы. Домашние измерения лучше воспринимать как ориентир.</p>
+<p>Не подкисляйте и не известкуйте почву без измерения: слишком резкое изменение pH тоже может навредить растениям.</p>`
     }
   };
 
@@ -341,6 +358,7 @@
       lifeCycles: getSelectedLifeCycles(),
       wintering: getSelectedWintering(),
       moisture: getSelectedMoisture(),
+      ph: getSelectedPh(),
       usdaZone: usdaRaw === "" ? null : +usdaRaw,
       sort: $("sort").value,
       onlyFav: $("onlyFav").value
@@ -448,6 +466,33 @@
     });
   }
 
+  function displayPh(p) {
+    const a = p.soilPhMin;
+    const b = p.soilPhMax;
+    if (a === "acidic" && b === "acidic") return "Кислая почва";
+    if (a === "slightly_acidic" && b === "slightly_acidic") return "Слабокислая почва";
+    if (a === "neutral" && b === "neutral") return "Нейтральная почва";
+    if (a === "alkaline" && b === "alkaline") return "Щелочная почва";
+    if (a === "acidic" && b === "slightly_acidic") return "Кислая — слабокислая";
+    if (a === "acidic" && b === "neutral") return "Кислая — нейтральная";
+    if (a === "acidic" && b === "alkaline") return "Кислая — щелочная";
+    if (a === "slightly_acidic" && b === "neutral") return "Слабокислая — нейтральная";
+    if (a === "slightly_acidic" && b === "alkaline") return "Слабокислая — щелочная";
+    if (a === "neutral" && b === "alkaline") return "Нейтральная — щелочная";
+    return "";
+  }
+
+  function phMatches(p, selected) {
+    if (!selected.length) return true;
+    const min = PH_RANK[p.soilPhMin];
+    const max = PH_RANK[p.soilPhMax];
+    if (min == null || max == null) return false;
+    return selected.some((key) => {
+      const z = PH_RANK[key];
+      return z != null && min <= z && z <= max;
+    });
+  }
+
   const PHOTO_CACHE_V = "20260810a";
 
   function photo(p) {
@@ -489,6 +534,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
 <div class="plant-fact"><dt>Зона морозостойкости</dt><dd>${esc(displayHardiness(p))}</dd></div>
 <div class="plant-fact"><dt>Зимовка в средней полосе</dt><dd>${esc(displayWintering(p))}</dd></div>
 <div class="plant-fact"><dt>Влажность грунта</dt><dd>${esc(displayMoisture(p))}${drainageLine(p) ? `<span class="plant-fact__drain">${esc(drainageLine(p))}</span>` : ""}</dd></div>
+${displayPh(p) ? `<div class="plant-fact"><dt>Кислотность почвы</dt><dd>${esc(displayPh(p))}</dd></div>` : ""}
 </dl>
 <details open><summary>Почему подходит</summary><ul class="reasons">${p.reasons.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></details>
 <div class="tips"><b>Советы</b><ul class="reasons">${(p.tips.length ? p.tips : ["условия близки к оптимальным"]).map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
@@ -506,6 +552,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
       lifeCycles: f.lifeCycles,
       wintering: f.wintering,
       moisture: f.moisture,
+      ph: f.ph,
       usdaZone: f.usdaZone,
       onlyFav: f.onlyFav,
       sort: f.sort
@@ -544,6 +591,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
       arr = arr.filter((p) => allowed.has(p.russiaWintering));
     }
     if (f.moisture.length) arr = arr.filter((p) => moistureMatches(p, f.moisture));
+    if (f.ph.length) arr = arr.filter((p) => phMatches(p, f.ph));
     if (f.usdaZone != null) {
       arr = arr.filter(
         (p) =>
@@ -710,6 +758,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     setSelectedLifeCycles([]);
     setSelectedWintering([]);
     setSelectedMoisture([]);
+    setSelectedPh([]);
     if ($("usdaZone")) $("usdaZone").value = "";
     showLessSuitable = false;
     lastFilterKey = "";
@@ -743,6 +792,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
       usdaEl.textContent = $("usdaZone").value === "" ? "Любая" : $("usdaZone").value;
     }
     updateMoistureHint();
+    updatePhHint();
     ["sunRange", "heightRange"].forEach((id) => {
       const el = $(id);
       if (!el) return;
@@ -835,6 +885,31 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
       : "Любая влажность";
   }
 
+  function getSelectedPh() {
+    return [...document.querySelectorAll("#phChoices .filter-choice.is-active")]
+      .map((b) => b.dataset.ph)
+      .filter(Boolean);
+  }
+
+  function setSelectedPh(values) {
+    const set = new Set(values);
+    document.querySelectorAll("#phChoices .filter-choice").forEach((b) => {
+      const on = set.has(b.dataset.ph);
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    updatePhHint();
+  }
+
+  function updatePhHint() {
+    const el = $("phValue");
+    if (!el) return;
+    const selected = getSelectedPh();
+    el.textContent = selected.length
+      ? selected.map((k) => PH_FILTER_LABELS[k] || k).join(", ")
+      : "Любая кислотность";
+  }
+
   function wireChoiceGroup(wrapId) {
     const wrap = $(wrapId);
     if (!wrap) return;
@@ -846,6 +921,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
       updateLifeCycleHint();
       updateWinteringHint();
       updateMoistureHint();
+      updatePhHint();
       render();
     });
   }
@@ -1043,7 +1119,26 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
       const max = MOISTURE_RANK[p.soilMoistureMax];
       if (min == null || max == null) issues.push(`${p.nameRu}: нет moisture min/max`);
       else if (min > max) issues.push(`${p.nameRu}: moisture min > max`);
+      if (!window.GARDEN_IS_DEMO && p.soilMoistureMin != null) {
+        const phMin = p.soilPhMin;
+        const phMax = p.soilPhMax;
+        if (phMin == null || phMax == null || phMin === "" || phMax === "") {
+          issues.push(`${p.nameRu}: нет soilPh min/max`);
+        } else if (PH_RANK[phMin] == null || PH_RANK[phMax] == null) {
+          issues.push(`${p.nameRu}: недопустимое значение кислотности`);
+        } else if (PH_RANK[phMin] > PH_RANK[phMax]) {
+          issues.push(`${p.nameRu}: soilPh min > max`);
+        }
+      }
     });
+    if (!window.GARDEN_IS_DEMO && PLANTS.length === 135) {
+      Object.keys(PH_EXPECTED_COUNTS).forEach((key) => {
+        const n = PLANTS.filter((p) => phMatches(p, [key])).length;
+        if (n !== PH_EXPECTED_COUNTS[key]) {
+          issues.push(`pH «${PH_FILTER_LABELS[key]}»: ${n}, ожидалось ${PH_EXPECTED_COUNTS[key]}`);
+        }
+      });
+    }
     $("auditSummary").textContent = `Проверено ${PLANTS.length} записей. Замечаний: ${issues.length}.`;
     $("auditList").innerHTML =
       (issues.slice(0, 8).map((x) => `<li>${esc(x)}</li>`).join("") || "<li>Критичных замечаний не найдено.</li>") +
@@ -1060,6 +1155,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
     wireChoiceGroup("lifeCycleChoices");
     wireChoiceGroup("winteringChoices");
     wireChoiceGroup("moistureChoices");
+    wireChoiceGroup("phChoices");
     createParameterHelp();
     wireDual("sun", "sunRange", () => {
       sunTouched = true;
@@ -1165,6 +1261,7 @@ ${metricCard("Цветение", bloomLabel(p.bloomR), "", bloomV)}
       $("profile").value = "custom";
       render();
     }
+    if (!window.GARDEN_IS_DEMO) runAudit();
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

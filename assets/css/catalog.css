@@ -2286,7 +2286,8 @@
   grid-column: 1;
 }
 
-.catalog-page .param-card[data-param="moisture"] .param-card__value {
+.catalog-page .param-card[data-param="moisture"] .param-card__value,
+.catalog-page .param-card[data-param="soil-ph"] .param-card__value {
   white-space: normal;
 }
 

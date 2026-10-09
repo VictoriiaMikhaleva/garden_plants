@@ -21,7 +21,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 2,
@@ -42,7 +44,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "slightly_acidic"
   },
   {
     "id": 3,
@@ -62,7 +66,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": null,
     "russiaWintering": "Требует уточнения",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "slightly_acidic"
   },
   {
     "id": 4,
@@ -82,7 +88,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -28.9,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 5,
@@ -103,7 +111,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 6,
@@ -123,7 +133,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "wet"
+    "soilMoistureMax": "wet",
+    "soilPhMin": "acidic",
+    "soilPhMax": "slightly_acidic"
   },
   {
     "id": 7,
@@ -144,7 +156,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Требует уточнения",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 8,
@@ -165,7 +179,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Выкапывают на зиму",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 9,
@@ -185,7 +201,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": null,
     "russiaWintering": "Требует уточнения",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 10,
@@ -206,7 +224,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 11,
@@ -226,7 +246,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 12,
@@ -247,7 +269,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "acidic",
+    "soilPhMax": "slightly_acidic"
   },
   {
     "id": 13,
@@ -268,7 +292,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "dry",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 14,
@@ -289,7 +315,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "dry",
     "soilMoistureMax": "dry",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 15,
@@ -310,7 +338,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 16,
@@ -331,7 +361,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "dry",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 17,
@@ -352,7 +384,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Пограничная зимовка",
     "soilMoistureMin": "dry",
     "soilMoistureMax": "dry",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "neutral",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 18,
@@ -373,7 +407,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Пограничная зимовка",
     "soilMoistureMin": "dry",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 19,
@@ -394,7 +430,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Пограничная зимовка",
     "soilMoistureMin": "dry",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 20,
@@ -415,7 +453,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Пограничная зимовка",
     "soilMoistureMin": "dry",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 21,
@@ -436,7 +476,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Не зимует в открытом грунте",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 22,
@@ -457,7 +499,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "dry",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 23,
@@ -477,7 +521,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 24,
@@ -497,7 +543,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "dry",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 25,
@@ -517,7 +565,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "dry",
-    "soilMoistureMax": "dry"
+    "soilMoistureMax": "dry",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 26,
@@ -538,7 +588,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Требует уточнения",
     "soilMoistureMin": "dry",
     "soilMoistureMax": "dry",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 27,
@@ -559,7 +611,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 28,
@@ -579,7 +633,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 29,
@@ -599,7 +655,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 30,
@@ -619,7 +677,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 31,
@@ -640,7 +700,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 32,
@@ -660,7 +722,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 33,
@@ -680,7 +744,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 34,
@@ -700,7 +766,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 35,
@@ -721,7 +789,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "dry",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 36,
@@ -741,7 +811,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 37,
@@ -762,7 +834,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 38,
@@ -783,7 +857,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "acidic",
+    "soilPhMax": "slightly_acidic"
   },
   {
     "id": 40,
@@ -804,7 +880,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 41,
@@ -824,7 +902,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -28.9,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 42,
@@ -845,7 +925,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 43,
@@ -865,7 +947,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 44,
@@ -886,7 +970,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Требует уточнения",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 45,
@@ -907,7 +993,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Выкапывают на зиму",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 46,
@@ -928,7 +1016,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Выкапывают на зиму",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 47,
@@ -948,7 +1038,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 48,
@@ -968,7 +1060,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 49,
@@ -988,7 +1082,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Зимует с укрытием",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 50,
@@ -1009,7 +1105,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует с укрытием",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 53,
@@ -1030,7 +1128,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует с укрытием",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 55,
@@ -1050,7 +1150,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -28.9,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 56,
@@ -1070,7 +1172,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 57,
@@ -1090,7 +1194,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "dry",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 58,
@@ -1110,7 +1216,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "dry",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 59,
@@ -1130,7 +1238,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 60,
@@ -1151,7 +1261,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует с укрытием",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 61,
@@ -1172,7 +1284,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Требует уточнения",
     "soilMoistureMin": "dry",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 62,
@@ -1193,7 +1307,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 63,
@@ -1214,7 +1330,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 64,
@@ -1234,7 +1352,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "dry",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 65,
@@ -1254,7 +1374,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Зимует с укрытием",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 66,
@@ -1274,7 +1396,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 67,
@@ -1294,7 +1418,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": null,
     "russiaWintering": "Не применяется",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 68,
@@ -1314,7 +1440,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 69,
@@ -1334,7 +1462,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 70,
@@ -1354,7 +1484,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Пограничная зимовка",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 71,
@@ -1374,7 +1506,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 72,
@@ -1394,7 +1528,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -45.6,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 73,
@@ -1414,7 +1550,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "acidic",
+    "soilPhMax": "slightly_acidic"
   },
   {
     "id": 74,
@@ -1434,7 +1572,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 75,
@@ -1454,7 +1594,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 76,
@@ -1474,7 +1616,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 77,
@@ -1494,7 +1638,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "dry",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 78,
@@ -1514,7 +1660,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": null,
     "russiaWintering": "Не применяется",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 79,
@@ -1534,7 +1682,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": null,
     "russiaWintering": "Требует уточнения",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 80,
@@ -1555,7 +1705,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 81,
@@ -1576,7 +1728,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "slightly_acidic"
   },
   {
     "id": 82,
@@ -1596,7 +1750,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": null,
     "russiaWintering": "Требует уточнения",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 83,
@@ -1617,7 +1773,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует с укрытием",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 84,
@@ -1638,7 +1796,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Требует уточнения",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 85,
@@ -1659,7 +1819,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": null,
     "russiaWintering": "Не применяется для однолетника",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 86,
@@ -1680,7 +1842,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Выкапывают на зиму",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 87,
@@ -1701,7 +1865,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "dry",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 88,
@@ -1722,7 +1888,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует с укрытием",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 89,
@@ -1742,7 +1910,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 90,
@@ -1763,7 +1933,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 91,
@@ -1783,7 +1955,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": null,
     "russiaWintering": "Не применяется",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 92,
@@ -1803,7 +1977,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": null,
     "russiaWintering": "Не применяется",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 93,
@@ -1823,7 +1999,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "dry",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 94,
@@ -1843,7 +2021,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": null,
     "russiaWintering": "Не применяется",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 95,
@@ -1863,7 +2043,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": null,
     "russiaWintering": "Требует уточнения",
     "soilMoistureMin": "dry",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 96,
@@ -1884,7 +2066,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 97,
@@ -1905,7 +2089,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Требует уточнения",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 98,
@@ -1925,7 +2111,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 99,
@@ -1945,7 +2133,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -28.9,
     "russiaWintering": "Зимует с укрытием",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 100,
@@ -1965,7 +2155,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 101,
@@ -1985,7 +2177,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": null,
     "russiaWintering": "Не применяется",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "slightly_acidic"
   },
   {
     "id": 102,
@@ -2006,7 +2200,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "acidic",
+    "soilPhMax": "slightly_acidic"
   },
   {
     "id": 103,
@@ -2026,7 +2222,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -28.9,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 104,
@@ -2047,7 +2245,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Не зимует в открытом грунте",
     "soilMoistureMin": "moist",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 105,
@@ -2068,7 +2268,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 106,
@@ -2088,7 +2290,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 107,
@@ -2109,7 +2313,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
     "soilMoistureMax": "wet",
-    "drainageDisplay": "tolerates_wet"
+    "drainageDisplay": "tolerates_wet",
+    "soilPhMin": "acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 108,
@@ -2130,7 +2336,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует с укрытием",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 109,
@@ -2150,7 +2358,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": null,
     "russiaWintering": "Не применяется",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "neutral",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 110,
@@ -2170,7 +2380,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 111,
@@ -2191,7 +2403,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует с укрытием",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 112,
@@ -2212,7 +2426,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Требует уточнения",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 113,
@@ -2232,7 +2448,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 114,
@@ -2252,7 +2470,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -28.9,
     "russiaWintering": "Зимует с укрытием",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 115,
@@ -2272,7 +2492,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 116,
@@ -2292,7 +2514,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 117,
@@ -2312,7 +2536,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Пограничная зимовка",
     "soilMoistureMin": "dry",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 118,
@@ -2332,7 +2558,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 119,
@@ -2353,7 +2581,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "dry",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 120,
@@ -2373,7 +2603,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -28.9,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "dry",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 121,
@@ -2393,7 +2625,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moist",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 122,
@@ -2413,7 +2647,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 123,
@@ -2433,7 +2669,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "dry",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 124,
@@ -2453,7 +2691,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "dry",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 125,
@@ -2474,7 +2714,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "dry",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 126,
@@ -2494,7 +2736,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 127,
@@ -2514,7 +2758,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 128,
@@ -2535,7 +2781,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 129,
@@ -2556,7 +2804,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует с укрытием",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 130,
@@ -2576,7 +2826,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Зимует с укрытием",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 131,
@@ -2596,7 +2848,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "dry",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 132,
@@ -2616,7 +2870,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -40,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 133,
@@ -2636,7 +2892,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "dry",
-    "soilMoistureMax": "dry"
+    "soilMoistureMax": "dry",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 134,
@@ -2656,7 +2914,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": null,
     "russiaWintering": "Требует уточнения",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 135,
@@ -2677,7 +2937,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Выкапывают на зиму",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 136,
@@ -2697,7 +2959,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -1.1,
     "russiaWintering": "Зимует в помещении",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moderate"
+    "soilMoistureMax": "moderate",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 137,
@@ -2718,7 +2982,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Выкапывают на зиму",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moist",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "neutral"
   },
   {
     "id": 138,
@@ -2738,7 +3004,9 @@ const GARDEN_RAW_PLANTS = [
     "hardinessMinTempC": -34.4,
     "russiaWintering": "Пограничная зимовка",
     "soilMoistureMin": "moderate",
-    "soilMoistureMax": "moist"
+    "soilMoistureMax": "moist",
+    "soilPhMin": "acidic",
+    "soilPhMax": "alkaline"
   },
   {
     "id": 139,
@@ -2759,7 +3027,9 @@ const GARDEN_RAW_PLANTS = [
     "russiaWintering": "Зимует в открытом грунте",
     "soilMoistureMin": "moderate",
     "soilMoistureMax": "moderate",
-    "drainageDisplay": "avoid_stagnation"
+    "drainageDisplay": "avoid_stagnation",
+    "soilPhMin": "slightly_acidic",
+    "soilPhMax": "alkaline"
   }
 ]
 
