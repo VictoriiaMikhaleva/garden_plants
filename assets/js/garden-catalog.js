@@ -150,8 +150,19 @@
     return { min: Math.min(...n), max: Math.max(...n), raw: String(s || "") };
   }
 
+  function bloomRange(s) {
+    const n = nums(s);
+    if (!n.length) return { min: null, max: null, raw: "", na: true };
+    return { min: Math.min(...n), max: Math.max(...n), raw: String(s || ""), na: false };
+  }
+
   function mid(r) {
     return (r.min + r.max) / 2;
+  }
+
+  function bloomSortKey(r) {
+    if (!r || r.na || r.min == null || r.max == null) return 100;
+    return mid(r);
   }
 
   function clamp(x, a, b) {
@@ -168,7 +179,7 @@
       ...p,
       sunR: toRange(p.sun, [1, 5]),
       heightR: toRange(p.height, [0, 300]),
-      bloomR: toRange(p.bloom, [1, 12]),
+      bloomR: bloomRange(p.bloom),
       colorLabel: GARDEN_COLOR_LABELS[p.color] || p.color,
       text
     };
@@ -228,6 +239,7 @@
   }
 
   function bloomLabel(r) {
+    if (!r || r.na || r.min == null || r.max == null) return "Цветение не применяется";
     if (r.min === r.max) return GARDEN_MONTH_LABELS[r.min] || r.raw;
     return boxText(`${GARDEN_MONTH_LABELS[r.min]} — ${GARDEN_MONTH_LABELS[r.max]}`);
   }
@@ -263,6 +275,10 @@
   }
 
   function bloomScore(months, plantR) {
+    if (!plantR || plantR.na || plantR.min == null || plantR.max == null) {
+      if (!months.length) return { points: 22, ok: true, delta: 0, na: true };
+      return { points: -200, ok: false, delta: 12, far: true, na: true };
+    }
     if (!months.length) return { points: 22, ok: true, delta: 0 };
     const hit = months.some((m) => m >= plantR.min && m <= plantR.max);
     if (hit) return { points: 22, ok: true, delta: 0 };
@@ -275,6 +291,9 @@
   }
 
   function bloomRangeVisual(plantR, months) {
+    if (!plantR || plantR.na || plantR.min == null || plantR.max == null) {
+      return `<small>Цветение не применяется</small>`;
+    }
     if (!months.length) {
       return `<small>${boxText("Месяцы не выбраны — учитываются все")}</small>`;
     }
@@ -320,7 +339,13 @@
           ? "высота в нужном диапазоне"
           : `высота отличается на ~${Math.round(h.delta)} см`
     );
-    reasons.push(b.ok ? "цветение в выбранные месяцы" : `цветение не попадает в выбранные месяцы (~${Math.round(b.delta)} мес.)`);
+    reasons.push(
+      b.na
+        ? "цветение не применяется"
+        : b.ok
+          ? "цветение в выбранные месяцы"
+          : `цветение не попадает в выбранные месяцы (~${Math.round(b.delta)} мес.)`
+    );
 
     if (!s.ok) {
       tips.push(f.sun < p.sunR.min ? "выберите более солнечное место или проредите крону деревьев" : "добавьте притенение или посадите под кустарник");
@@ -328,7 +353,7 @@
     if (!h.ok) {
       tips.push(f.height < p.heightR.min ? "растение вырастет выше — учтите при планировании ярусов" : "для низкого бордюра лучше подобрать более компактный сорт");
     }
-    if (!b.ok) {
+    if (!b.ok && !b.na) {
       tips.push(
         b.far
           ? "цветение слишком далеко от выбранных месяцев — растение не показывается в подборе"
@@ -510,7 +535,7 @@
     });
   }
 
-  const PHOTO_CACHE_V = "20260810a";
+  const PHOTO_CACHE_V = "20261014b";
 
   function photo(p) {
     const src = p.photo ? `${p.photo}?v=${PHOTO_CACHE_V}` : "";
@@ -626,7 +651,7 @@ ${displayPh(p) ? `<div class="plant-fact"><dt>Кислотность почвы<
     if (f.sort === "score") arr.sort((a, b) => b.score - a.score || a.nameRu.localeCompare(b.nameRu, "ru"));
     if (f.sort === "name") arr.sort((a, b) => a.nameRu.localeCompare(b.nameRu, "ru"));
     if (f.sort === "height") arr.sort((a, b) => mid(a.heightR) - mid(b.heightR));
-    if (f.sort === "bloom") arr.sort((a, b) => mid(a.bloomR) - mid(b.bloomR));
+    if (f.sort === "bloom") arr.sort((a, b) => bloomSortKey(a.bloomR) - bloomSortKey(b.bloomR) || a.nameRu.localeCompare(b.nameRu, "ru"));
 
     const ideal = arr.filter((p) => p.score >= 90);
     const rest = arr.filter((p) => p.score < 90);

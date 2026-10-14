@@ -47,6 +47,7 @@
   }
 
   function bloomLabel(r) {
+    if (!r || r.na || r.min == null || r.max == null) return "Цветение не применяется";
     if (r.min === r.max) return GARDEN_MONTH_LABELS[r.min] || r.raw;
     return `${GARDEN_MONTH_LABELS[r.min]} — ${GARDEN_MONTH_LABELS[r.max]}`;
   }
