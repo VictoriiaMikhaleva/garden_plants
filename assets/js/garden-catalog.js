@@ -624,7 +624,8 @@ ${displayPh(p) ? `<div class="plant-fact"><dt>Кислотность почвы<
     }
 
     const fs = favs();
-    let arr = PLANTS.filter((p) => !f.q || p.text.includes(f.q)).map((p) => Object.assign({}, p, explain(p, f)));
+    const searchApi = window.PlantSearch;
+    let arr = PLANTS.filter((p) => !f.q || (searchApi ? searchApi.matches(p, f.q, searchApi.GARDEN_ALIASES) : p.text.includes(f.q))).map((p) => Object.assign({}, p, explain(p, f)));
 
     if (f.colors.length) arr = arr.filter((p) => f.colors.includes(p.color));
     if (f.lifeCycles.length) arr = arr.filter((p) => f.lifeCycles.includes(p.lifeCycle));
@@ -648,7 +649,8 @@ ${displayPh(p) ? `<div class="plant-fact"><dt>Кислотность почвы<
     if (!browseMode) arr = arr.filter((p) => p.score >= 50);
     if (f.onlyFav === "fav") arr = arr.filter((p) => fs.has(p.id));
 
-    if (f.sort === "score") arr.sort((a, b) => b.score - a.score || a.nameRu.localeCompare(b.nameRu, "ru"));
+    const relevance = (p) => (searchApi && f.q ? searchApi.relevance(p, f.q) : 0);
+    if (f.sort === "score") arr.sort((a, b) => b.score - a.score || relevance(b) - relevance(a) || a.nameRu.localeCompare(b.nameRu, "ru"));
     if (f.sort === "name") arr.sort((a, b) => a.nameRu.localeCompare(b.nameRu, "ru"));
     if (f.sort === "height") arr.sort((a, b) => mid(a.heightR) - mid(b.heightR));
     if (f.sort === "bloom") arr.sort((a, b) => bloomSortKey(a.bloomR) - bloomSortKey(b.bloomR) || a.nameRu.localeCompare(b.nameRu, "ru"));
