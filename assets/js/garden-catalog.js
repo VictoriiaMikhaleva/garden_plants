@@ -535,7 +535,7 @@
     });
   }
 
-  const PHOTO_CACHE_V = "20261014b";
+  const PHOTO_CACHE_V = "20261014d";
 
   function photo(p) {
     const src = p.photo ? `${p.photo}?v=${PHOTO_CACHE_V}` : "";
