@@ -65,8 +65,8 @@ function check(condition, message) {
   if (!condition) failures.push(message);
 }
 
-const conifers = [145, 146].map((id) => byId[id]);
-check(conifers.every(Boolean), "хвойные 145 и 146 отсутствуют");
+const conifers = [145, 146, ...Array.from({ length: 10 }, (_, index) => index + 169)].map((id) => byId[id]);
+check(conifers.every(Boolean), "хвойные 145/146/169–178 отсутствуют");
 
 for (const plant of conifers) {
   check(plant.bloom === "", `${plant.id}: в данных не должно быть выдуманного периода цветения`);
@@ -104,4 +104,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`PASS: хвойные 145/146 не цветут в фильтре; прежние периоды сохранены (${legacy.length}).`);
+console.log(`PASS: хвойные 145/146/169–178 не цветут в фильтре; прежние периоды сохранены (${legacy.length}).`);
