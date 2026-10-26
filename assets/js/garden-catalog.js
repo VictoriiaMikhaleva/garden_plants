@@ -736,6 +736,22 @@ ${displayPh(p) ? `<div class="plant-fact"><dt>Кислотность почвы<
 
     renderCompare();
     syncScenarioButtons();
+    pinCatalogAfterFilter();
+  }
+
+  function pinCatalogAfterFilter() {
+    const results = $("results");
+    const footer = document.querySelector(".site-closing, .catalog-footer");
+    if (!results || !footer) return;
+    if (footer.getBoundingClientRect().top >= innerHeight * 0.7) return;
+    const header = document.querySelector(".site-header");
+    const headerBottom = header ? header.getBoundingClientRect().bottom : 0;
+    const r = results.getBoundingClientRect();
+    const html = document.documentElement;
+    const prev = html.style.scrollBehavior;
+    html.style.scrollBehavior = "auto";
+    window.scrollTo(0, Math.max(0, window.scrollY + r.top - headerBottom - 12));
+    html.style.scrollBehavior = prev;
   }
 
   function syncScenarioButtons() {
@@ -1222,10 +1238,21 @@ ${displayPh(p) ? `<div class="plant-fact"><dt>Кислотность почвы<
       b.addEventListener("click", () => applyProfile(b.dataset.profile))
     );
 
+    $("filterForm").addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && e.target.matches("input")) {
+        e.preventDefault();
+        render();
+      }
+    });
     $("filterForm").addEventListener("submit", (e) => {
       e.preventDefault();
       render();
-      $("results").focus();
+      const results = $("results");
+      results.focus({ preventScroll: true });
+      const top = results.getBoundingClientRect().top;
+      if (e.submitter && e.submitter.classList.contains("filters-btn-submit") && top > innerHeight * 0.55) {
+        results.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     });
     $("reset").addEventListener("click", reset);
 
